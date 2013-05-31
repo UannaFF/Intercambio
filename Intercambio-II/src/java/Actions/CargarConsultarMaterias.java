@@ -20,7 +20,7 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author caponte
  */
-public class CargarLlenarPlanillaUSB extends org.apache.struts.action.Action {
+public class CargarConsultarMaterias extends org.apache.struts.action.Action {
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
@@ -41,23 +41,30 @@ public class CargarLlenarPlanillaUSB extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
 
-        PlanillaUSB p = (PlanillaUSB) form;
+       Usuario u = (Usuario) form;
         ArrayList materias = new ArrayList();
-
-        Usuario u = new Usuario();
-        u.setNombreusuario(p.getNombreUsuario());
         u.setConfirmar("2013-2014");
         
         Clases.PlanillaUSB hay = DBMS.getInstance().obtenerPlanillaUSB(u);
 
         if (hay.getNombreUsuario() != null) {
-            p = DBMS.getInstance().obtenerPlanillaUSB(u);
             PlanDeEstudio plan = DBMS.getInstance().obtenerPlanDeEstudio(u);
             u.setNombre("");
-            request.setAttribute("PlanillaUSB", p);
+    
             request.setAttribute("Usuario", u);
             request.setAttribute("PlanDeEstudio", plan);
- 
+            for(int i=0; i< plan.listMateriaUSB.size(); i++)
+            {
+                materias.add("<td>"+plan.getMateriaUSB(i)+"</td>");
+                materias.add("<td>"+plan.getCodigoUSB(i)+"</td>");
+                materias.add("<td>"+plan.getCreditosUSB(i)+"</td>");
+                materias.add("<td>"+plan.getCodigoUniv(i)+"</td>");
+                materias.add("<td>"+plan.getMateriaUniv(i)+"</td>");
+                materias.add("<td>"+plan.getCreditosUniv(i)+"</td>");
+                materias.add("</tr><tr>");
+                
+            }
+            request.setAttribute("materias", materias);
            return mapping.findForward(MODIFICAR);
        }
         u.setNombre("");

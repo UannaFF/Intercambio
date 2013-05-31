@@ -487,6 +487,11 @@
             <forward name="modificar" path="formularioUSB" />
        </action>
        
+       <action input="/" name="Usuario" path="/CargarConsultarMaterias" scope="session" type="Actions.CargarConsultarMaterias">
+            <forward name="success" path="consultaEst" />
+            <forward name="modificar" path="consultaEst" />
+       </action>
+       
        <action name="PlanillaUSB" path="/LlenarPlanilla_EstUSB" scope="session" type="Actions.LlenarPlanilla_EstUSB">
             <forward name="success" path="cargacorrecta" />
             <forward name ="fail" path = "cargaincorrecta" />

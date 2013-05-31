@@ -127,6 +127,12 @@
             validate="false"
             parameter="accionesEstUSB"/>
         
+       <action path="/consultaEst"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="consultaEst"/>
+        
         <action path="/formSolicUSB"
             type="org.apache.struts.actions.ForwardAction"
             scope="request"
@@ -479,6 +485,11 @@
        <action name="PlanillaUSB" path="/CargarLlenarPlanillaUSB" scope="session" type="Actions.CargarLlenarPlanillaUSB">
             <forward name="success" path="formularioUSB" />
             <forward name="modificar" path="formularioUSB" />
+       </action>
+       
+       <action input="/" name="Usuario" path="/CargarConsultarMaterias" scope="session" type="Actions.CargarConsultarMaterias">
+            <forward name="success" path="consultaEst" />
+            <forward name="modificar" path="consultaEst" />
        </action>
        
        <action name="PlanillaUSB" path="/LlenarPlanilla_EstUSB" scope="session" type="Actions.LlenarPlanilla_EstUSB">

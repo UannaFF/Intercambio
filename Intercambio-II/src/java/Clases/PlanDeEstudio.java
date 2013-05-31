@@ -19,7 +19,7 @@ public class PlanDeEstudio extends org.apache.struts.action.ActionForm {
      Ademas se disponen de 6 indices para poder agregar cada formulario a su arraylist
      asociado y en la posicion que concuerden con el resto de los arraylist*/
     private String nombreUsuario;
-    private ArrayList listMateriaUSB;
+    public ArrayList listMateriaUSB;
     private String materiaUSB;
     private ArrayList listCodigoUSB;
     private String codigoUSB;

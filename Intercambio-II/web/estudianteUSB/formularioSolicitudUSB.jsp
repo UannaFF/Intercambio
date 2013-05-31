@@ -13,6 +13,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
+<%Object tmp = session.getAttribute("nombreusuario");%>
 
 <html:html lang="true">
 
@@ -1218,14 +1219,19 @@
                     </table>
                     <input type="button"  value="Agregar Materia" style="font-size:16px; padding:4px 6px;" onclick="addMate('MateBody')"/>
                     <input type="button" value="Eliminar Materia" style="font-size:16px; padding:4px 6px" onclick="deletePlan('MateBody')"/>
-                    <html:link action="consultaEst"> <input type="button" value="Consultar" style="font-size:16px; padding:4px 6px;"></html:link>
                 </div>
             </div>
             <p  align=center>
                
                 <html:submit>Cargar Plan </html:submit>
-                </p>
-        </html:form>
+                </p>    
+                </html:form>
+  
+         <html:form  action="/CargarConsultarMaterias" method="POST" >
+    <p hidden="true"><html:text name="Usuario" property="nombreusuario" maxlength="20"  value ="<%=tmp.toString()%>" errorKey="org.apache.struts.action.ERROR"></html:text></p>
+       <p  align=center> <html:submit>Consultar materias cargadas</html:submit></p>
+
+              </html:form>
     </div>
 
     <br>

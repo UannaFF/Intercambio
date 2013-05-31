@@ -13,6 +13,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
+<%Object tmp = session.getAttribute("nombreusuario");%>
 
 <html:html lang="true">
 
@@ -1180,7 +1181,7 @@
                                     <html:text name="PlanDeEstudio" property="codigoUSB[0]" maxlength="45" errorStyleClass="error" value="" style="width:80%;"
                                                errorKey="org.apache.struts.action.ERROR">
                                     </html:text>
-                                </td>
+                                    </td>
 
                                 <td>
                                     <html:text name="PlanDeEstudio" property="materiaUSB[0]" maxlength="45" errorStyleClass="error" value="" style="width:80%;"
@@ -1218,13 +1219,19 @@
                     </table>
                     <input type="button"  value="Agregar Materia" style="font-size:16px; padding:4px 6px;" onclick="addMate('MateBody')"/>
                     <input type="button" value="Eliminar Materia" style="font-size:16px; padding:4px 6px" onclick="deletePlan('MateBody')"/>
-
                 </div>
             </div>
             <p  align=center>
+               
                 <html:submit>Cargar Plan </html:submit>
-                </p>
-        </html:form>
+                </p>    
+                </html:form>
+  
+         <html:form  action="/CargarConsultarMaterias" method="POST" >
+    <p hidden="true"><html:text name="Usuario" property="nombreusuario" maxlength="20"  value ="<%=tmp.toString()%>" errorKey="org.apache.struts.action.ERROR"></html:text></p>
+       <p  align=center> <html:submit>Consultar materias cargadas</html:submit></p>
+
+              </html:form>
     </div>
 
     <br>
@@ -1262,10 +1269,10 @@
 
                                     <html:select property="nivelVerbal[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
                                     <!--html:select property="nivelVerbal[0]" style="width:50px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR"-->
-                                        <html:option value=""></html:option>
-                                        <html:option value="Basico">Basico</html:option>
-                                        <html:option value="Intermedio">Intermedio</html:option>
-                                        <html:option value="Avanzado">Avanzado</html:option>
+                                        <html:option value = ""></html:option>
+                                        <html:option value = "Basico">Basico</html:option>
+                                        <html:option value = "Intermedio">Intermedio</html:option>
+                                        <html:option value = "Avanzado">Avanzado</html:option>
                                     </html:select>
                                 </td>
 

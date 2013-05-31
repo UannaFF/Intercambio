@@ -15,6 +15,7 @@ public class PlanillaUSB extends org.apache.struts.action.ActionForm {
     // Seccion De Datos Personales
     private String estadoSolicitud;
     private String nombreUsuario;   //nombreUsuario db
+    private String nombreUsuarioS;   //nombreUsuario db
     private String periodo;
     private String apellido1;       //apellido1 db
     private String apellido2;       //apellido1 db
@@ -113,6 +114,14 @@ public class PlanillaUSB extends org.apache.struts.action.ActionForm {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
+    }
+    
+     public String getNombreUsuarioS() {
+        return nombreUsuarioS;
+    }
+
+    public void setNombreUsuarioS(String nombreUsuarioS) {
+        this.nombreUsuarioS = nombreUsuarioS;
     }
 
     public String getPeriodo() {

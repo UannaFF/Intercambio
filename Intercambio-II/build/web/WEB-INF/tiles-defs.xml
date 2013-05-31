@@ -230,6 +230,10 @@
     <definition name="formSolicUSB" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/formularioSolicitudUSB.jsp" />
     </definition>
+    
+    <definition name="consultaEst" extends="baseEstudiante"> 
+        <put name="body" value="/estudianteUSB/consultarPlan.jsp" />
+    </definition>
             
     <definition name="modificarperUSB" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/modificarperUSB.jsp" />
