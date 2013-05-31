@@ -186,4 +186,58 @@ public class PlanDeEstudio extends org.apache.struts.action.ActionForm {
         this.listCreditosUniv.add(indexCreUniv, credito);
 
     }    
+    
+    public String getMateriaUSB1() {
+        return materiaUSB;
+    }
+
+    public void setMateriaUSB1(String materia) {
+
+        this.materiaUSB = materia;
+    }
+    
+     public String getCodigoUSB1() {
+        return codigoUSB;
+    }
+
+    public void setCodigoUSB1(String codigo) {
+
+        this.codigoUSB = codigo;
+    }
+    
+     public int getCreditoUSB1() {
+        return creditosUSB;
+    }
+
+    public void setCreditoUSB1(int creditos) {
+
+        this.creditosUSB = creditos;
+    }
+    
+     public String getMateriaUniv1() {
+        return materiaUniv;
+    }
+
+    public void setMateriaUniv1(String materia) {
+
+        this.materiaUniv = materia;
+    }
+    
+     public String getCodigoUniv1() {
+        return codigoUniv;
+    }
+
+    public void setCodigoUniv1(String codigo) {
+
+        this.codigoUniv = codigo;
+    }
+    
+     public int getCreditoUniv1() {
+        return creditosUniv;
+    }
+
+    public void setCreditoUniv1(int creditos) {
+
+        this.creditosUniv = creditos;
+    }
 }

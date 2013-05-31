@@ -127,6 +127,12 @@
             validate="false"
             parameter="accionesEstUSB"/>
         
+       <action path="/consultaEst"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="consultaEst"/>
+        
         <action path="/formSolicUSB"
             type="org.apache.struts.actions.ForwardAction"
             scope="request"

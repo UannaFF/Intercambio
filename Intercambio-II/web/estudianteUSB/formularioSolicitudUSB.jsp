@@ -1180,7 +1180,7 @@
                                     <html:text name="PlanDeEstudio" property="codigoUSB[0]" maxlength="45" errorStyleClass="error" value="" style="width:80%;"
                                                errorKey="org.apache.struts.action.ERROR">
                                     </html:text>
-                                </td>
+                                    </td>
 
                                 <td>
                                     <html:text name="PlanDeEstudio" property="materiaUSB[0]" maxlength="45" errorStyleClass="error" value="" style="width:80%;"
@@ -1218,10 +1218,11 @@
                     </table>
                     <input type="button"  value="Agregar Materia" style="font-size:16px; padding:4px 6px;" onclick="addMate('MateBody')"/>
                     <input type="button" value="Eliminar Materia" style="font-size:16px; padding:4px 6px" onclick="deletePlan('MateBody')"/>
-
+                    <html:link action="consultaEst"> <input type="button" value="Consultar" style="font-size:16px; padding:4px 6px;"></html:link>
                 </div>
             </div>
             <p  align=center>
+               
                 <html:submit>Cargar Plan </html:submit>
                 </p>
         </html:form>
@@ -1262,10 +1263,10 @@
 
                                     <html:select property="nivelVerbal[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
                                     <!--html:select property="nivelVerbal[0]" style="width:50px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR"-->
-                                        <html:option value=""></html:option>
-                                        <html:option value="Basico">Basico</html:option>
-                                        <html:option value="Intermedio">Intermedio</html:option>
-                                        <html:option value="Avanzado">Avanzado</html:option>
+                                        <html:option value = ""></html:option>
+                                        <html:option value = "Basico">Basico</html:option>
+                                        <html:option value = "Intermedio">Intermedio</html:option>
+                                        <html:option value = "Avanzado">Avanzado</html:option>
                                     </html:select>
                                 </td>
 

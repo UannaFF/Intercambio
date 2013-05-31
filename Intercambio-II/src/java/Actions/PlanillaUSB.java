@@ -5,7 +5,6 @@ package Actions;
  * and open the template in the editor.
  */
 
-
 import Clases.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -38,13 +37,6 @@ public class PlanillaUSB extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form, 
            HttpServletRequest request, HttpServletResponse response) 
            throws Exception {
-        
-        
-        
-        
         return super.execute(mapping, form, request, response);
     }
-    
-    
-    
 }

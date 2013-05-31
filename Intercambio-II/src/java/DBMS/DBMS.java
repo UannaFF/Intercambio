@@ -1884,8 +1884,6 @@ public class DBMS {
     public boolean InsertarPlan(PlanDeEstudio plan) {
         PreparedStatement ps = null;
         try {
-
-
             ArrayList codusb = plan.getListCodigoUSB();
             ArrayList coduniv = plan.getListCodigoUniv();
             ArrayList creusb = plan.getListCreditoUSB();
@@ -1893,7 +1891,8 @@ public class DBMS {
             ArrayList nomusb = plan.getListMateriaUSB();
             ArrayList nomuniv = plan.getListMateriaUniv();
             String nombre = plan.getNombreUsuario();
-            for (int i = 0; i < codusb.size(); i++) {
+            
+            for (int i = 0; i < coduniv.size(); i++) {
                 ps = conexion.prepareStatement("INSERT INTO \"dycicle\".planestudio "
                         + "VALUES(?,?,?,?,?,?,?);");
                 ps.setString(1, (String) nombre);
@@ -1904,17 +1903,16 @@ public class DBMS {
                 ps.setString(6, (String) nomuniv.get(i));
                 ps.setInt(7, (Integer) creuniv.get(i));
                 System.out.println(ps.toString());
-                Integer j = ps.executeUpdate();
-                return j > 0;
-
+                ps.execute();
             }
+            return true;
         } catch (SQLException ex) {
             ex.printStackTrace();
-            return false;
         }
         return false;
-
     }
+    
+    
 
     /* Esta funcion es para insertar el plan de estudio de los estudiantes extranjeros*/
     public boolean InsertarPlan(PlanExtranjero plan) {
@@ -1942,7 +1940,19 @@ public class DBMS {
         }
         return false;
     }
-
+    
+    /*public boolean eliminarPlan(PlanDeEstudio plan){
+        try{
+            
+            
+            return true;
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+    
+        }
+        return false;
+    }
+*/
     public ArrayList<Usuario> listarBusquedaAvanzada(Busqueda busqueda) {
 
         ArrayList<Usuario> usrs = new ArrayList<Usuario>(0);
@@ -2227,7 +2237,7 @@ public class DBMS {
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
-                
+          
         }
         
         if (iniciadoG){
@@ -2238,17 +2248,16 @@ public class DBMS {
                 Statement stmt3 = conexion.createStatement();
                 ResultSet rs3 = stmt3.executeQuery(sqlquery);
 
-                while (rs3.next()) {
+                while (rs3.next()){
                     Usuario u = new Usuario();
                     u.setNombreusuario(rs3.getString("nombreusuario"));
                     u.setNombre(rs3.getString("nombre"));
                     u.setEmail(rs3.getString("email"));
                     usrs.add(u);
-                } 
+                }
             } catch (SQLException ex) {
                 ex.printStackTrace();
-            }
-                
+            }  
         }
         
         if (iniciado || iniciadoP || iniciadoG){
@@ -2363,5 +2372,42 @@ public class DBMS {
 
         return false;
     
+    }
+    
+    public ArrayList<PlanDeEstudio> ConsultarPlan(Usuario u){
+        
+        PreparedStatement psConsultar = null;
+    
+        String sqlquery;
+        sqlquery = "SELECT * FROM \"dycicle\".planestudio"
+                     + " WHERE nombreusuario = ?;";
+        ArrayList<PlanDeEstudio> materias = new ArrayList();
+        
+        try{
+        psConsultar = conexion.prepareStatement(sqlquery);
+        
+        psConsultar.setString(1, u.getNombreusuario());
+        
+        ResultSet set = psConsultar.executeQuery();
+        
+         while (set.next()) {
+                PlanDeEstudio pe = new PlanDeEstudio();
+                pe.setNombreUsuario((set.getString("NombreUsuario")));
+                pe.setCodigoUSB1(set.getString("CodigoUsb"));
+                pe.setMateriaUSB1(set.getString("MateriaUsb"));
+                pe.setCreditoUSB1(Integer.parseInt(set.getString("CreditoUsb")));
+                pe.setCodigoUniv1(set.getString("CodigoUniv"));
+                pe.setMateriaUniv1(set.getString("MateriaUniv"));
+                pe.setCreditoUniv1(Integer.parseInt(set.getString("CreditoUniv")));
+  
+                materias.add(pe);
+
+            }
+
+        
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return materias;
     }
 }
