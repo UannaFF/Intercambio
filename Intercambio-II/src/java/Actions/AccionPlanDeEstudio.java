@@ -46,31 +46,31 @@ public class AccionPlanDeEstudio extends Action {
             }
         }
         for(int i = 0; i<crediusb.size(); i++){
-            String a = (String)codiusb.get(i);
+            String a = (String)crediusb.get(i);
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<nomusb.size(); i++){
-            String a = (String)codiusb.get(i);
+            String a = (String)nomusb.get(i);
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<codiuni.size(); i++){
-            String a = (String)codiusb.get(i);
+            String a = (String)codiuni.get(i);
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<crediuni.size(); i++){
-            String a = (String)codiusb.get(i);
+            String a = (String)crediuni.get(i);
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<nomuni.size(); i++){
-            String a = (String)codiusb.get(i);
+            String a = (String)nomuni.get(i);
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
