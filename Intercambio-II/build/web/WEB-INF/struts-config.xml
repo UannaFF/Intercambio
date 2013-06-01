@@ -609,7 +609,7 @@
       <action input="/" name="EstUSB" path="/ListarSolicitudes" scope="session" type="Actions.ListarSolicitudes"/>
       
       <!-->Creacion de estudiante desde 0, cuando entra por primera vez<-->
-       <action forward="/public/CreacionCuentaEstudiante.jsp" path="/CrearCuentaEstudiante"/>
+       <action forward="creacioncuentaest" path="/CrearCuentaEstudiante"/>
       
        
       <!--Jcaptch

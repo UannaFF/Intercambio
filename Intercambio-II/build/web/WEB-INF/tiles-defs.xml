@@ -236,7 +236,7 @@
     </definition>
     
     <definition name="creacioncuentaest" extends="baseEstudiante"> 
-        <put name="body" value="Web Pages/CreacionCuentaEstudiante.jsp" />
+        <put name="body" value="/public/CreacionCuentaEstudiante.jsp" />
     </definition>
     
     

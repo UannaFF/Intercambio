@@ -144,7 +144,7 @@
                 </tbody>
             </table>
 
-            <p style="text-align: left">
+            <p style="text-align: center">
                 <html:submit onclick="javascript: return confirm('¿Está seguro que los datos son correctos?')">
                     Crear su cuenta
                 </html:submit>
