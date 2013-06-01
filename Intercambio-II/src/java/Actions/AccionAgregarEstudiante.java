@@ -68,8 +68,8 @@ public class AccionAgregarEstudiante extends org.apache.struts.action.Action {
         String mail = e.getEmail();
 
         e.setPrivilegio(5);
-        e.setContrasena(pswd);
-        e.setConfirmar(confPswd);
+        //e.setContrasena(pswd);
+        //e.setConfirmar(confPswd);
 
         if (e.getNombreusuario().equals("")) {
             error.add("nombreusuario", new ActionMessage("error.nombreusuario.required"));

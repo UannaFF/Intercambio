@@ -49,6 +49,9 @@
             <html:submit value = "Login"> Login</html:submit>   
         </html:form>
         <html:link action="reccontra">¿Olvid&oacute; su contraseña?</html:link><br />
+         <html:link action="/CrearCuentaEstudiante">
+            <p align ="center">Crear Cuenta</p>
+        </html:link>
     </div>
 
     <br /><br />

@@ -370,9 +370,10 @@
      <!-- Acciones de agregar de administrador -->
      
        <action input="/" name="EstUSB" path="/AccionAgregarEstudiante" scope="session" type="Actions.AccionAgregarEstudiante">
-            <forward name="success" path = "accExito" />
             <forward name ="fail" path = "accFallo" />
-            <forward name="error" path = "agregarEstudianteUSB" />          
+            <forward name="error" path = "agregarEstudianteUSB" />
+            <forward name="success" path="/public/ExitoCreacionEstudiante.jsp"/>
+                    
        </action>
        
        <action name="EstInter" path="/AccionAgregarEstudianteInter" scope="session" type="Actions.AccionAgregarEstudianteInter">
@@ -593,15 +594,24 @@
       <action input="/" name="Usuario" path="/ActDest" scope="session" type="Actions.ActDest">
           <forward name="success" path="estadoSistema" />
       </action>
+      
       <action input="/" name="Usuario" path="/LogAuditoria" scope="session" type="Actions.LogAuditoria">
           <forward name="success" path="LogAuditoria" />
       </action>
-
+      
+      
+  
+      
+      
+    
       <action path="/Descarga" type="Actions.Descarga" parameter="images/descarga.png" />
       
       <action input="/" name="EstUSB" path="/ListarSolicitudes" scope="session" type="Actions.ListarSolicitudes"/>
       
+      <!-->Creacion de estudiante desde 0, cuando entra por primera vez<-->
+       <action forward="/public/CreacionCuentaEstudiante.jsp" path="/CrearCuentaEstudiante"/>
       
+       
       <!--Jcaptch
       <action path="/SaveRegistration"
                   type="com.octo.captcha.module.struts.VerifyCaptchaChallengeAction"
