@@ -60,6 +60,20 @@ WITH (
 OIDS = FALSE
 );
 
+
+CREATE TABLE "dycicle".GESTION(
+	NombreUsuario	VARCHAR(20)	NOT NULL,
+        p1      VARCHAR(5)      NOT NULL,
+ 	p2 	VARCHAR(5)	NOT NULL,
+        p3      VARCHAR(5)      NOT NULL,
+	p4	VARCHAR(5)	NOT NULL,
+        p5	VARCHAR(5)      NOT NULL,
+	CONSTRAINT	PK_Gestion	PRIMARY KEY (NombreUsuario)
+)
+WITH (
+OIDS = FALSE
+);
+
 /* En esta tabla se tienen todos los datos particulares
  * de  los  estudiantes  que  pertenecen  a  la  USB */
 CREATE TABLE "dycicle".EstudianteUSB(

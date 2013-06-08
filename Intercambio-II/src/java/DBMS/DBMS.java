@@ -2410,4 +2410,85 @@ public class DBMS {
         }
         return materias;
     }
+    
+    //Inicio modificacion MOSQ
+    
+    
+    public boolean agregarGestion(Gestion g){
+        
+        PreparedStatement psAgregar = null;
+
+        try {
+            psAgregar = conexion.prepareStatement("INSERT INTO \"dycicle\".GESTION VALUES (?,?,?,?,?,?);");
+            psAgregar.setString(1, g.getusuario());
+            psAgregar.setString(2, g.getp1());
+            psAgregar.setString(3, g.getp2());
+            psAgregar.setString(4, g.getp3());
+            psAgregar.setString(5, g.getp4());
+            psAgregar.setString(6, g.getp5());
+            System.out.println(psAgregar.toString());
+            Integer i = psAgregar.executeUpdate();
+            return i > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return false;
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    public boolean existeGestion(Usuario u){
+     PreparedStatement psConsultar = null;
+
+        try {
+            psConsultar = conexion.prepareStatement("SELECT * FROM \"dycicle\".gestion"
+                    + " WHERE nombreusuario = ?;");
+            
+            psConsultar.setString(1, u.getNombreusuario());
+            System.out.println(psConsultar.toString());
+            ResultSet set = psConsultar.executeQuery();
+            return set.next();
+            
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return false;
+    
+    }
+    
+    public boolean modificarGestion(Gestion g) {
+        PreparedStatement ps = null;
+        try {
+            ps = conexion.prepareStatement("UPDATE \"dycicle\".GESTION SET p1 = ?"
+                    + ", p2= ?, p3= ? , p4= ?, p5= ?  WHERE nombreusuario = ?");
+            ps.setString(1, g.getp1());
+            ps.setString(2, g.getp2());
+            ps.setString(3, g.getp3());
+            ps.setString(4, g.getp4());
+            ps.setString(5, g.getp5());
+            ps.setString(6, g.getusuario());
+            System.out.println(ps.toString());
+            Integer i = ps.executeUpdate();
+            return i > 0;
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+    
+    
+    //Fin modificacion MOSQ
 }

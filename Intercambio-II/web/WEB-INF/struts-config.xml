@@ -13,6 +13,7 @@
         <form-bean name="PlanillaUSB" type="Clases.PlanillaUSB"/>
         <form-bean name="PlanillaExt" type="Clases.PlanillaExt"/>
         <form-bean name="EstUSB" type="Clases.EstudianteUSB"/>
+        <form-bean name="Gestion" type="Clases.Gestion"/> <!-- MOSQ -->
         <form-bean name="EstInter" type="Clases.EstudianteInternacional"/>
         <form-bean name="Postulante" type="Clases.Postulante"/>
         <form-bean name="fileUploadForm" type="Clases.FileUploadForm"/>
@@ -150,6 +151,35 @@
             scope="request"
             validate="false"
             parameter="modificarperUSB"/>
+        
+         <!--Inicio modificacion MOSQ-->
+        
+       <action path="/accionesGestion"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="accionesGestion"/>
+
+       <action path="/consultarGestion"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="consultarGestion"/>
+       
+       <action path="/agregarGestion"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="agregarGestion"/>
+       
+       <action path="/modificarGestion"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="modificarGestion"/>                      
+          
+       
+       <!--Fin Modificacion MOSQ-->
         
         <action path="/contactoEstUSB"
             type="org.apache.struts.actions.ForwardAction"
@@ -487,6 +517,41 @@
             <forward name="success" path="formularioUSB" />
             <forward name="modificar" path="formularioUSB" />
        </action>
+       
+       <!-- Inicio modificacion MOSQ-->
+       
+              <action name="Usuario" path="/AgregarGestion" scope="session" type="Actions.AgregarGestion">
+            <forward name="success" path="agregarGestion" />
+            <forward name="existe"  path="modificarGestion" />
+       </action>
+       
+       <action name="Gestion" path="/gestionAgregada" scope="session" type="Actions.gestionAgregada">
+            <forward name="success" path="accionesGestion" />
+            <forward name="failure" path="gestionnocompleta" />
+       </action>
+ 
+       <action name="Gestion" path="/gestionModificada" scope="session" type="Actions.gestionModificada">
+            <forward name="success" path="accionesGestion" />
+            <forward name="failure" path="inicSesion" />
+       </action>
+                   
+       <action name="Gestion" path="/gestionConsultada" scope="session" type="Actions.gestionConsultada">
+            <forward name="success" path="accionesGestion" />
+            <forward name="failure" path="inicSesion" />
+       </action>            
+                   
+        <action name="Usuario" path="/ConsultarGestion" scope="session" type="Actions.ConsultarGestion">
+            <forward name="success" path="consultarGestion" />
+            <forward name="failure" path="consultargestionvacia" />
+       </action>
+       
+        <action name="Usuario" path="/ModificarGestion" scope="session" type="Actions.ModificarGestion">
+            <forward name="success" path="modificarGestion" />
+            <forward name="nuevo" path="agregarGestion" />
+       </action>
+       
+       
+       <!--Fin modificacion MOSQ-->
        
        <action input="/" name="Usuario" path="/CargarConsultarMaterias" scope="session" type="Actions.CargarConsultarMaterias">
             <forward name="success" path="consultaEst" />

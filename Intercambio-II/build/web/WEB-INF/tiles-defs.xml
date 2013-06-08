@@ -244,6 +244,36 @@
     <definition name="modificarperUSB" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/modificarperUSB.jsp" />
     </definition>
+    
+    
+<!-- Inicio modificacion MOSQ-->
+
+    <definition name="accionesGestion" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/accionesGestion.jsp" />
+    </definition>    
+
+    <definition name="consultarGestion" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/consultarGestion.jsp" />
+    </definition>                            
+
+    <definition name="agregarGestion" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/agregarGestion.jsp" />
+    </definition>                                  
+                             
+    <definition name="modificarGestion" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/modificarGestion.jsp" />
+    </definition>                                                                                                 
+
+    <definition name="consultargestionvacia" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/consultargestionvacia.jsp" />
+    </definition>                                                                                                                                                                                                                                                                                                                                  
+                                             
+     <definition name="gestionnocompleta" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/gestionnocompleta.jsp" />
+    </definition>  
+            
+     <!--Fin modificacion MOSQ--> 
+    
         
     <definition name="formularioUSB" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/formularioSolicitudUSB.jsp" />
