@@ -47,7 +47,7 @@ public class CargarConsultarMaterias extends org.apache.struts.action.Action {
         
         Clases.PlanillaUSB hay = DBMS.getInstance().obtenerPlanillaUSB(u);
 
-        if (hay.getNombreUsuario() != null) {
+        if (true) {
             PlanDeEstudio plan = DBMS.getInstance().obtenerPlanDeEstudio(u);
             u.setNombre("");
     

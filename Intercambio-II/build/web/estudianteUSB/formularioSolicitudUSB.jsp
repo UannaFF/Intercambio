@@ -1172,6 +1172,8 @@
                                     <td> Nombre-Univ. Destino</td>                                
 
                                     <td> Créditos-Univ. Destino</td>
+                                    
+                                    <td> Guardar Materia </td>
 
                                 </tr>
 
@@ -1212,20 +1214,21 @@
                                                errorKey="org.apache.struts.action.ERROR">
                                     </html:text>
                                 </td>
+                                
+                                <td>
+                                <html:submit>Guardar Materia </html:submit>
+                                 
+                                </html:form>
+                                </td>
 
                             </tr>
 
                         </tbody>
                     </table>
-                    <input type="button"  value="Agregar Materia" style="font-size:16px; padding:4px 6px;" onclick="addMate('MateBody')"/>
-                    <input type="button" value="Eliminar Materia" style="font-size:16px; padding:4px 6px" onclick="deletePlan('MateBody')"/>
+                   
                 </div>
             </div>
-            <p  align=center>
-               
-                <html:submit>Cargar Plan </html:submit>
-                </p>    
-                </html:form>
+           
   
          <html:form  action="/CargarConsultarMaterias" method="POST" >
     <p hidden="true"><html:text name="Usuario" property="nombreusuario" maxlength="20"  value ="<%=tmp.toString()%>" errorKey="org.apache.struts.action.ERROR"></html:text></p>

@@ -17,15 +17,15 @@
     <title>Mostrar-PlanDeEstudios</title>
     <h4> Plan De Estudio </h4>
     
-    <table border="0"  align="center" style="margin-left: auto;margin-right: auto; text-align: center">
+    <table border="1"  align="center" style="margin-left: auto;margin-right: auto; text-align: center">
 
                                 <tr>
                 
-                                    <td> Código-USB
+                                    <td> Nombre-USB
                             
                                     </td>
 
-                                    <td> Nombre-USB</td>
+                                    <td> Código-USB</td>
 
                                     <td> Créditos-USB</td>
 
