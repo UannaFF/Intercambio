@@ -40,37 +40,37 @@ public class AccionPlanDeEstudio extends Action {
         ArrayList nomuni = plan.getListMateriaUniv();
         int count = 0;
         for(int i = 0; i<codiusb.size(); i++){
-            String a = (String)codiusb.get(i);
+            String a = codiusb.get(i).toString();
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<crediusb.size(); i++){
-            String a = (String)crediusb.get(i);
+            String a = crediusb.get(i).toString();
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<nomusb.size(); i++){
-            String a = (String)nomusb.get(i);
+            String a = nomusb.get(i).toString();
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<codiuni.size(); i++){
-            String a = (String)codiuni.get(i);
+            String a = codiuni.get(i).toString();
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<crediuni.size(); i++){
-            String a = (String)crediuni.get(i);
+            String a = crediuni.get(i).toString();
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
         }
         for(int i = 0; i<nomuni.size(); i++){
-            String a = (String)nomuni.get(i);
+            String a = nomuni.get(i).toString();
             if(a.equalsIgnoreCase("") ){
                 count++;
             }
