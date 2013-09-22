@@ -85,7 +85,7 @@ public class AccionPlanDeEstudio extends Action {
          de estudio de un estudiante*/
         if(!DBMS.getInstance().InsertarPlan(plan)){
             
-            System.out.println("Falloooooo");
+            return mapping.findForward("fail");
         }
         
         return mapping.findForward("success");
