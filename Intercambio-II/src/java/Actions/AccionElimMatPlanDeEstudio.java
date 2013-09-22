@@ -42,7 +42,7 @@ public class AccionElimMatPlanDeEstudio extends org.apache.struts.action.Action 
         String codiusbS = plan.getCodigoUSB(0);
 
         if(!DBMS.getInstance().eliminarMateria(nom,codiusbS)){
-            System.out.println("Fallo");
+            return mapping.findForward("fail");
         }
  
         return mapping.findForward("success");
