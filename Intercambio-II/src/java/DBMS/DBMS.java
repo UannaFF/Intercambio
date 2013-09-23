@@ -1941,18 +1941,24 @@ public class DBMS {
         return false;
     }
     
-    /*public boolean eliminarPlan(PlanDeEstudio plan){
+    public boolean eliminarMateria(String nombreusuario, String codiusb){
+       
         try{
+            String sqlquery = "DELETE FROM \"dycicle\".planestudio "
+                        + "WHERE nombreusuario ='" + nombreusuario + "' AND codigousb = '"
+                         + codiusb +  "'";
+             Statement stmt = conexion.createStatement();
+             Integer i = 1;
+             i = stmt.executeUpdate(sqlquery);
             
-            
-            return true;
+            return (i>0);
         } catch (SQLException ex) {
             ex.printStackTrace();
     
         }
         return false;
     }
-*/
+
     public ArrayList<Usuario> listarBusquedaAvanzada(Busqueda busqueda) {
 
         ArrayList<Usuario> usrs = new ArrayList<Usuario>(0);

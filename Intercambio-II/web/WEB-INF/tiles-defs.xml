@@ -239,12 +239,18 @@
         <put name="body" value="/public/CreacionCuentaEstudiante.jsp" />
     </definition>
     
-    
-            
     <definition name="modificarperUSB" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/modificarperUSB.jsp" />
     </definition>
     
+    <definition name="elimMCorrecto" extends="baseEstudiante">
+        <put name="body" value="/estudianteUSB/elimMatCorrecto.jsp" />
+    </definition>
+    
+    <definition name="elimMIncorrecto" extends="baseEstudiante">
+        <put name="body" value="/estudianteUSB/elimMatIncorrecto.jsp" />
+    </definition>
+
     
 <!-- Inicio modificacion MOSQ-->
 
