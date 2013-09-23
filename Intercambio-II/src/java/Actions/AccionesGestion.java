@@ -4,22 +4,19 @@
  */
 package Actions;
 
-
 import Clases.Gestion;
-import DBMS.DBMS;
+import Clases.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
 
 /**
  *
  * @author jaescalante02
  */
-public class gestionAgregada extends org.apache.struts.action.Action {
+public class AccionesGestion extends org.apache.struts.action.Action {
 
 
     /* forward name="success" path="" */
@@ -40,23 +37,12 @@ public class gestionAgregada extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
-       
-        Gestion gest = (Gestion) form;
-  //     if (!(gest.getUsuario().equalsIgnoreCase("sofia"))) return mapping.findForward(FAIL);
-  //      if (!(gest.getp1().equalsIgnoreCase("w"))) return mapping.findForward(FAIL);
-        System.out.print(gest.getnombreusuario());
-        System.out.print(gest.getp1());
-        System.out.print(gest.getp2());
-        System.out.print(gest.getp3());
-        System.out.print(gest.getp4());
-        System.out.print(gest.getp5());
-        if ((gest.getnombreusuario()==null) || (gest.getp1().toString().equals(""))
-                || (gest.getp2().toString().equals("")) || (gest.getp3().toString().equals(""))
-                || (gest.getp4().toString().equals("")) || (gest.getp5().toString().equals(""))) return mapping.findForward(FAIL);
         
-        if (DBMS.getInstance().agregarGestion(gest)) return mapping.findForward(SUCCESS);
-        
-        
-        return null;
+        Gestion g = (Gestion) form;
+        Usuario u = new Usuario();
+        u.setNombreusuario(g.getnombreusuario());
+        Gestion g2 = DBMS.DBMS.getInstance().getGestion(u);        
+        request.setAttribute("gestion", g2);
+        return mapping.findForward(SUCCESS);
     }
 }

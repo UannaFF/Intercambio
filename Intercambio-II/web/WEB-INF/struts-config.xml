@@ -520,32 +520,36 @@
        
        <!-- Inicio modificacion MOSQ-->
        
-              <action name="Usuario" path="/AgregarGestion" scope="session" type="Actions.AgregarGestion">
+              <action name="Gestion" path="/AgregarGestion" scope="session" type="Actions.AgregarGestion">
             <forward name="success" path="agregarGestion" />
             <forward name="existe"  path="modificarGestion" />
        </action>
        
        <action name="Gestion" path="/gestionAgregada" scope="session" type="Actions.gestionAgregada">
-            <forward name="success" path="accionesGestion" />
+            <forward name="success" path="gestionGuardadaExito" />
             <forward name="failure" path="gestionnocompleta" />
        </action>
  
        <action name="Gestion" path="/gestionModificada" scope="session" type="Actions.gestionModificada">
-            <forward name="success" path="accionesGestion" />
-            <forward name="failure" path="inicSesion" />
+            <forward name="success" path="gestionGuardadaExito" />
+            <forward name="failure" path="gestionnocompleta" />
        </action>
                    
        <action name="Gestion" path="/gestionConsultada" scope="session" type="Actions.gestionConsultada">
             <forward name="success" path="accionesGestion" />
             <forward name="failure" path="inicSesion" />
        </action>            
-                   
-        <action name="Usuario" path="/ConsultarGestion" scope="session" type="Actions.ConsultarGestion">
+         
+       <action name="Gestion" path="/AccionesGestion" scope="session" type="Actions.AccionesGestion">
+            <forward name="success" path="accionesGestion" />
+       </action>            
+                                       
+        <action name="Gestion" path="/ConsultarGestion" scope="session" type="Actions.ConsultarGestion">
             <forward name="success" path="consultarGestion" />
             <forward name="failure" path="consultargestionvacia" />
        </action>
        
-        <action name="Usuario" path="/ModificarGestion" scope="session" type="Actions.ModificarGestion">
+        <action name="Gestion" path="/ModificarGestion" scope="session" type="Actions.ModificarGestion">
             <forward name="success" path="modificarGestion" />
             <forward name="nuevo" path="agregarGestion" />
        </action>

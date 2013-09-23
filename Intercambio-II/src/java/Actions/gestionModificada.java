@@ -44,6 +44,10 @@ public class gestionModificada extends org.apache.struts.action.Action {
         Gestion gest = (Gestion) form;
   //     if (!(gest.getUsuario().equalsIgnoreCase("sofia"))) return mapping.findForward(FAIL);
   //      if (!(gest.getp1().equalsIgnoreCase("w"))) return mapping.findForward(FAIL);
+ 
+        if ((gest.getnombreusuario()==null) || (gest.getp1() == null)
+                || (gest.getp2() == null) || (gest.getp3() == null)
+                || (gest.getp4() == null) || (gest.getp5() == null)) return mapping.findForward(FAIL);        
         
         if (DBMS.getInstance().modificarGestion(gest)) return mapping.findForward(SUCCESS);
         

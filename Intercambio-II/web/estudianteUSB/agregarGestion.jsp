@@ -91,7 +91,7 @@
             </html:submit>
             </p>
      </html:form> 
-     <html:link action="/accionesGestion">
+     <html:link action="/AccionesGestion">
             <p style="text-align: center">
             <html:submit>
                 Volver

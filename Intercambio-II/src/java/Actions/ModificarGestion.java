@@ -5,6 +5,7 @@
 package Actions;
 
 
+import Clases.Gestion;
 import Clases.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,11 +40,12 @@ public class ModificarGestion extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-                Usuario u = (Usuario) form;
-        
+                Gestion g = (Gestion) form;
+                Usuario u = new Usuario();
+                u.setNombreusuario(g.getnombreusuario());
         if(!DBMS.DBMS.getInstance().existeGestion(u)) return mapping.findForward(NUEVO);
         
-        System.out.print("estoy en agregar gestion");
+        System.out.print("estoy en modificar gestion");
         return mapping.findForward(SUCCESS);
         
     }

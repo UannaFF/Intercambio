@@ -10,6 +10,7 @@
 <%Object confirm = session.getAttribute("confirmar");%>
 <%@page import="javax.swing.text.html.HTML"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.* , Clases.*" %>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -30,16 +31,19 @@
     <h4 align ="center">Estudiante USB</h4>
     <h5 align ="center">Esta es tu opinion sobre nuestro proceso de intercambio</h5>
 
-    <body onload ="clearForms()" onunload="clearForms()">
-    
+    <body>
+        <% Gestion gest = (Gestion)request.getAttribute("gestion");%>
+        
     <html:form  action="/gestionConsultada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
     <table border="0" >
             <tbody>
                 <tr> <p hidden="true"> <html:text name="Gestion" property="usuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
                            errorKey="org.apache.struts.action.ERROR"></p></html:text></tr>
-                <tr>
-                    <td > <p>Pregunta 1:</p></td>
-                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p1" value="1" /> 1
+                                <tr>
+                <td > <p>Pregunta 1:</p></td>
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p1" value="1" /> 1
                                                         <html:radio disabled="true" property="p1" value="2" /> 2
                                                         <html:radio disabled="true" property="p1" value="3" /> 3
                                                         <html:radio disabled="true" property="p1" value="4" /> 4
@@ -47,7 +51,9 @@
                 </tr>
                 <tr>
                     <td > <p>Pregunta 2:</p></td>
-                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p2" value="1" /> 1
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p2" value="1" /> 1
                                                         <html:radio disabled="true" property="p2" value="2" /> 2
                                                         <html:radio disabled="true" property="p2" value="3" /> 3
                                                         <html:radio disabled="true" property="p2" value="4" /> 4

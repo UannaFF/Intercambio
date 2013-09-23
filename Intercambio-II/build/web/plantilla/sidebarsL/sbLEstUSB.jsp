@@ -6,6 +6,7 @@
 --%>
 
 <%Object var = session.getAttribute("nombre");%>
+<%Object tmp = session.getAttribute("nombreusuario");%>
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -49,7 +50,14 @@ ddmenu.init({
         </div>
         
         <a style="border-bottom: none;"> <html:link styleClass="menuitem" action="/modificarperUSB" >Modificar perfil</html:link></a>
-        <a style="border-bottom: none;"> <html:link styleClass="menuitem" action="/accionesGestion" >Gestion de conocimientos</html:link></a>
+                          
+            <a style="border-bottom: none;"> 
+            <html:link styleClass="menuitem" action="/AccionesGestion" >    
+
+                Gesti&oacute;n de Conocimientos
+
+            </html:link>    
+            </a>
         <a style="border-bottom: none;"> <html:link styleClass="menuitem" action="/CerrarSesion">Cerrar sesión</html:link></a>
     </div>
     

@@ -7,6 +7,7 @@
 package Actions;
 
 
+import Clases.Gestion;
 import Clases.Usuario;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,10 +42,15 @@ public class ConsultarGestion extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-        Usuario u = (Usuario) form;
-        
+        Gestion g = (Gestion) form;
+        Usuario u = new Usuario();
+        System.out.print("saludo");
+    //    System.out.print(g.getusuario().toString());
+        u.setNombreusuario(g.getnombreusuario());
         if(!DBMS.DBMS.getInstance().existeGestion(u)) return mapping.findForward(FAIL);
-        
+        Gestion g2 = DBMS.DBMS.getInstance().getGestion(u);
+   //     System.out.print(g2.toString());
+        request.setAttribute("gestion", g2);
         return mapping.findForward(SUCCESS);
     }
 }
