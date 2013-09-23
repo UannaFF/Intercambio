@@ -2420,7 +2420,7 @@ public class DBMS {
 
         try {
             psAgregar = conexion.prepareStatement("INSERT INTO \"dycicle\".GESTION VALUES (?,?,?,?,?,?);");
-            psAgregar.setString(1, g.getusuario());
+            psAgregar.setString(1, g.getnombreusuario());
             psAgregar.setString(2, g.getp1());
             psAgregar.setString(3, g.getp2());
             psAgregar.setString(4, g.getp3());
@@ -2467,6 +2467,37 @@ public class DBMS {
         return false;
     
     }
+
+        public Gestion getGestion(Usuario u){
+     PreparedStatement psConsultar = null;
+
+        try {
+            psConsultar = conexion.prepareStatement("SELECT * FROM \"dycicle\".gestion"
+                    + " WHERE nombreusuario = ?;");
+            
+            psConsultar.setString(1, u.getNombreusuario());
+            ResultSet set = psConsultar.executeQuery();
+            if(!(set.next())) return null;
+            Gestion g = new Gestion();
+            g.setp1(set.getString("p1"));
+            System.out.print("esto es p1 ");
+            System.out.print(g.getp1());
+            g.setp2(set.getString("p2"));
+            g.setp3(set.getString("p3"));
+            g.setp4(set.getString("p4"));
+            g.setp5(set.getString("p5"));
+            return g;
+            
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+
+        return null;
+    
+    }
+    
+    
     
     public boolean modificarGestion(Gestion g) {
         PreparedStatement ps = null;
@@ -2478,7 +2509,7 @@ public class DBMS {
             ps.setString(3, g.getp3());
             ps.setString(4, g.getp4());
             ps.setString(5, g.getp5());
-            ps.setString(6, g.getusuario());
+            ps.setString(6, g.getnombreusuario());
             System.out.println(ps.toString());
             Integer i = ps.executeUpdate();
             return i > 0;
