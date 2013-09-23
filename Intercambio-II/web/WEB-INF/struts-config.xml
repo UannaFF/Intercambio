@@ -668,11 +668,16 @@
           <forward name="success" path="LogAuditoria" />
       </action>
       
+      <!-->Accion para eliminar materias de un plan de estudio<-->
+      <action input="/" name="PlanDeEstudio" path="/AccionElimMatPdE" scope="request" type="Actions.AccionElimMatPlanDeEstudio">
+          <forward name="success" path="elimMCorrecto"/>
+          <forward name="fail" path="elimMIncorrecto"/>
+      </action>
+      
       
   
       
       
-    
       <action path="/Descarga" type="Actions.Descarga" parameter="images/descarga.png" />
       
       <action input="/" name="EstUSB" path="/ListarSolicitudes" scope="session" type="Actions.ListarSolicitudes"/>

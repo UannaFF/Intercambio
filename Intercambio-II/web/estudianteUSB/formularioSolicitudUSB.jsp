@@ -8,7 +8,7 @@
 <%Object var = session.getAttribute("nombreusuario");%>
 
 <%@page pageEncoding="UTF-8"%>
-
+<link rel="stylesheet" type="text/css" href="../css/estilo.css">
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -1160,7 +1160,7 @@
                         <table border="0"  align="center" style="margin-left: auto;margin-right: auto">
                             <tbody id ="MateBody">
                                 <tr>
-                                    <td></td>
+                                    
                                     <td> Código-USB</td>
 
                                     <td> Nombre-USB</td>
@@ -1178,7 +1178,7 @@
                                 </tr>
 
                                 <tr>
-                                    <td> <input type="checkbox" name="c[]"></td>
+                                    
                                     <td>
                                     <html:text name="PlanDeEstudio" property="codigoUSB[0]" maxlength="45" errorStyleClass="error" value="" style="width:80%;"
                                                errorKey="org.apache.struts.action.ERROR">
