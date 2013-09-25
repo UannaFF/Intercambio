@@ -39,7 +39,7 @@
             <tbody>
                 <tr> <p hidden="true"> <html:text name="Gestion" property="usuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
                            errorKey="org.apache.struts.action.ERROR"></p></html:text></tr>
-                                <tr>
+                <tr>
                 <td > <p>Pregunta 1:</p></td>
                     <td> <p style="text-align: center">
                                                         
@@ -82,6 +82,104 @@
                                                         <html:radio disabled="true" property="p5" value="3" /> 3
                                                         <html:radio disabled="true" property="p5" value="4" /> 4
                                                         <html:radio disabled="true" property="p5" value="5" /> 5 </td>
+                </tr>
+                <tr>
+                <td > <p>Pregunta 6:</p></td>
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p6" value="1" /> 1
+                                                        <html:radio disabled="true" property="p6" value="2" /> 2
+                                                        <html:radio disabled="true" property="p6" value="3" /> 3
+                                                        <html:radio disabled="true" property="p6" value="4" /> 4
+                                                        <html:radio disabled="true" property="p6" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 7:</p></td>
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p7" value="1" /> 1
+                                                        <html:radio disabled="true" property="p7" value="2" /> 2
+                                                        <html:radio disabled="true" property="p7" value="3" /> 3
+                                                        <html:radio disabled="true" property="p7" value="4" /> 4
+                                                        <html:radio disabled="true" property="p7" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 8:</p></td>
+                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p8" value="1" /> 1
+                                                        <html:radio disabled="true" property="p8" value="2" /> 2 
+                                                        <html:radio disabled="true" property="p8" value="3" /> 3
+                                                        <html:radio disabled="true" property="p8" value="4" /> 4
+                                                        <html:radio disabled="true" property="p8" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 9:</p></td>
+                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p9" value="1" /> 1
+                                                        <html:radio disabled="true" property="p9" value="2" /> 2
+                                                        <html:radio disabled="true" property="p9" value="3" /> 3
+                                                        <html:radio disabled="true" property="p9" value="4" /> 4
+                                                        <html:radio disabled="true" property="p9" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 10:</p></td>
+                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p10" value="1" /> 1
+                                                        <html:radio disabled="true" property="p10" value="2" /> 2
+                                                        <html:radio disabled="true" property="p10" value="3" /> 3
+                                                        <html:radio disabled="true" property="p10" value="4" /> 4
+                                                        <html:radio disabled="true" property="p10" value="5" /> 5 </td>
+                </tr>
+                <tr>
+                <td > <p>Pregunta 11:</p></td>
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p11" value="1" /> 1
+                                                        <html:radio disabled="true" property="p11" value="2" /> 2
+                                                        <html:radio disabled="true" property="p11" value="3" /> 3
+                                                        <html:radio disabled="true" property="p11" value="4" /> 4
+                                                        <html:radio disabled="true" property="p11" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 12:</p></td>
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p12" value="1" /> 1
+                                                        <html:radio disabled="true" property="p12" value="2" /> 2
+                                                        <html:radio disabled="true" property="p12" value="3" /> 3
+                                                        <html:radio disabled="true" property="p12" value="4" /> 4
+                                                        <html:radio disabled="true" property="p12" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 13:</p></td>
+                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p13" value="1" /> 1
+                                                        <html:radio disabled="true" property="p13" value="2" /> 2 
+                                                        <html:radio disabled="true" property="p13" value="3" /> 3
+                                                        <html:radio disabled="true" property="p13" value="4" /> 4
+                                                        <html:radio disabled="true" property="p13" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 14:</p></td>
+                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p14" value="1" /> 1
+                                                        <html:radio disabled="true" property="p14" value="2" /> 2
+                                                        <html:radio disabled="true" property="p14" value="3" /> 3
+                                                        <html:radio disabled="true" property="p14" value="4" /> 4
+                                                        <html:radio disabled="true" property="p14" value="5" /> 5</td>
+                </tr>
+                <tr>
+                    <td > <p>Pregunta 15:</p></td>
+                    <td> <p style="text-align: center"> <html:radio disabled="true" property="p15" value="1" /> 1
+                                                        <html:radio disabled="true" property="p15" value="2" /> 2
+                                                        <html:radio disabled="true" property="p15" value="3" /> 3
+                                                        <html:radio disabled="true" property="p15" value="4" /> 4
+                                                        <html:radio disabled="true" property="p15" value="5" /> 5 </td>
+                </tr>
+                <tr>
+                <td > <p>Pregunta 16:</p></td>
+                    <td> <p style="text-align: center">
+                                                        
+                                                        <html:radio disabled="true" property="p16" value="1" /> 1
+                                                        <html:radio disabled="true" property="p16" value="2" /> 2
+                                                        <html:radio disabled="true" property="p16" value="3" /> 3
+                                                        <html:radio disabled="true" property="p16" value="4" /> 4
+                                                        <html:radio disabled="true" property="p16" value="5" /> 5</td>
                 </tr>
             </tbody>
         </table>

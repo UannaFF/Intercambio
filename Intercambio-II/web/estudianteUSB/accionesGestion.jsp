@@ -25,13 +25,26 @@
    <%Gestion gest = DBMS.DBMS.getInstance().getGestion(u);%>
     
    <% String r1=null,r2=null,r3=null,r4=null,r5=null;%>
+   <% String r6=null,r7=null,r8=null,r9=null,r10=null;%>
+   <% String r11=null,r12=null,r13=null,r14=null,r15=null, r16=null;%>
+
    <%if(gest!=null){%>
    <%r1 = gest.getp1();%>
    <%r2 = gest.getp2();%>
    <%r3 = gest.getp3();%>
    <%r4 = gest.getp4();%>
    <%r5 = gest.getp5();%>
-   <%=gest.getp5()%>
+   <%r6 = gest.getp6();%>
+   <%r7 = gest.getp7();%>
+   <%r8 = gest.getp8();%>
+   <%r9 = gest.getp9();%>
+   <%r10 = gest.getp10();%>
+   <%r11 = gest.getp11();%>
+   <%r12 = gest.getp12();%>
+   <%r13 = gest.getp13();%>
+   <%r14 = gest.getp14();%>
+   <%r15 = gest.getp15();%>
+   <%r16 = gest.getp16();%>
    <%}%>
 
  
@@ -58,6 +71,28 @@
                         <p hidden="true"> <html:text name="Gestion" property="p4" value ="<%=null%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <p hidden="true"> <html:text name="Gestion" property="p5" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p6" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p7" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p8" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p9" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p10" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p11" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p12" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p13" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p14" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p15" value ="<%=null%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p16" value ="<%=null%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
             <p style="text-align: center">
             <html:submit >
@@ -96,6 +131,28 @@
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <p hidden="true"> <html:text name="Gestion" property="p5" value ="<%=r5%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p6" value ="<%=r6%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p7" value ="<%=r7%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p8" value ="<%=r8%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p9" value ="<%=r9%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p10" value ="<%=r10%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p11" value ="<%=r11%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p12" value ="<%=r12%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p13" value ="<%=r13%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p14" value ="<%=r14%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p15" value ="<%=r15%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p16" value ="<%=r16%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
       
                           <p style="text-align: center">
                             <html:submit >
@@ -132,6 +189,28 @@
                         <p hidden="true"> <html:text name="Gestion" property="p4" value ="<%=r4%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <p hidden="true"> <html:text name="Gestion" property="p5" value ="<%=r5%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p6" value ="<%=r6%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p7" value ="<%=r7%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p8" value ="<%=r8%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p9" value ="<%=r9%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p10" value ="<%=r10%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p11" value ="<%=r11%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p12" value ="<%=r12%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p13" value ="<%=r13%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p14" value ="<%=r14%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p15" value ="<%=r15%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="p16" value ="<%=r16%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
       
             <p style="text-align: center">

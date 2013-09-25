@@ -68,6 +68,17 @@ CREATE TABLE "dycicle".GESTION(
         p3      VARCHAR(5)      NOT NULL,
 	p4	VARCHAR(5)	NOT NULL,
         p5	VARCHAR(5)      NOT NULL,
+        p6      VARCHAR(5)      NOT NULL,
+ 	p7 	VARCHAR(5)	NOT NULL,
+        p8      VARCHAR(5)      NOT NULL,
+	p9	VARCHAR(5)	NOT NULL,
+        p10	VARCHAR(5)      NOT NULL,
+        p11      VARCHAR(5)      NOT NULL,
+ 	p12 	VARCHAR(5)	NOT NULL,
+        p13      VARCHAR(5)      NOT NULL,
+	p14	VARCHAR(5)	NOT NULL,
+        p15	VARCHAR(5)      NOT NULL,
+        p16	VARCHAR(5)      NOT NULL,
 	CONSTRAINT	PK_Gestion	PRIMARY KEY (NombreUsuario)
 )
 WITH (
