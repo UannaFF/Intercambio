@@ -136,7 +136,7 @@ public class AccionAgregarEstudiante extends org.apache.struts.action.Action {
                 if (correoEnviado) {
                     return mapping.findForward(SUCCESS);
                 } else {
-                    return mapping.findForward(FAIL);
+                    return mapping.findForward(SUCCESS);
                 }
             }
 

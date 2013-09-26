@@ -17,7 +17,7 @@
 <html:html lang="true">
 
    <div id="Bienve">
-        <h1>Bienvenido, <a ><%=var.toString()%></a> </h1>
+        <h1>Bienvenido/a, <a ><%=var.toString()%></a> </h1>
         <h1>El estado actual de su postulacion es: <%=confirm.toString()%></h1>
    </div>
     
@@ -30,16 +30,35 @@
     <h4 align ="center">Estudiante USB</h4>
     <h5 align ="center">¿Qu&eacute; desea hacer?</h5>
 
+    <p style="text-align:center">
+        <font size="1">
+            Manejar todo lo referente a su solicitud:
+        </font>
+            
+    </p>
+    <p style="text-align:center">
+        <font size="1">
+            Llenado de formulario,carga de documentos, manejo idiomas,etc.
+        </font>
+            
+    </p>
     <html:form  action="/CargarLlenarPlanillaUSB" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <p hidden="true"><html:text name="PlanillaUSB" property="nombreUsuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
             <p style="text-align: center">
             <html:submit >
-                Gestionar Formulario de Solicitud
+                Gestion de Solicitud
             </html:submit>
         </p>
     </html:form>
+        <br />
 
+        <p style="text-align:center">
+            <font size="1">
+                Descargar planilla que engloba todos los datos de su solicitud 
+            </font>
+        </p>
+       
     <html:form  action="/VerificarPlanillaUSB" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <table border="0" >
             <tbody>
@@ -60,8 +79,13 @@
             </tbody>
         </table>
     </html:form>
+        <br />
     
-    
+    <p style="text-align:center">
+            <font size="1">
+                Descargar la carpeta con todo lo referente a su solicitud
+            </font>
+    </p>
         <html:form  action="/GenerarCarpeta" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <p hidden="true"><html:text name="Usuario" property="nombreUsuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
                    errorKey="org.apache.struts.action.ERROR"></html:text></p>

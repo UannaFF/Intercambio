@@ -49,7 +49,7 @@
 
 
         <div class="nav" style="text-align: center;">
-            <a href="#" onclick=" if (true) show('datosplanilla'), hide('archivos'),hide('plan'),hide('idio')"> 1. Formulario de Datos </a>
+            <a href="#" onclick=" if (true) show('datosplanilla'), hide('archivos'),hide('plan'),hide('idio')"> Formulario de Datos </a>
         </div>
 
         <div id="datosplanilla" style="display: none; width:92%; margin-left: 8%">
@@ -1042,7 +1042,7 @@
     <!-- CARGA DE DOCUMENTOS -->
 
     <div class="nav" style="text-align: center;">
-        <a href="#" onclick=" if (true) hide('datosplanilla'), show('archivos'),hide('plan'),hide('idio')"> 2. Documentos requeridos </a>
+        <a href="#" onclick=" if (true) hide('datosplanilla'), show('archivos'),hide('plan'),hide('idio')"> Documentos requeridos </a>
     </div>
     <div id="archivos" style="display: none; width: 80%;margin-left: 15%">
         <h5>Los archivos permitidos a cargar son aquellos con formato
@@ -1145,7 +1145,7 @@
     <!--Carga Materias-->
 
     <div style="text-align: center;">
-        <a href="#" > 3. Plan de Estudio </a>
+        <a href="#" > Plan de Estudio </a>
         <p style="color:green" align="center"> La materia fue cargada satisfactoriamente </p>
     </div>
 
@@ -1242,7 +1242,7 @@
 
 
     <div class="nav" style="text-align: center; width: 100%">
-        <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),hide('plan'),show('idio')"> 4. Dominio de idiomas</a>
+        <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),hide('plan'),show('idio')"> Dominio de idiomas</a>
     </div>
 
     <div id="idio" style="display: none; width: 88%; margin-left: 12%">
@@ -1259,7 +1259,7 @@
 
                                 <tr>
                                     <td><INPUT type="checkbox" name="ch[]"/></td>
-                                    <td> Idioma que maneja:</td>
+                                    <td style="font-size:small"> Idioma que maneja:</td>
 
                                     <td>
                                     <html:text name="Idiomas" property="idiomaDest[0]" maxlength="45" style="width:76px;" errorStyleClass="error"
@@ -1267,7 +1267,7 @@
                                     </html:text>
                                 </td>
 
-                                <td>Nivel Verbal</td>
+                                <td style="font-size:small">Nivel Verbal</td>
 
                                 <td>
 
@@ -1280,7 +1280,7 @@
                                     </html:select>
                                 </td>
 
-                                <td>Nivel Escrito</td>
+                                <td style="font-size:small">Nivel Escrito</td>
 
                                 <td>
                                     <html:select property="nivelEscrito[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
@@ -1292,7 +1292,7 @@
                                     </html:select>
                                 </td>
 
-                                <td>Nivel Oral</td>
+                                <td style="font-size:small">Nivel Conversacional</td>
 
                                 <td>
                                     <html:select property="nivelConversacional[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
@@ -1303,7 +1303,7 @@
                                         <html:option value="Avanzado">Avanzado</html:option>
                                     </html:select>
                                 </td>
-                                <td>Nivel Auditivo</td>
+                                <td style="font-size:small">Nivel Auditivo</td>
 
                                 <td>
                                     <html:select property="nivelAuditivo[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
@@ -1319,11 +1319,11 @@
 
                         </tbody>
                     </table>
-                    <input type="button"  value="Especificar Otro Idioma" style="font-size:16px; padding:4px 6px;" onclick="addIdi('IdioBody')"/>
-                    <input type="button" value="Eliminar Seleccionados" style="font-size:16px; padding:4px 6px" onclick="deleteRow2('IdioBody')"/>
+                    <!--<input type="button"  value="Especificar Otro Idioma" style="font-size:16px; padding:4px 6px;" onclick="addIdi('IdioBody')"/>-->
+                    <input type="button" value="Eliminar Seleccionados" style="font-size:small; padding:4px 6px" onclick="deleteRow2('IdioBody')"/>
 
                     <p  align=center>
-                        <html:submit> GUARDAR </html:submit>
+                        <html:submit> Guardar Idioma </html:submit>
                         </p>
                 </html:form>
             </div>
