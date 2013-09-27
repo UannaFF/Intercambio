@@ -1151,7 +1151,7 @@
 
     <div id="plan" style="width: 75%;margin-left: 20%">
 
-        <div style="width:auto;height:auto;border:3px solid #126598; border-radius: 10px;background: #dcebe8">
+         <div style="width:auto;height:auto;border:3px solid #126598; border-radius: 10px;background: #dcebe8; font-size:12px;">
             <div align=center>
                 <html:form action="/AccionPlanDeEstudio" acceptCharset="ISO-8859-1" method="post" enctype="multipart/form-data">
                     <br />
@@ -1162,24 +1162,35 @@
                             <tbody id ="MateBody">
                                 <tr>
                                     <td></td>
-                                    <td> Código-USB</td>
-
-                                    <td> Nombre-USB</td>
-
-                                    <td> Créditos-USB</td>
-
-                                    <td> Codigo-Univ. Destino</td>
-
-                                    <td> Nombre-Univ. Destino</td>                                
-
-                                    <td> Créditos-Univ. Destino</td>
+                                    <td><b style="color:#125698">USB</b></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><b style="color:#125698"> Univ. Destino</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
                                     
-                                    <td> Guardar Materia </td>
+                                    <td> Código</td>
+
+                                    <td> Nombre</td>
+
+                                    <td> Créditos</td>
+                                    
+                                    <td></td>
+
+                                    <td> Codigo</td>
+
+                                    <td> Nombre</td>                                
+
+                                    <td> Créditos</td>
+                                    
+                               
 
                                 </tr>
 
                                 <tr>
-                                    <td> <input type="checkbox" name="c[]"></td>
+                                    
                                     <td>
                                     <html:text name="PlanDeEstudio" property="codigoUSB[0]" maxlength="45" errorStyleClass="error" value="" style="width:80%;"
                                                errorKey="org.apache.struts.action.ERROR">
@@ -1197,7 +1208,7 @@
                                                errorKey="org.apache.struts.action.ERROR">
                                     </html:text>
                                 </td>
-
+                                <td></td>
                                 <td>
                                     <html:text name="PlanDeEstudio" property="codigoUniv[0]" maxlength="45" errorStyleClass="error" value="" style="width:60%;"
                                                errorKey="org.apache.struts.action.ERROR">
@@ -1216,19 +1227,22 @@
                                     </html:text>
                                 </td>
                                 
-                                <td>
-                                <html:submit>Guardar Materia </html:submit>
-                                 
-                                </html:form>
-                                </td>
+                                
 
                             </tr>
 
                         </tbody>
                     </table>
-                   
+                    <div align="center" style="top-margin:5%;">
+                        <html:submit>Guardar Materia </html:submit>
+                                
+                        </html:form>
+                    </div>
+                        
                 </div>
             </div>
+           
+
            
   
          <html:form  action="/CargarConsultarMaterias" method="POST" >
@@ -1245,7 +1259,7 @@
         <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),hide('plan'),show('idio')"> Dominio de idiomas</a>
     </div>
 
-    <div id="idio" style="display: none; width: 88%; margin-left: 12%">
+    <div id="idio" style="display: none; width: 88%; margin-left: 15%">
         <div style="width:auto;height:auto;border:3px solid #126598; border-radius: 10px;background: #dcebe8">
             <div align=center>
                 <html:form action="/CargarIdioma" method="post" acceptCharset="ISO-8859-1" enctype="multipart/form-data">

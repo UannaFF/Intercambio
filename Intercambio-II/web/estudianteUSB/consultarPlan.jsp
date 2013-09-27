@@ -17,7 +17,7 @@
     <title>Mostrar-PlanDeEstudios</title>
     <h4> Plan De Estudio </h4>
     
-    <table border="1"  align="center" style="margin-left: auto;margin-right: auto; text-align: center; font-size:12px">
+    <table border="1"  align="center" style="margin-left: auto;margin-right: auto; text-align: center; font-size:12px; width:68%">
 
                                 <tr>
                                     <td> Nombre-USB
