@@ -14,7 +14,7 @@
     <title>Exito</title>
     
     <div style="text-align: center;">
-        <h1>Su gestion ha sido guardada exitosamente</h1>
+        <h3>Su gesti&oacute;n ha sido guardada exitosamente</h3>
         
         <html:image src="images/correct.png" /> 
         <br />

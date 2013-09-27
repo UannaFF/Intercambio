@@ -16,7 +16,7 @@
 
 
     <div style="text-align: center;">
-        <h1>Operación Fallida</h1>
+        <h2>Operación Fallida</h2>
         <h3>No ha llenado la encuesta correctamente</h3>
         
         <html:image src="images/error.png" /> 
