@@ -71,10 +71,7 @@
     <definition name="accExitoPublico" extends="basePublic"> <!-- pagina de exito de gestion de usuarios -->
         <put name="body" value="/public/accionExitosa2.jsp"/>
     </definition>
-    
-    <definition name="creacioncuentaest" extends="basePublic"> 
-        <put name="body" value="/public/CreacionCuentaEstudiante.jsp" />
-    </definition>        
+            
            
     <!-- ADMINISTRADOR -->
     <definition name="baseAdmin" extends="base"> <!-- base de todas las vistas de administrador -->
@@ -238,7 +235,9 @@
         <put name="body" value="/estudianteUSB/consultarPlan.jsp" />
     </definition>
     
-    
+    <definition name="creacioncuentaest" extends="baseEstudiante"> 
+        <put name="body" value="/public/CreacionCuentaEstudiante.jsp" />
+    </definition>
     
     <definition name="modificarperUSB" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/modificarperUSB.jsp" />
