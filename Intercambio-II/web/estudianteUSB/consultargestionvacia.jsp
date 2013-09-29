@@ -16,8 +16,8 @@
 
 
     <div style="text-align: center;">
-        <h1>Operación Fallida</h1>
-        <h3>No hay Gestion para consultar</h3>
+        <h2>Operaci&oacute;n Fallida</h2>
+        <h3>No hay gesti&oacute;n para consultar</h3>
         
         <html:image src="images/error.png" /> 
         <br />

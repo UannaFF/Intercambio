@@ -4,7 +4,6 @@
  */
 package Actions;
 
-
 import Clases.Gestion;
 import Clases.Usuario;
 import javax.servlet.http.HttpServletRequest;
@@ -13,17 +12,16 @@ import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-
 /**
  *
  * @author jaescalante02
  */
-public class ModificarGestion extends org.apache.struts.action.Action {
+public class AccionesGestion extends org.apache.struts.action.Action {
 
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    private static final String NUEVO = "nuevo";
+    private static final String FAIL = "failure";
     
     /**
      * This is the action called from the Struts framework.
@@ -40,13 +38,11 @@ public class ModificarGestion extends org.apache.struts.action.Action {
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
         
-                Gestion g = (Gestion) form;
-                Usuario u = new Usuario();
-                u.setNombreusuario(g.getnombreusuario());
-        if(!DBMS.DBMS.getInstance().existeGestion(u)) return mapping.findForward(NUEVO);
-        
-        System.out.print("estoy en modificar gestion");
+        Gestion g = (Gestion) form;
+        Usuario u = new Usuario();
+        u.setNombreusuario(g.getnombreusuario());
+        Gestion g2 = DBMS.DBMS.getInstance().getGestion(u);        
+        request.setAttribute("gestion", g2);
         return mapping.findForward(SUCCESS);
-        
     }
 }

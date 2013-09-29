@@ -1,6 +1,6 @@
 <%-- 
-    Document   : gestionnocompleta
-    Created on : 31/05/2013, 12:14:42 PM
+    Document   : gestionGuardadaExito
+    Created on : 21/09/2013, 02:20:43 PM
     Author     : jaescalante02
 --%>
 
@@ -11,15 +11,12 @@
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <!DOCTYPE html>
 <html>
-
-    <title>Fallo</title>
-
-
+    <title>Exito</title>
+    
     <div style="text-align: center;">
-        <h2>Operación Fallida</h2>
-        <h3>No ha llenado la encuesta correctamente</h3>
+        <h3>Su gesti&oacute;n ha sido guardada exitosamente</h3>
         
-        <html:image src="images/error.png" /> 
+        <html:image src="images/correct.png" /> 
         <br />
         
         <html:link action="AccionesGestion">

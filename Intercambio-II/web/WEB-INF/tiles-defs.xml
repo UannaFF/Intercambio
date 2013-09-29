@@ -273,7 +273,11 @@
     <definition name="consultargestionvacia" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/consultargestionvacia.jsp" />
     </definition>                                                                                                                                                                                                                                                                                                                                  
-                                             
+                         
+    <definition name="gestionGuardadaExito" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/gestionGuardadaExito.jsp" />
+    </definition>                                           
+                                                                                     
      <definition name="gestionnocompleta" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/gestionnocompleta.jsp" />
     </definition>  

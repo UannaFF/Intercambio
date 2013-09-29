@@ -44,10 +44,16 @@ public class gestionAgregada extends org.apache.struts.action.Action {
         Gestion gest = (Gestion) form;
   //     if (!(gest.getUsuario().equalsIgnoreCase("sofia"))) return mapping.findForward(FAIL);
   //      if (!(gest.getp1().equalsIgnoreCase("w"))) return mapping.findForward(FAIL);
-        
-        if ((gest.getusuario()==null) || (gest.getp1() == null)
-                || (gest.getp2() == null) || (gest.getp3() == null)
-                || (gest.getp4() == null) || (gest.getp5() == null)) return mapping.findForward(FAIL);
+
+        if ((gest.getnombreusuario()==null) || (gest.getp1().toString().equals(""))
+                || (gest.getp2().toString().equals("")) || (gest.getp3().toString().equals(""))
+                || (gest.getp4().toString().equals("")) || (gest.getp5().toString().equals(""))
+                || (gest.getp6().toString().equals("")) || (gest.getp7().toString().equals(""))
+                || (gest.getp8().toString().equals("")) || (gest.getp9().toString().equals(""))
+                || (gest.getp10().toString().equals("")) || (gest.getp11().toString().equals(""))
+                || (gest.getp12().toString().equals("")) || (gest.getp13().toString().equals(""))
+                || (gest.getp14().toString().equals("")) || (gest.getp15().toString().equals(""))
+                || (gest.getp16().toString().equals(""))) return mapping.findForward(FAIL);
         
         if (DBMS.getInstance().agregarGestion(gest)) return mapping.findForward(SUCCESS);
         

@@ -132,8 +132,8 @@
                     </tr>
                       <tr>
                         <td style="color: black">Contrasena</td>       
-                        <td><html:text name="EstUSB" property="contrasena" maxlength="100" errorStyleClass="error"
-                                   errorKey="org.apache.struts.action.ERROR"></html:text>
+                        <td><html:password name="EstUSB" property="contrasena" maxlength="100" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:password>
                         </td>
                     </tr>
                     <tr>

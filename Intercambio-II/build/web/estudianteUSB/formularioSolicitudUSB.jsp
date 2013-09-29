@@ -49,7 +49,7 @@
 
 
         <div class="nav" style="text-align: center;">
-            <a href="#" onclick=" if (true) show('datosplanilla'), hide('archivos'),hide('plan'),hide('idio')"> 1. Formulario de Datos </a>
+            <a href="#" onclick=" if (true) show('datosplanilla'), hide('archivos'),hide('plan'),hide('idio')"> Formulario de Datos </a>
         </div>
 
         <div id="datosplanilla" style="display: none; width:92%; margin-left: 8%">
@@ -1042,7 +1042,7 @@
     <!-- CARGA DE DOCUMENTOS -->
 
     <div class="nav" style="text-align: center;">
-        <a href="#" onclick=" if (true) hide('datosplanilla'), show('archivos'),hide('plan'),hide('idio')"> 2. Documentos requeridos </a>
+        <a href="#" onclick=" if (true) hide('datosplanilla'), show('archivos'),hide('plan'),hide('idio')"> Documentos requeridos </a>
     </div>
     <div id="archivos" style="display: none; width: 80%;margin-left: 15%">
         <h5>Los archivos permitidos a cargar son aquellos con formato
@@ -1145,12 +1145,12 @@
     <!--Carga Materias-->
 
     <div class="nav" style="text-align: center;">
-        <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),show('plan'),hide('idio')"> 3. Plan de Estudio </a>
+        <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),show('plan'),hide('idio')"> Plan de Estudio </a>
     </div>
 
     <div id="plan" style="display: none; width: 75%;margin-left: 20%">
 
-        <div style="width:auto;height:auto;border:3px solid #126598; border-radius: 10px;background: #dcebe8">
+         <div style="width:auto;height:auto;border:3px solid #126598; border-radius: 10px;background: #dcebe8; font-size:12px;">
             <div align=center>
                 <html:form action="/AccionPlanDeEstudio" acceptCharset="ISO-8859-1" method="post" enctype="multipart/form-data">
                     <br />
@@ -1160,20 +1160,31 @@
                         <table border="0"  align="center" style="margin-left: auto;margin-right: auto">
                             <tbody id ="MateBody">
                                 <tr>
+                                    <td></td>
+                                    <td> <b style="color:#125698"> USB</b> </td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td><b style="color:#125698">Univ. Destino</b></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
                                     
-                                    <td> Código-USB</td>
+                                    <td> Código</td>
 
-                                    <td> Nombre-USB</td>
+                                    <td> Nombre</td>
 
-                                    <td> Créditos-USB</td>
-
-                                    <td> Codigo-Univ. Destino</td>
-
-                                    <td> Nombre-Univ. Destino</td>                                
-
-                                    <td> Créditos-Univ. Destino</td>
+                                    <td> Créditos</td>
                                     
-                                    <td> Guardar Materia </td>
+                                    <td></td>
+
+                                    <td> Codigo</td>
+
+                                    <td> Nombre</td>                                
+
+                                    <td> Créditos</td>
+                                    
+                               
 
                                 </tr>
 
@@ -1196,7 +1207,7 @@
                                                errorKey="org.apache.struts.action.ERROR">
                                     </html:text>
                                 </td>
-
+                                <td></td>
                                 <td>
                                     <html:text name="PlanDeEstudio" property="codigoUniv[0]" maxlength="45" errorStyleClass="error" value="" style="width:60%;"
                                                errorKey="org.apache.struts.action.ERROR">
@@ -1215,19 +1226,22 @@
                                     </html:text>
                                 </td>
                                 
-                                <td>
-                                <html:submit>Guardar Materia </html:submit>
-                                 
-                                </html:form>
-                                </td>
+                                
 
                             </tr>
 
                         </tbody>
                     </table>
-                   
+                    <div align="center" style="top-margin:5%;">
+                        <html:submit>Guardar Materia </html:submit>
+                                
+                        </html:form>
+                    </div>
+                        
                 </div>
             </div>
+           
+
            
   
          <html:form  action="/CargarConsultarMaterias" method="POST" >
@@ -1241,10 +1255,10 @@
 
 
     <div class="nav" style="text-align: center; width: 100%">
-        <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),hide('plan'),show('idio')"> 4. Dominio de idiomas</a>
+        <a href="#" onclick=" if (true) hide('datosplanilla'), hide('archivos'),hide('plan'),show('idio')"> Dominio de idiomas</a>
     </div>
 
-    <div id="idio" style="display: none; width: 88%; margin-left: 12%">
+    <div id="idio" style="display: none; width: 88%; margin-left: 15%">
         <div style="width:auto;height:auto;border:3px solid #126598; border-radius: 10px;background: #dcebe8">
             <div align=center>
                 <html:form action="/CargarIdioma" method="post" acceptCharset="ISO-8859-1" enctype="multipart/form-data">
@@ -1253,12 +1267,12 @@
                                errorKey="org.apache.struts.action.ERROR"></html:text></p>
 
 
-                        <table border="0"  align="center" style="margin-left: auto;margin-right: auto">
+                        <table border="0"  align="center" style="margin-left: auto;margin-right: auto; width:50%">
                             <tbody id ="IdioBody">
 
                                 <tr>
                                     <td><INPUT type="checkbox" name="ch[]"/></td>
-                                    <td> Idioma que maneja:</td>
+                                    <td style="font-size:small"> Idioma que maneja:</td>
 
                                     <td>
                                     <html:text name="Idiomas" property="idiomaDest[0]" maxlength="45" style="width:76px;" errorStyleClass="error"
@@ -1266,7 +1280,7 @@
                                     </html:text>
                                 </td>
 
-                                <td>Nivel Verbal</td>
+                                <td style="font-size:small">Nivel Verbal</td>
 
                                 <td>
 
@@ -1279,7 +1293,7 @@
                                     </html:select>
                                 </td>
 
-                                <td>Nivel Escrito</td>
+                                <td style="font-size:small">Nivel Escrito</td>
 
                                 <td>
                                     <html:select property="nivelEscrito[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
@@ -1291,7 +1305,7 @@
                                     </html:select>
                                 </td>
 
-                                <td>Nivel Oral</td>
+                                <td style="font-size:small">Nivel Conversacional</td>
 
                                 <td>
                                     <html:select property="nivelConversacional[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
@@ -1302,7 +1316,8 @@
                                         <html:option value="Avanzado">Avanzado</html:option>
                                     </html:select>
                                 </td>
-                                <td>Nivel Auditivo</td>
+                              
+                                <td style="font-size:small">Nivel Auditivo</td>
 
                                 <td>
                                     <html:select property="nivelAuditivo[0]" style="width:35px;" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
@@ -1313,16 +1328,17 @@
                                         <html:option value="Avanzado">Avanzado</html:option>
                                     </html:select>
                                 </td>
+                                
 
                             </tr>
 
                         </tbody>
                     </table>
-                    <input type="button"  value="Especificar Otro Idioma" style="font-size:16px; padding:4px 6px;" onclick="addIdi('IdioBody')"/>
-                    <input type="button" value="Eliminar Seleccionados" style="font-size:16px; padding:4px 6px" onclick="deleteRow2('IdioBody')"/>
+                    <!--<input type="button"  value="Especificar Otro Idioma" style="font-size:16px; padding:4px 6px;" onclick="addIdi('IdioBody')"/>-->
+                    <input type="button" value="Eliminar Seleccionados" style="font-size:small; padding:4px 6px" onclick="deleteRow2('IdioBody')"/>
 
                     <p  align=center>
-                        <html:submit> GUARDAR </html:submit>
+                        <html:submit> Guardar Idioma </html:submit>
                         </p>
                 </html:form>
             </div>
