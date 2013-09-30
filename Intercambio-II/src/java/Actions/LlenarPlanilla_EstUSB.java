@@ -448,7 +448,7 @@ public class LlenarPlanilla_EstUSB extends org.apache.struts.action.Action {
             saveErrors(request, error);
             huboError = true;
             arre[4] = true;
-        } else if (!p.getIndice().matches("[0-4]\\.[0-9]{4}|5\\.0{4}")) {
+        } else if (!(Integer.parseInt(p.getIndice()) > 1 && Integer.parseInt(p.getIndice()) <= 5)) {
             error.add("indice", new ActionMessage("error.indice.malestructurado"));
             saveErrors(request, error);
             huboError = true;
