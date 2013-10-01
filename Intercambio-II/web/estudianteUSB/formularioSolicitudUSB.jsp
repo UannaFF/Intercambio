@@ -57,7 +57,6 @@
             <h5>El siguiente formulario consta de 7 pasos, todos los campos son obligatorios</h5>
             <div>
                 <div align ="center">
-                <div id="error" style="color: #ff0000 !important; text-size: 14px"></div>
                 <html:form action="/LlenarPlanilla_EstUSB"  method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this)">
                     <p hidden="true"><html:text name="PlanillaUSB" property="nombreUsuario" maxlength="20" errorStyleClass="error" value ="<%=var.toString()%>"
                                errorKey="org.apache.struts.action.ERROR"></html:text></p>
@@ -74,8 +73,8 @@
                                         <td style="font-weight: bold">Primer Apellido</td>
 
                                         <td>
-                                            <text id="apellido1" name="PlanillaUSB" property="apellido1" maxlength="80" errorStyleClass="error"
-                                                   errorKey="org.apache.struts.action.ERROR"></text>
+                                            <html:text name="PlanillaUSB" property="apellido1" maxlength="80" errorStyleClass="error"
+                                                   errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
                                     </tr>
                                     <tr>
@@ -88,8 +87,8 @@
                                     <td style="font-weight: bold">Segundo Apellido</td>
 
                                     <td>
-                                        <text id="apellido2" name="PlanillaUSB" property="apellido2" maxlength="80" errorStyleClass="error"
-                                                   errorKey="org.apache.struts.action.ERROR"></text>
+                                        <html:text name="PlanillaUSB" property="apellido2" maxlength="80" errorStyleClass="error"
+                                                   errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
                                     </tr>
@@ -103,8 +102,8 @@
                                     <td style="font-weight: bold">Primer Nombre</td>
 
                                     <td>
-                                        <text id="nombre1" name="PlanillaUSB" property="nombre1" maxlength="80" errorStyleClass="error"
-                                                   errorKey="org.apache.struts.action.ERROR"></text>
+                                        <html:text name="PlanillaUSB" property="nombre1" maxlength="80" errorStyleClass="error"
+                                                   errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
                                     </tr>
@@ -118,8 +117,8 @@
                                     <td style="font-weight: bold">Segundo Nombre</td>
 
                                     <td>
-                                        <text id="nombre2" name="PlanillaUSB" property="nombre2" maxlength="80" errorStyleClass="error"
-                                                   errorKey="org.apache.struts.action.ERROR"></text>
+                                        <html:text name="PlanillaUSB" property="nombre2" maxlength="80" errorStyleClass="error"
+                                                   errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
                                     </tr>
@@ -149,11 +148,11 @@
                                     <td style="font-weight: bold">Género</td>
 
                                     <td>
-                                        <select id="sexo" property="sexo" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
-                                            <option value="">Seleccione</option>
-                                            <option value="Femino">Femenino</option>
-                                            <option value="Masculino">Masculino</option>
-                                        </select>
+                                        <html:select property="sexo" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
+                                            <html:option value="">Seleccione</html:option>
+                                            <html:option value="Femino">Femenino</html:option>
+                                            <html:option value="Masculino">Masculino</html:option>
+                                        </html:select>
                                     </td>
 
                                 </tr>
@@ -168,9 +167,9 @@
                                     <td style="font-weight: bold">Nacionalidad</td>
 
                                     <td>
-                                        <text id="nacionalidad" name="PlanillaUSB" property="nacionalidad" maxlength="80" errorStyleClass="error"
+                                        <html:text name="PlanillaUSB" property="nacionalidad" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
-                                        </text>
+                                        </html:text>
                                     </td>
 
                                 </tr>
@@ -184,9 +183,9 @@
                                     <td style="font-weight: bold">Cédula de Identidad</td>
 
                                     <td>
-                                        <text id="cedula" name="PlanillaUSB" property="cedula" maxlength="10" errorStyleClass="error"
+                                        <html:text name="PlanillaUSB" property="cedula" maxlength="10" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
-                                        </text>
+                                        </html:text>
                                     </td>
 
                                 </tr>
@@ -199,9 +198,9 @@
                                 <tr>
                                     <td style="font-weight: bold">Nro Carnet Estudiantil</td>
                                     <td>
-                                        <text id="carnet" name="PlanillaUSB" property="carnet" maxlength="10" errorStyleClass="error"
+                                        <html:text name="PlanillaUSB" property="carnet" maxlength="10" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
-                                        </text>
+                                        </html:text>
                                     </td>
                                 </tr>
                                 <tr>
