@@ -425,6 +425,9 @@
 
         function seleccion(opc)
         {
+            var Error;
+            var ErrorInscripcion = false;
+            var MensajeError = "";
             //escondemos todos los contenidos
             document.getElementById("opci1").style.display="none";
             document.getElementById("opci2").style.display="none";
@@ -437,11 +440,36 @@
             {
                 case 1:
                     //mostramos elcontenido de la primera opcion
-                    document.getElementById("opci1").style.display="block";
+                        document.getElementById("opci1").style.display="block";
                     break;
                 case 2:
                     //mostramos elcontenido de la segunda opcion
-                    document.getElementById("opci2").style.display="block";
+                   Error = Necesario('apellido1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('apellido2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nombre1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nombre2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('fechaNacimiento');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('sexo');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nacionalidad');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('cedula');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('carnet');
+                    if (Error===true) ErrorInscripcion = true;
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                    }else{
+                        document.getElementById("opci2").style.display="block";
+                    }
+                    if(ErrorInscripcion===true){
+                        document.getElementById('error').innerHTML = MensajeError;
+                    }
                     break;
                 case 3:
                     //mostramos elcontenido de la tercera opcion
@@ -671,3 +699,66 @@
             document.getElementById("carr").options[0].selected = true 
         }
          
+         /*FUNCIONES PARA VERIFICAR LOS CAMPOS
+         * REALIZADAS POR: FRANCO NORI G.
+         */
+        /*Funcion que verifica si el campo es necesario y lo modifica dependiendo de si esta vacio*/
+        function Necesario(campo){
+                error = false;
+                string = trim(document.getElementById(campo).value);
+                if(string==""){
+                        error = true;
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                }else{
+                        error = false;
+                        document.getElementById(campo).style.background = "#FFFFFF";	
+                }
+                return error;
+        }
+        /*Funcion que elimina los espacios en blanco de un string*/
+        function trim(myString){
+                return myString.replace(/^\s+/g,'').replace(/\s+$/g,'')
+        }
+        /*Funcion que verifica el formato de un email*/
+        function CompruebaEmail(campo){
+                pasa = true;
+                var	validRegExp	= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var strEmail	= 	document.getElementById(campo).value;
+
+                if (strEmail.length > 0) {
+
+                        if(strEmail.search(validRegExp)==-1) {
+                                pasa = false;	
+                        }
+                }else{
+                        pasa = false;		
+                }
+                return pasa;
+        }
+        /*Funcion que verifica que la clave no contenga caracteres raros*/
+        function claveValida(campo,min,max){
+                var clave = document.getElementById(campo).value;
+                var alphaExp = /\s/gi;
+                if(clave.length >= min && clave.length <= max && !clave.match(alphaExp)){
+                        document.getElementById(campo).style.background = "#FFFFFF";
+                        return true;
+                }else{
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                        return false;	
+                }
+        }
+        /*Funcion que verifica que el campo sea valido*/
+        function campoValido(campo,min,max){
+                error = false;
+                var objeto = document.getElementById(campo).value;
+                var alphaExp = /\@|\'|\#|\$|\%|\;|drop|insert|create|delete|update/gi;
+                if(objeto.length >= min && objeto.length <= max && !objeto.match(alphaExp)){
+                        error=false;
+                        document.getElementById(campo).style.background = "#FFFFFF";
+                        return true;
+                }else{
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                        error = true;
+                        return false;
+                }
+        }
