@@ -11,6 +11,8 @@ package Clases;
 public class Gestion extends org.apache.struts.validator.ValidatorForm {
     
     String nombreusuario;
+    String pais;
+    String univ;
     String p1;
     String p2;
     String p3;
@@ -37,7 +39,27 @@ public void setnombreusuario(String u){
     
     this.nombreusuario = u;
 }    
-  
+
+public String getpais(){
+    
+    return this.pais;
+}    
+    
+public void setpais(String pais){
+    
+    this.pais = pais;
+}
+
+public String getuniv(){
+    
+    return this.univ;
+}    
+    
+public void setuniv(String univ){
+    
+    this.univ = univ;
+}
+
 public String getp1(){
     
     return this.p1;

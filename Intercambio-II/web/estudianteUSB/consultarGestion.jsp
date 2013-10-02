@@ -8,22 +8,45 @@
 <%Object tmp = session.getAttribute("nombreusuario");%>
 <%Object var = session.getAttribute("nombre");%>
 <%Object confirm = session.getAttribute("confirmar");%>
+
 <%@page import="javax.swing.text.html.HTML"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.* , Clases.*" %>
+<meta http-equiv="Content-Type" content="text/html; UTF-8">
+
+<%@page import="java.util.* , Clases.*" %> 
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
-
+<%Gestion g = (Gestion) request.getAttribute("gestion"); %>
  <title>Sistema de Gesti&oacute;n de Intercambio</title>
 <html:html lang="true">
 
     <h4 align ="center">Estudiante USB</h4>
     <h5 align ="center">Aqu&iacute; se encuentra tu opini&oacute;n:</h5>
 
-    <body onload ="clearForms()" onunload="clearForms()">
+    <table border="0" width="520"> 
+        
+        <tr>
+            
+            <td>
+                <b>Pa&iacute;s al que fue de Intercambio: </b>
+            </td>
+            <td align="center">
+                <%=g.getpais()%>
+        </td></tr>
+        <tr>
+            <td>
+                <b>Universidad a la que fue de Intercambio: </b>
+            </td>
+        <td align="center">
+               <%=g.getuniv()%>
+       </td></tr>
+        
+        
+    </table>
+    <br>
     
     <html:form  action="/gestionConsultada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
     <table border="1" width="520">

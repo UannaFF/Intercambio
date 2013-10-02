@@ -14,6 +14,8 @@
         <form-bean name="PlanillaExt" type="Clases.PlanillaExt"/>
         <form-bean name="EstUSB" type="Clases.EstudianteUSB"/>
         <form-bean name="Gestion" type="Clases.Gestion"/> <!-- MOSQ -->
+        <form-bean name="GestionUniversidad" type="Clases.GestionUniversidad"/> <!-- MOSQ -->
+        <form-bean name="Gestionpais" type="Clases.Gestionpais"/> <!-- MOSQ -->
         <form-bean name="EstInter" type="Clases.EstudianteInternacional"/>
         <form-bean name="Postulante" type="Clases.Postulante"/>
         <form-bean name="fileUploadForm" type="Clases.FileUploadForm"/>
@@ -176,8 +178,43 @@
             type="org.apache.struts.actions.ForwardAction"
             scope="request"
             validate="false"
-            parameter="modificarGestion"/>                      
+            parameter="modificarGestion"/>  
+       
+        <action path="/accionesGestionCoord"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="accionesGestionCoord"/>   
+        
+         <action path="/gestionporPais"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="gestionporPais"/>    
+         
+          <action path="/gestionporUniv"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="gestionporUniv"/> 
           
+          <action path="/gestionAvanzada"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="gestionAvanzada"/>              
+          
+           <action path="/gestionUniv"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="gestionUniv"/> 
+
+            <action path="/gestionPais"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="gestionPais"/>           
        
        <!--Fin Modificacion MOSQ-->
         
@@ -520,6 +557,8 @@
        
        <!-- Inicio modificacion MOSQ-->
        
+       <!--Gestion Est-->
+       
               <action name="Gestion" path="/AgregarGestion" scope="session" type="Actions.AgregarGestion">
             <forward name="success" path="agregarGestion" />
             <forward name="existe"  path="modificarGestion" />
@@ -555,6 +594,35 @@
        </action>
        
        
+       <!--Gestion Coord-->
+       
+              <action name="Usuario" path="/AccionesGestionCoord" scope="session" type="Actions.AccionesGestionCoord">
+                   <forward name="success" path="accionesGestionCoord" />
+              </action>
+              
+              <action name="Gestionpais" path="/GestionporPais" scope="session" type="Actions.GestionporPais">
+                   <forward name="success" path="gestionporPais" />
+              </action>
+              
+              <action name="GestionUniversidad" path="/GestionporUniv" scope="session" type="Actions.GestionporUniv">
+                   <forward name="success" path="gestionporUniv" />
+              </action>
+              
+              <action name="Usuario" path="/GestionAvanzada" scope="session" type="Actions.GestionAvanzada">
+                   <forward name="success" path="gestionAvanzada" />
+              </action>
+              
+              <action name="GestionUniversidad" path="/GestionUniv" scope="session" type="Actions.GestionUniv">
+                   <forward name="success" path="gestionUniv" />
+              </action>
+              
+              <action name="Gestionpais" path="/GestionPais" scope="session" type="Actions.GestionPais">
+                   <forward name="success" path="gestionPais" />
+              </action>
+       
+       
+  
+              
        <!--Fin modificacion MOSQ-->
        
        <action input="/" name="Usuario" path="/CargarConsultarMaterias" scope="session" type="Actions.CargarConsultarMaterias">

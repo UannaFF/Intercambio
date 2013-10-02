@@ -53,7 +53,8 @@ public class gestionAgregada extends org.apache.struts.action.Action {
                 || (gest.getp10().toString().equals("")) || (gest.getp11().toString().equals(""))
                 || (gest.getp12().toString().equals("")) || (gest.getp13().toString().equals(""))
                 || (gest.getp14().toString().equals("")) || (gest.getp15().toString().equals(""))
-                || (gest.getp16().toString().equals(""))) return mapping.findForward(FAIL);
+                || (gest.getp16().toString().equals("")) || (gest.getpais().equals("0"))
+                || (gest.getuniv().equals("Seleccione"))) return mapping.findForward(FAIL);
         
         if (DBMS.getInstance().agregarGestion(gest)) return mapping.findForward(SUCCESS);
         

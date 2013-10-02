@@ -2,6 +2,7 @@ package DBMS;
 
 import Clases.*;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -2420,29 +2421,32 @@ public class DBMS {
     //Inicio modificacion MOSQ
     
     
-    public boolean agregarGestion(Gestion g){
+    public boolean agregarGestion(Gestion g) throws UnsupportedEncodingException{
         
         PreparedStatement psAgregar = null;
 
         try {
-            psAgregar = conexion.prepareStatement("INSERT INTO \"dycicle\".GESTION VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
+            psAgregar = conexion.prepareStatement("INSERT INTO \"dycicle\".GESTION VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);");
             psAgregar.setString(1, g.getnombreusuario());
-            psAgregar.setString(2, g.getp1());
-            psAgregar.setString(3, g.getp2());
-            psAgregar.setString(4, g.getp3());
-            psAgregar.setString(5, g.getp4());
-            psAgregar.setString(6, g.getp5());
-            psAgregar.setString(7, g.getp6());
-            psAgregar.setString(8, g.getp7());
-            psAgregar.setString(9, g.getp8());
-            psAgregar.setString(10, g.getp9());
-            psAgregar.setString(11, g.getp10());
-            psAgregar.setString(12, g.getp11());
-            psAgregar.setString(13, g.getp12());
-            psAgregar.setString(14, g.getp13());
-            psAgregar.setString(15, g.getp14());
-            psAgregar.setString(16, g.getp15());
-            psAgregar.setString(17, g.getp16());
+            psAgregar.setString(2,  new String (g.getpais().getBytes("ISO-8859-1"),"UTF-8"));
+            psAgregar.setString(3,  new String (g.getuniv().getBytes("ISO-8859-1"),"UTF-8"));
+            psAgregar.setString(4, g.getp1());
+            psAgregar.setString(5, g.getp2());
+            psAgregar.setString(6, g.getp3());
+            psAgregar.setString(7, g.getp4());
+            psAgregar.setString(8, g.getp5());
+            psAgregar.setString(9, g.getp6());
+            psAgregar.setString(10, g.getp7());
+            psAgregar.setString(11, g.getp8());
+            psAgregar.setString(12, g.getp9());
+            psAgregar.setString(13, g.getp10());
+            psAgregar.setString(14, g.getp11());
+            psAgregar.setString(15, g.getp12());
+            psAgregar.setString(16, g.getp13());
+            psAgregar.setString(17, g.getp14());
+            psAgregar.setString(18, g.getp15());
+            psAgregar.setString(19, g.getp16());
+
             System.out.println(psAgregar.toString());
             Integer i = psAgregar.executeUpdate();
             return i > 0;
@@ -2495,7 +2499,9 @@ public class DBMS {
             psConsultar.setString(1, u.getNombreusuario());
             ResultSet set = psConsultar.executeQuery();
             if(!(set.next())) return null;
-            Gestion g = new Gestion();
+            Gestion g = new Gestion();  
+            g.setpais(set.getString("pais"));
+            g.setuniv(set.getString("univ"));
             g.setp1(set.getString("p1"));
             System.out.print("esto es p1 ");
             System.out.print(g.getp1());
@@ -2514,6 +2520,7 @@ public class DBMS {
             g.setp14(set.getString("p14"));
             g.setp15(set.getString("p15"));
             g.setp16(set.getString("p16"));
+
             
             return g;
             
@@ -2528,13 +2535,14 @@ public class DBMS {
     
     
     
-    public boolean modificarGestion(Gestion g) {
+    public boolean modificarGestion(Gestion g) throws UnsupportedEncodingException {
         PreparedStatement ps = null;
         try {
             ps = conexion.prepareStatement("UPDATE \"dycicle\".GESTION SET p1 = ?"
                     + ", p2= ?, p3= ? , p4= ?, p5= ?, p6= ?" 
                     + ", p7= ?, p8= ? , p9= ?, p10= ?, p11= ?" 
-                    + ", p12= ?, p13= ? , p14= ?, p15= ?, p16= ?  WHERE nombreusuario = ?");
+                    + ", p12= ?, p13= ? , p14= ?, p15= ?, p16= ? "
+                    + ", pais= ?, univ= ?  WHERE nombreusuario = ?");
             ps.setString(1, g.getp1());
             ps.setString(2, g.getp2());
             ps.setString(3, g.getp3());
@@ -2551,7 +2559,9 @@ public class DBMS {
             ps.setString(14, g.getp14());
             ps.setString(15, g.getp15());
             ps.setString(16, g.getp16());
-            ps.setString(17, g.getnombreusuario());
+            ps.setString(17, new String (g.getpais().getBytes("ISO-8859-1"),"UTF-8"));
+            ps.setString(18, new String (g.getuniv().getBytes("ISO-8859-1"),"UTF-8"));
+            ps.setString(19, g.getnombreusuario());
             System.out.println(ps.toString());
             Integer i = ps.executeUpdate();
             return i > 0;

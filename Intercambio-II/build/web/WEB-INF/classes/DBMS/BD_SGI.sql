@@ -63,6 +63,8 @@ OIDS = FALSE
 
 CREATE TABLE "dycicle".GESTION(
 	NombreUsuario	VARCHAR(20)	NOT NULL,
+        pais    VARCHAR(100)    NOT NULL,
+        univ    VARCHAR(100)    NOT NULL,
         p1      VARCHAR(5)      NOT NULL,
  	p2 	VARCHAR(5)	NOT NULL,
         p3      VARCHAR(5)      NOT NULL,
