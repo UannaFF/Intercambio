@@ -147,7 +147,7 @@
                                     <td style="font-weight: bold">Género</td>
 
                                     <td>
-                                        <html:select styleId="sexo" property="sexo" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
+                                        <html:select name="PlanillaUSB" styleId="sexo" property="sexo" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
                                             <html:option value="">Seleccione</html:option>
                                             <html:option value="Femino">Femenino</html:option>
                                             <html:option value="Masculino">Masculino</html:option>
@@ -432,7 +432,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Nombre de Programa: </td>
                                     <td>
-                                        <html:select styleId="prog_princ" onchange="cambia_pais();cambiar_link1()" property="nombreProgramaOpcion1"> 
+                                        <html:select name="PlanillaUSB" styleId="prog_princ" onchange="cambia_pais();cambiar_link1()" property="nombreProgramaOpcion1"> 
                                             <html:option value="0">Seleccione </html:option>
                                             <html:option value="Bilaterales">Convenios Bilaterales </html:option>
                                             <html:option value="SMILE">Programa SMILE </html:option>
@@ -457,7 +457,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> País Destino: </td>
                                     <td>
-                                        <html:select styleId="pais_princ" onchange="cambia_universidad()" property="paisOpcion1"> 
+                                        <html:select name="PlanillaUSB" styleId="pais_princ" onchange="cambia_universidad()" property="paisOpcion1"> 
                                             <html:option value="-">- </html:option>
                                         </html:select>
                                     </td>
@@ -471,7 +471,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Universidad Destino: </td>
                                     <td>
-                                        <html:select styleId="uni_princ" property="nombreOpcion1"> 
+                                        <html:select name="PlanillaUSB" styleId="uni_princ" property="nombreOpcion1"> 
                                             <html:option value="-">- </html:option>
                                         </html:select>
                                     </td>
@@ -485,7 +485,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Tipo de Programa: </td>
                                     <td>
-                                        <html:select styleId="programaOpcion1" property="programaOpcion1">
+                                        <html:select name="PlanillaUSB" styleId="programaOpcion1" property="programaOpcion1">
                                             <html:option value="">Seleccione</html:option>
                                             <html:option value="Intercambio Académico (sólo Asignaturas)"></html:option>
                                             <html:option value="Intercambio Académico + Pasantía Internacional"></html:option>
@@ -503,7 +503,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Inicio: </td>
                                     <td>
-                                        <html:select styleId="mesFechaIni1" property="mesFechaIni1">
+                                        <html:select name="PlanillaUSB" styleId="mesFechaIni1" property="mesFechaIni1">
                                             <html:option value="">-Mes-</html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
@@ -518,7 +518,7 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select styleId="anoFechaIni1" property="anoFechaIni1">
+                                        <html:select name="PlanillaUSB" styleId="anoFechaIni1" property="anoFechaIni1">
                                             <html:option value="">-Año-</html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
@@ -534,7 +534,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Fin: </td>
                                     <td>
-                                        <html:select styleId="mesFechaFin1" property="mesFechaFin1">
+                                        <html:select name="PlanillaUSB" styleId="mesFechaFin1" property="mesFechaFin1">
                                             <html:option value="">-Mes-</html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
@@ -549,7 +549,7 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select  styleId="anoFechaFin1" property="anoFechaFin1">
+                                        <html:select name="PlanillaUSB"  styleId="anoFechaFin1" property="anoFechaFin1">
                                             <html:option value="">-Año-</html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
@@ -565,7 +565,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Duración: </td>
                                     <td>
-                                        <html:select styleId="duracionProgramaOpcion1" property="duracionProgramaOpcion1">
+                                        <html:select name="PlanillaUSB" styleId="duracionProgramaOpcion1" property="duracionProgramaOpcion1">
                                             <html:option value="Seleccione"></html:option>
                                             <html:option value="Un Trimestre"></html:option>
                                             <html:option value="Dos Trimestres"></html:option>
@@ -585,7 +585,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Nombre de Programa: </td>
                                     <td>
-                                        <html:select styleId="prog_princ2" onchange="cambia_pais2();cambiar_link2()" property="nombreProgramaOpcion2"> 
+                                        <html:select name="PlanillaUSB" styleId="prog_princ2" onchange="cambia_pais2();cambiar_link2()" property="nombreProgramaOpcion2"> 
                                             <html:option value="0">Seleccione </html:option>
                                             <html:option value="Bilaterales">Convenios Bilaterales </html:option>
                                             <html:option value="SMILE">Programa SMILE </html:option>
@@ -610,7 +610,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> País Destino: </td>
                                     <td>
-                                        <html:select styleId="pais_princ2" onchange="cambia_universidad2()" property="paisOpcion2"> 
+                                        <html:select name="PlanillaUSB" styleId="pais_princ2" onchange="cambia_universidad2()" property="paisOpcion2"> 
                                             <html:option value="-">-</html:option>
                                         </html:select>
                                     </td>
@@ -624,7 +624,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Universidad Destino: </td>
                                     <td>
-                                        <html:select styleId="uni_princ2" property="nombreOpcion2"> 
+                                        <html:select name="PlanillaUSB" styleId="uni_princ2" property="nombreOpcion2"> 
                                             <html:option value="-">- </html:option>
                                         </html:select>
                                     </td>
@@ -638,7 +638,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Tipo de Programa: </td>
                                     <td>
-                                        <html:select styleId="programaOpcion2" property="programaOpcion2">
+                                        <html:select name="PlanillaUSB" styleId="programaOpcion2" property="programaOpcion2">
                                             <html:option value="Seleccione"></html:option>
                                             <html:option value="Intercambio Académico (sólo Asignaturas)"></html:option>
                                             <html:option value="Intercambio Académico + Pasantía Internacional"></html:option>
@@ -656,7 +656,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Inicio: </td>
                                     <td>
-                                        <html:select styleId="mesFechaIni2" property="mesFechaIni2">
+                                        <html:select name="PlanillaUSB" styleId="mesFechaIni2" property="mesFechaIni2">
                                             <html:option value="Mes"></html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
@@ -671,7 +671,7 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select  styleId="anoFechaIni2" property="anoFechaIni2">
+                                        <html:select name="PlanillaUSB"  styleId="anoFechaIni2" property="anoFechaIni2">
                                             <html:option value="Año"></html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
@@ -687,7 +687,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Fin: </td>
                                     <td>
-                                        <html:select styleId="mesFechaFin2" property="mesFechaFin2">
+                                        <html:select name="PlanillaUSB" styleId="mesFechaFin2" property="mesFechaFin2">
                                             <html:option value="Mes"></html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
@@ -702,7 +702,7 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select styleId="anoFechaFin2" property="anoFechaFin2">
+                                        <html:select name="PlanillaUSB" styleId="anoFechaFin2" property="anoFechaFin2">
                                             <html:option value="Año"></html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
@@ -718,7 +718,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Duración: </td>
                                     <td>
-                                        <html:select styleId="duracionProgramaOpcion2" property="duracionProgramaOpcion2">
+                                        <html:select name="PlanillaUSB" styleId="duracionProgramaOpcion2" property="duracionProgramaOpcion2">
                                             <html:option value="Seleccione"></html:option>
                                             <html:option value="Un Trimestre"></html:option>
                                             <html:option value="Dos Trimestres"></html:option>
@@ -755,7 +755,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Decanato: </td>
                                     <td>
-                                        <html:select styleId="dec" onchange="cambia_area()" property="decanato"> 
+                                        <html:select name="PlanillaUSB" styleId="dec" onchange="cambia_area()" property="decanato"> 
                                             <html:option value="0">Seleccione</html:option>
                                             <html:option value="1"> Decanato de Estudios Profesionales</html:option>
                                             <html:option value="2"> Decanato de Estudios Tecnológicos </html:option>
@@ -771,7 +771,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Área de Estudio: </td>
                                     <td>
-                                        <html:select styleId="area" onchange="cambia_carrera()" property="areaEstud"> 
+                                        <html:select name="PlanillaUSB" styleId="area" onchange="cambia_carrera()" property="areaEstud"> 
                                             <html:option value="-">- </html:option>
                                         </html:select>
                                     </td>
@@ -785,7 +785,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Carrera: </td>
                                     <td>
-                                        <html:select styleId="carrera" property="carrera"> 
+                                        <html:select name="PlanillaUSB" styleId="carrera" property="carrera"> 
                                             <html:option value="-">- </html:option>
                                         </html:select>
                                     </td>
