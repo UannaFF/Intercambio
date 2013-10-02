@@ -57,7 +57,6 @@
             <h5>El siguiente formulario consta de 7 pasos, todos los campos son obligatorios</h5>
             <div>
                 <div align ="center">
-
                 <html:form action="/LlenarPlanilla_EstUSB"  method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this)">
                     <p hidden="true"><html:text name="PlanillaUSB" property="nombreUsuario" maxlength="20" errorStyleClass="error" value ="<%=var.toString()%>"
                                errorKey="org.apache.struts.action.ERROR"></html:text></p>
@@ -74,7 +73,7 @@
                                         <td style="font-weight: bold">Primer Apellido</td>
 
                                         <td>
-                                        <html:text name="PlanillaUSB" property="apellido1" maxlength="80" errorStyleClass="error"
+                                            <html:text name="PlanillaUSB" property="apellido1" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
                                     </tr>
@@ -134,7 +133,7 @@
                                     <td style="font-weight: bold">Fecha de Nacimiento</td>
 
                                     <td>
-                                        <input type="date" min="1980-01-01" name="fechaNacimiento" maxlength="80" errorStyleClass="error" />
+                                        <input id="fechaNacimiento" type="date" min="1980-01-01" name="fechaNacimiento" maxlength="80" errorStyleClass="error" />
                                         <!--                               errorKey="org.apache.struts.action.ERROR" />-->
                                     </td>
 
