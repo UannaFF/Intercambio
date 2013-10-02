@@ -9,6 +9,7 @@
 <%Object confirm = session.getAttribute("confirmar");%>
 <%@page import="javax.swing.text.html.HTML"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<meta http-equiv="Content-Type" content="text/html; UTF-8">
 <%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -21,9 +22,64 @@
     <h4 align ="center">Estudiante USB</h4>
     <h5 align ="center">Punt&uacute;a del 1 al 5, siendo 5 el m&aacute;ximo en la escala. </h5>
 
-    <body onload ="clearForms()" onunload="clearForms()">
+    <script  src="/Intercambio-II/css/gestion.js"></script>
     
     <html:form  action="/gestionAgregada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+        <table border="0" width="520"> 
+        
+        <tr>
+            
+            <td>
+                <b>Pa&iacute;s al que fue de Intercambio: </b>
+            </td>
+            <td align="center">
+               <html:select styleId="pais_princG" name="Gestion" onchange="cambia_universidadG()" property="pais"> 
+               <html:option value="0">Seleccione </html:option>
+               <html:option value="Alemania">Alemania</html:option>
+               <html:option value="Argentina">Argentina</html:option>
+               <html:option value="Australia">Australia</html:option>
+               <html:option value="Bélgica">B&eacute;lgica</html:option>
+               <html:option value="Bolivia">Bolivia</html:option>
+               <html:option value="Brasil">Brasil</html:option>
+               <html:option value="Canadá">Canad&aacute;</html:option>
+               <html:option value="Chile">Chile</html:option>
+               <html:option value="Colombia">Colombia</html:option> 
+               <html:option value="CostaRica">Costa Rica</html:option>
+               <html:option value="Ecuador">Ecuador</html:option>
+               <html:option value="España">Espa&ntilde;a</html:option>
+               <html:option value="EstadosUnidos">Estados Unidos</html:option>
+               <html:option value="Finlandia">Finlandia</html:option>
+               <html:option value="Francia">Francia</html:option>
+               <html:option value="Italia">Italia</html:option>
+               <html:option value="Japón">Jap&oacute;n</html:option>
+               <html:option value="México">M&eacute;xico</html:option>
+               <html:option value="Noruega">Noruega</html:option>
+               <html:option value="Panamá">Panam&aacute;</html:option>
+               <html:option value="Paraguay">Paraguay</html:option>
+               <html:option value="Perú">Per&uacute;</html:option>
+               <html:option value="Polonia">Polonia</html:option>
+               <html:option value="PuertoRico">Puerto Rico</html:option>
+               <html:option value="ReinoUnido">Reino Unido</html:option>
+               <html:option value="RepúblicaCheca">Rep&uacute;blica Checa</html:option>               
+               <html:option value="RepúblicaDominicana">Rep&uacute;blica Dominicana</html:option>
+               <html:option value="Suecia">Suecia</html:option>
+               <html:option value="Uruguay">Uruaguay</html:option>
+               <html:option value="Venezuela">Venezuela</html:option>               
+             </html:select>
+        </td></tr>
+        <tr>
+            <td>
+                <b>Universidad a la que fue de Intercambio: </b>
+            </td>
+        <td align="center">
+            <html:select styleId="uni_princG" name="Gestion" property="univ"> 
+                <html:option value="-">- </html:option>
+            </html:select>
+       </td></tr>
+        
+        
+    </table>
+    <br>    
     <table border="1" width="520" >
             <tbody>
                 <tr > <p hidden="true"><html:text name="Gestion" property="usuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"

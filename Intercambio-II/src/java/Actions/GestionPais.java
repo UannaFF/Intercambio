@@ -4,26 +4,24 @@
  */
 package Actions;
 
-
-import Clases.Gestion;
-import Clases.Usuario;
+import Clases.GestionUniversidad;
+import Clases.Gestionpais;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 
-
 /**
  *
  * @author jaescalante02
  */
-public class ModificarGestion extends org.apache.struts.action.Action {
+public class GestionPais extends org.apache.struts.action.Action {
 
 
     /* forward name="success" path="" */
     private static final String SUCCESS = "success";
-    private static final String NUEVO = "nuevo";
+    private static final String FAIL = "failure";
     
     /**
      * This is the action called from the Struts framework.
@@ -39,18 +37,12 @@ public class ModificarGestion extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+
         
-                Gestion g = (Gestion) form;
-                g.setpais(new String (g.getpais().getBytes("ISO-8859-1"),"UTF-8"));
-                g.setuniv(new String (g.getuniv().getBytes("ISO-8859-1"),"UTF-8"));
-                request.setAttribute("uni", g.getuniv());
-                form = g;
-                Usuario u = new Usuario();
-                u.setNombreusuario(g.getnombreusuario());
-        if(!DBMS.DBMS.getInstance().existeGestion(u)) return mapping.findForward(NUEVO);
-        
-        System.out.print("estoy en modificar gestion");
+        Gestionpais gestp= (Gestionpais) form;
+        gestp.setpais(new String (gestp.getpais().getBytes("ISO-8859-1"),"UTF-8"));
+        //gestuniv.setuniv(new String (gestuniv.getuniv().getBytes("ISO-8859-1"),"UTF-8"));
+        request.setAttribute("gestionpais", gestp);
         return mapping.findForward(SUCCESS);
-        
     }
 }

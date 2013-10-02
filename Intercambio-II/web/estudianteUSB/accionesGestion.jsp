@@ -24,6 +24,7 @@
    <% String r1=null,r2=null,r3=null,r4=null,r5=null;%>
    <% String r6=null,r7=null,r8=null,r9=null,r10=null;%>
    <% String r11=null,r12=null,r13=null,r14=null,r15=null, r16=null;%>
+   <% String pais=null, univ=null;%>
 
    <%if(gest!=null){%>
    <%r1 = gest.getp1();%>
@@ -42,6 +43,8 @@
    <%r14 = gest.getp14();%>
    <%r15 = gest.getp15();%>
    <%r16 = gest.getp16();%>
+   <%pais = gest.getpais();%>
+   <%univ = gest.getuniv();%>
    <%}%>
 
  
@@ -193,9 +196,13 @@
         </html:form> 
 
     <%}else{%>    
-        
+    
     <html:form  action="/ModificarGestion" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
                         <p hidden="true"> <html:text name="Gestion" property="nombreusuario" value ="<%=tmp.toString()%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="pais" value ="<%=pais%>" maxlength="20" errorStyleClass="error"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"> <html:text name="Gestion" property="univ" value ="<%=univ%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <p hidden="true"> <html:text name="Gestion" property="p1" value ="<%=r1%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>

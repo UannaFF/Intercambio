@@ -281,7 +281,33 @@
      <definition name="gestionnocompleta" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/estudianteUSB/gestionnocompleta.jsp" />
     </definition>  
-            
+    
+    <!-- 20% -->
+    
+    <definition name="accionesGestionCoord" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/accionesGestionCoord.jsp" />
+    </definition>
+    
+    <definition name="gestionporPais" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/gestionporPais.jsp" />
+    </definition>
+    
+    <definition name="gestionporUniv" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/gestionporUniv.jsp" />
+    </definition>  
+    
+        <definition name="gestionAvanzada" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/gestionAvanzada.jsp" />
+    </definition>  
+    
+    <definition name="gestionUniv" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/gestionUniv.jsp" />
+    </definition> 
+
+    <definition name="gestionPais" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/gestionPais.jsp" />
+    </definition>         
+                                    
      <!--Fin modificacion MOSQ--> 
     
         
