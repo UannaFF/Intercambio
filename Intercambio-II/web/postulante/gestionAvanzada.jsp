@@ -20,6 +20,11 @@
  <title>Sistema de Gesti&oacute;n de Intercambio</title>
 <html:html lang="true">
     
+    <%String[] mejorc = (String []) request.getAttribute("mejorc");%>
+    <%String[] mejorg = (String []) request.getAttribute("mejorg");%>
+    <%String[] paisg = (String []) request.getAttribute("paisg");%>
+    <%String[] paisc = (String []) request.getAttribute("paisc");%>
+    
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -29,83 +34,79 @@
     <br><br><br>
     <div id="muestrauni">
        <table  border="1" width="520">
-           
-           <th colspan="2">GENERAL</th>
+           <h5 align ="center">Estas son las mejores opciones según la opinión de antiguos postulados </h5>
+           <tr> <th>Mejores puntuaciones por Universidad</th></tr>
+           <th> GENERAL</th>
            <tr>
-               <td width="300">
-                   N&uacute;mero de encuestas llenadas del pa&iacute;s        
-               </td>
                <td>
+                   <table border="0">
+                    <% for (int i=0; i<paisg.length; i++){%>
+                  <html:form  action="/AvanzadaUniv" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
                   
-               </td>
-           </tr>
-           <tr>
-               <td>
-                   Promedio de aceptaci&oacute;n del pa&iacute;s        
-               </td>
-               <td>
+                  <tr ><td><p hidden="true"><html:text name="GestionUniversidad" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
+                  <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="pais" maxlength="20" errorStyleClass="error" value ="<%=paisg[i]%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr>
+            <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="univ" maxlength="20" errorStyleClass="error" value ="<%=mejorg[i]%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
                   
-               </td>
-           </tr>
-           <tr>
-               <td colspan="2" align="center">
-                Top 10 Universidades             
-               </td>
-           </tr>
-           <tr>
-               <td colspan="2">
-               <table>
-                   <tr>    
-                     <td colspan="2" align="center">
-                       Univ 1             
-                     </td>
-                   </tr>
-                   <tr>    
-                     <td colspan="2" align="center">
-                       Univ 2             
-                     </td>
-                   </tr>
-               </table> 
-               </td>    
-           </tr>
-           <th colspan="2">CARRERA</th>
-           <tr>
-               <td>
-                 N&uacute;mero de encuestas llenadas del pa&iacute;s
-               </td>
-               <td>
                    
+                      <tr>
+                          <td>
+                          <%=i+1%>.<%=mejorg[i]%>
+                          </td>   
+                      
+                      <td>
+                       
+                          <html:submit>Detalles</html:submit>
+                       
+                      </td>
+                      </tr>
+                  </html:form>    
+                 <%}%>
+                   </table>
                </td>
+               
            </tr>
-           <tr>
+            <th>CARRERA</th>
+                       <tr>
                <td>
-                    Promedio de aceptaci&oacute;n del pa&iacute;s 
-               </td>
-               <td>
+                   <table border="0">
+                    <% for (int i=0; i<paisc.length; i++){%>
+                  <html:form  action="/AvanzadaUniv" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+                  
+                  <tr ><td><p hidden="true"><html:text name="GestionUniversidad" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
+                  <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="pais" maxlength="20" errorStyleClass="error" value ="<%=paisc[i]%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr>
+            <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="univ" maxlength="20" errorStyleClass="error" value ="<%=mejorc[i]%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
+                  
                    
+                      <tr>
+                          <td>
+                          <%=i+1%>.<%=mejorc[i]%>
+                          </td>   
+                      
+                      <td>
+                       
+                          <html:submit>Detalles</html:submit>
+                       
+                      </td>
+                      </tr>
+                  </html:form>    
+                 <%}%>
+                   </table>
                </td>
+               
            </tr>
-           <tr>
-               <td colspan="2" align="center">
-                Top 10 Universidades             
-               </td>
-           </tr>
-           <tr>
-               <td colspan="2">
-               <table>
-                   <tr>    
-                     <td colspan="2" align="center">
-                       Univ 1             
-                     </td>
-                   </tr>
-                   <tr>    
-                     <td colspan="2" align="center">
-                       Univ 2             
-                     </td>
-                   </tr>
-               </table> 
-               </td>    
-           </tr>
+ 
        </table>    
        </div>
        <br>

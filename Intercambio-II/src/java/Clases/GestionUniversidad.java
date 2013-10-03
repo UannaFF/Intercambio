@@ -26,6 +26,16 @@ public class GestionUniversidad extends org.apache.struts.validator.ValidatorFor
     float avgct;
     int encuestasc;
 
+    public boolean mayorQueG(GestionUniversidad g){
+        
+        return this.avggt>g.getavggt();
+    }
+
+    public boolean mayorQueC(GestionUniversidad g){
+        
+        return this.avgct>g.getavgct();
+    }
+    
     public String getnombreusuario() {
         return nombreusuario;
     }

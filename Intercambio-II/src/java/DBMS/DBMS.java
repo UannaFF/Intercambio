@@ -2661,13 +2661,13 @@ public class DBMS {
             gp.setavgg1(a1/t1);
             gp.setavgg2(a2/t2);
             gp.setavgg3(a3/t3);
-            gp.setavgg3(a4/t4);
+            gp.setavgg4(a4/t4);
             gp.setencuestasg(participantes);
             gp.setavggt((a1+a2+a3+a4)/(t1+t2+t3+t4));
             gp.setavgc1(c1/tc1);
             gp.setavgc2(c2/tc2);
             gp.setavgc3(c3/tc3);
-            gp.setavgc3(c4/tc4);
+            gp.setavgc4(c4/tc4);
             gp.setencuestasc(participantescarrera);
             gp.setavgct((c1+c2+c3+c4)/(tc1+tc2+tc3+tc4));
             
@@ -2766,13 +2766,13 @@ public class DBMS {
             gp.setavgg1(a1/t1);
             gp.setavgg2(a2/t2);
             gp.setavgg3(a3/t3);
-            gp.setavgg3(a4/t4);
+            gp.setavgg4(a4/t4);
             gp.setencuestasg(participantes);
             gp.setavggt((a1+a2+a3+a4)/(t1+t2+t3+t4));
             gp.setavgc1(c1/tc1);
             gp.setavgc2(c2/tc2);
             gp.setavgc3(c3/tc3);
-            gp.setavgc3(c4/tc4);
+            gp.setavgc4(c4/tc4);
             gp.setencuestasc(participantescarrera);
             gp.setavgct((c1+c2+c3+c4)/(tc1+tc2+tc3+tc4));
             

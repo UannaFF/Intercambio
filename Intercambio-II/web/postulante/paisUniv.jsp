@@ -29,6 +29,7 @@
     <br><br><br>
     <br><br><br>
     <div id="muestrauni">
+       <h5 align ="center">Estos son los resultados de la entidad elegida </h5> 
        <table  border="1" width="520">
            
            <tr>
@@ -61,7 +62,7 @@
            <th colspan="2">GENERAL</th>
            <tr>
                <td>
-                   <b>  N&uacute;mero de encuestas llenadas del pa&iacute;s    </b>    
+                   <b>  N&uacute;mero de encuestas llenadas sobre la universidad    </b>    
                </td>
                <td>
                    <%=g.getencuestasg()%>
@@ -69,7 +70,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Secci&oacute;n 1 del pa&iacute;s   </b>     
+                   <b>  Promedio Secci&oacute;n 1 de la universidad  </b>     
                </td>
                <td>
                    <%=g.getavgg1()%>
@@ -77,7 +78,7 @@
            </tr>
            <tr>
                <td>
-                   <b>    Promedio Secci&oacute;n 2 del pa&iacute;s     </b>   
+                   <b>    Promedio Secci&oacute;n 2 de la universidad     </b>   
                </td>
                <td>
                    <%=g.getavgg2()%>
@@ -85,7 +86,7 @@
            </tr>
            <tr>
                <td>
-                   <b> Promedio Secci&oacute;n 3 del pa&iacute;s   </b>     
+                   <b> Promedio Secci&oacute;n 3 de la universidad   </b>     
                </td>
                <td>
                    <%=g.getavgg3()%>
@@ -93,7 +94,7 @@
            </tr>
            <tr>
                <td>
-                   <b> Promedio Secci&oacute;n 4 del pa&iacute;s   </b>     
+                   <b> Promedio Secci&oacute;n 4 de la universidad   </b>     
                </td>
                <td>
                    <%=g.getavgg4()%>
@@ -101,7 +102,7 @@
            </tr>
            <tr>
                <td>
-                   <b>   Promedio Total del pa&iacute;s </b>
+                   <b>   Promedio Total de la universidad </b>
                </td>
                <td>
                    <%=g.getavggt()%>
@@ -110,7 +111,7 @@
            <th colspan="2">CARRERA</th>
            <tr>
                <td>
-                   <b> N&uacute;mero de encuestas llenadas del pa&iacute;s </b>
+                   <b> N&uacute;mero de encuestas llenadas sobre la universidad </b>
                </td>
                <td>
                  <%=g.getencuestasc()%>
@@ -118,7 +119,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Secci&oacute;n 1 del pa&iacute;s    </b>    
+                   <b>  Promedio Secci&oacute;n 1 de la universidad    </b>    
                </td>
                <td>
                    <%=g.getavgc1()%>
@@ -126,7 +127,7 @@
            </tr>
            <tr>
                <td>
-                   <b>   Promedio Secci&oacute;n 2 del pa&iacute;s   </b>     
+                   <b>   Promedio Secci&oacute;n 2 de la universidad   </b>     
                </td>
                <td>
                    <%=g.getavgc2()%>
@@ -134,7 +135,7 @@
            </tr>
            <tr>
                <td>
-                   <b> Promedio Secci&oacute;n 3 del pa&iacute;s </b>        
+                   <b> Promedio Secci&oacute;n 3 de la universidad </b>        
                </td>
                <td>
                    <%=g.getavgc3()%>
@@ -142,7 +143,7 @@
            </tr>
            <tr>
                <td>
-                   <b>   Promedio Secci&oacute;n 4 del pa&iacute;s    </b>    
+                   <b>   Promedio Secci&oacute;n 4 de la universidad    </b>    
                </td>
                <td>
                    <%=g.getavgc4()%>
@@ -150,7 +151,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Total del pa&iacute;s </b> 
+                   <b>  Promedio Total de la universidad </b> 
                </td>
                <td>
                    <%=g.getavgct()%>

@@ -20,7 +20,7 @@
 <html:html lang="true">
 
     <h4 align ="center">Coordinaci&oacute;n</h4>
-    <h5 align ="center">Elija una universidad </h5>
+    <h5 align ="center">Elija un pa&iacute;s para filtrar la casa de estudio buscada.</h5>
 
     <script  src="/Intercambio-II/css/gestion.js"></script>
     

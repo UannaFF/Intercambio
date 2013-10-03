@@ -30,6 +30,8 @@
     <br><br><br>
     <br><br><br>
     <div id="muestrauni">
+        <h5 align ="center">Estos son los resultados de la naci&oacute;n elegida </h5>
+        
        <table  border="1" width="520">
            
            <tr>
@@ -99,7 +101,7 @@
                    <b> N&uacute;mero de encuestas llenadas del pa&iacute;s </b>
                </td>
                <td>
-                   <%=g.getencuestasg()%>
+                   <%=g.getencuestasc()%>
                </td>
            </tr>
            <tr>

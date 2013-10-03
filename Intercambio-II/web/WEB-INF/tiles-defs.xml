@@ -307,6 +307,10 @@
         <definition name="paisUniv" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/postulante/paisUniv.jsp" />
     </definition> 
+    
+           <definition name="avanzadaUniv" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/avanzadaUniv.jsp" />
+    </definition>
 
     <definition name="gestionPais" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/postulante/gestionPais.jsp" />
