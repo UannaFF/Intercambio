@@ -3,7 +3,13 @@
  * and open the template in the editor.
  */
 package Clases;
-import java.util.Random;
+import java.util.Random; 
+import org.apache.struts.action.ActionForm;  
+import javax.servlet.http.HttpServletRequest;  
+   
+import org.apache.struts.action.ActionErrors;  
+import org.apache.struts.action.ActionMapping;  
+import org.apache.struts.action.ActionMessage; 
 
 /**
  *
@@ -25,6 +31,13 @@ public class Usuario extends org.apache.struts.validator.ValidatorForm {
         super();
     }
 
+    public void reset(ActionMapping mapping, HttpServletRequest request)  
+  {  
+    super.reset(mapping,request);  
+    setNombreusuario("");
+    setConfirmar("");
+  }  
+    
     @Override
     public String toString() {
         return "Usuario{" + "nombreusuario=" + nombreusuario + ", contrasena=" + contrasena + ", confirmar=" + confirmar + ", nombre=" + nombre + ", email=" + email + ", privilegio=" + privilegio + '}';

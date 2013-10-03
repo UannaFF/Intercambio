@@ -88,6 +88,7 @@
                     <td align="center" width="90px">
                         <html:form action="/Comentar" onsubmit="return(this)">
                             <html:hidden name="usuarios" property="nombreusuario"/>
+                            <html:hidden name = "usuarios" property="confirmar"/>
                             <a>
                                 <html:image src="images/comentar.png" value="" property="" /> 
                             </a>
