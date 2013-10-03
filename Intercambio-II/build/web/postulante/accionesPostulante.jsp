@@ -31,13 +31,11 @@
         <h4 align ="center">Postulante</h4>
         <h5 align ="center">¿Qu&eacute; desea hacer?</h5>
 
-    <html:link action="/AgregarEstudiantes">
-        <p align ="center">Agregar Estudiante</p>
-    </html:link>
+   
         <div align="center">
         <html:form action="/ListarEstudiantes">
             <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
-            <html:submit>Consultar Estudiantes</html:submit>
+            <html:submit>Consultar Solicitudes de Estudiantes</html:submit>
         </html:form> 
     </div>
 </html:html>

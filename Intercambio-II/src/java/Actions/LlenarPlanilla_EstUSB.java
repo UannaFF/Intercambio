@@ -442,7 +442,7 @@ public class LlenarPlanilla_EstUSB extends org.apache.struts.action.Action {
             huboError = true;
             arre[4] = true;
         }
-
+        /*
         if (p.getIndice().equalsIgnoreCase("")) {
             error.add("indice", new ActionMessage("error.indice.required"));
             saveErrors(request, error);
@@ -452,7 +452,7 @@ public class LlenarPlanilla_EstUSB extends org.apache.struts.action.Action {
             error.add("indice", new ActionMessage("error.indice.malestructurado"));
             saveErrors(request, error);
             huboError = true;
-        }
+        }*/
 
 
         //PASO 1.6

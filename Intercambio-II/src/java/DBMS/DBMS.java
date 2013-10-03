@@ -678,6 +678,7 @@ public class DBMS {
             while (rs.next()) {
                 Usuario t = new Usuario();
                 t.setNombreusuario(rs.getString("nombreusuario"));
+                t.setConfirmar(rs.getString("comentario"));
                 usrs.add(t);
             }
 
