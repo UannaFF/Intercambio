@@ -37,16 +37,12 @@
     }
 </script>
 
-<html>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>SGI - Listar Estudiantes</title>
-
     <script language="JavaScript">
         function submitForm() { document.ObtenerDatos.submit(); }
     </script>
-
+<center>
     <h4>Lista de Estudiantes de la Carrera:</h4>
-    <div id="testTable">
+    <div id="testTable" style="width: 68%">
         <table  style="margin: auto" class="altrowstable" id="alternatecolor">
             <thead>
                 <tr>
@@ -99,4 +95,4 @@
             </logic:iterate>           
         </table>
     </div>
-</html>
+</center>
