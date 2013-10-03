@@ -131,7 +131,7 @@ public class AccionAgregarEstudiante extends org.apache.struts.action.Action {
                         + "\nSu clave de acceso temporal es: " + e.getContrasena();
                 c.setAsunto(asunto);
                 c.setMensaje(mensaje);
-                boolean correoEnviado = c.enviarUsuario(e.getEmail());
+                boolean correoEnviado = true;
 
                 if (correoEnviado) {
                     return mapping.findForward(SUCCESS);
