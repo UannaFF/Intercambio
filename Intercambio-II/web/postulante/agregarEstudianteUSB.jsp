@@ -20,7 +20,7 @@
         <h4>Postulaci&oacute;n de Nuevo Estudiante</h4>
         <h5>Por favor introduzca los datos del estudiante.</h5>
 
-        <html:form action="/AgregarEstudianteUsb" method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this)">
+        
             <table border="0" >
                 <tbody>
                     <tr>
@@ -50,65 +50,16 @@
                         </td>
                     </tr>
 
-                    <tr>
-                        <td style="color: black">Primer nombre</td>
-                        <td>
-                            <html:text name="EstUSB" property="pNombre" maxlength="30" errorStyleClass="error"
-                                       errorKey="org.apache.struts.action.ERROR"></html:text>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <html:errors property="nombres" />
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td style="color: black">Primer Apellido</td>       
-                        <td><html:text name="EstUSB" property="pApellido" maxlength="100" errorStyleClass="error"
-                                   errorKey="org.apache.struts.action.ERROR"></html:text>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <html:errors property="apellidos" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <td style="color: black">Carnet</td>       
-                        <td><html:text name="EstUSB" property="carnet" maxlength="100" errorStyleClass="error"
-                                   errorKey="org.apache.struts.action.ERROR"></html:text>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <html:errors property="apellidos" />
-                        </td>
-                    </tr>
-
-                    <tr hidden="true">
-                        <td style="color: black">Carrera</td>
-
-                        <td>
-                            <html:text name="EstUSB" property="carrera" value="<%=var.toString()%>" maxlength="100" errorStyleClass="error"
-                                       errorKey="org.apache.struts.action.ERROR"></html:text>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <html:errors property="carrera" />
-
-                        </td>
-                    </tr>
                 </tbody>
             </table>
 
             <p style="text-align: center">
-                <html:submit onclick="javascript: return confirm('¿Está seguro que los datos son correctos?')">
+                <html:submit onclick="javascript: return confirm('Un correo sera enviado al estudiante postulado')">
                     Postular Estudiante
                 </html:submit>
+ 
             </p>
-        </html:form>
+        
 
     </body>
 </html>
