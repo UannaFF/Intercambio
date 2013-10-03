@@ -4,7 +4,9 @@
  */
 package Actions;
 
+import Clases.PlanDeEstudio;
 import Clases.Usuario;
+import Clases.Idiomas;
 import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -57,8 +59,42 @@ public class ConsultarUsuario2 extends org.apache.struts.action.Action {
                 user.setConfirmar("Estudiante Ext");
             }
             
-            request.setAttribute("usuario", user);
-            
+           Clases.PlanillaUSB p = DBMS.getInstance().obtenerPlanillaUSB(user);
+        request.setAttribute("PlanillaUSB", p);
+        
+        ArrayList materias = new ArrayList();
+        ArrayList idiomas = new ArrayList();
+        ArrayList path = new ArrayList();
+ 
+            PlanDeEstudio plan = DBMS.getInstance().obtenerPlanDeEstudio(user);
+            Idiomas idio = DBMS.getInstance().obtenerIdiomas(user);
+   
+            for(int i=0; i< plan.listMateriaUSB.size(); i++)
+            {
+                materias.add("<td>"+plan.getMateriaUSB(i)+"</td>");
+                materias.add("<td>"+plan.getCodigoUSB(i)+"</td>");
+                materias.add("<td>"+plan.getCreditosUSB(i)+"</td>");
+                materias.add("<td>"+plan.getCodigoUniv(i)+"</td>");
+                materias.add("<td>"+plan.getMateriaUniv(i)+"</td>");
+                materias.add("<td>"+plan.getCreditosUniv(i)+"</td>");
+                materias.add("</tr><tr>");
+                
+            }
+             for(int i=0; i< idio.getListIdioma().size(); i++)
+            {
+                idiomas.add("<td>"+idio.getIdiomaDest(i)+"</td>");
+                idiomas.add("<td>"+idio.getNivelVerbal(i)+"</td>");
+                idiomas.add("<td>"+idio.getNivelEscrito(i)+"</td>");
+                idiomas.add("<td>"+idio.getNivelConversacional(i)+"</td>");
+                idiomas.add("<td>"+idio.getNivelAuditivo(i)+"</td>");
+                idiomas.add("</tr><tr>");
+                
+            }
+            request.setAttribute("materias", materias);
+            request.setAttribute("idiomas", idiomas);
+            String filePath = "Documentos/" + user.getNombre().toLowerCase() + "/Foto.png";
+            path.add(filePath);
+            request.setAttribute("dir", path);
             if(redi.equals("postulante")){
                 return mapping.findForward("postu");  
             }else if(redi.equals("gestor")){
