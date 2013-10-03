@@ -17,7 +17,7 @@
 
     <body onload ="clearForms()" onunload="clearForms()">
 
-        <h4>Postulacio&oacute;n de Nuevo Estudiante</h4>
+        <h4>Postulaci&oacute;n de Nuevo Estudiante</h4>
         <h5>Por favor introduzca los datos del estudiante.</h5>
 
         <html:form action="/AgregarEstudianteUsb" method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this)">
