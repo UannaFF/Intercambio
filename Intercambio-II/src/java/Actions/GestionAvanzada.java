@@ -57,7 +57,8 @@ public class GestionAvanzada extends org.apache.struts.action.Action {
         "Universidad de Tohoku", "Universidad Tecnológica de Nagaoka",
         "Instituto Tecnológico Superior de Cajeme (ITESCA)", "ITESM Monterrey", "Universidad Veracruzana",  "ITESM Monterrey ", "Universidad Autónoma Metropolitana",
         "NTNU- Trondheim",
-        "Universidad San Martín de Porres","Pontificia Universidad Católica del Perú ", "Universidad de Lima", "Universidad del Pacífico ", "Universidad Peruana Cayetano Heredia",        "PSML - POL - AGH Universidad de Ciencias y Tecnología",
+        "Universidad San Martín de Porres","Pontificia Universidad Católica del Perú ", "Universidad de Lima", "Universidad del Pacífico ", "Universidad Peruana Cayetano Heredia",       
+        "PSML - POL - AGH Universidad de Ciencias y Tecnología",
         "PSML - POR - Universidad Técnica de Lisboa",
         "Universidad de Panamá ",
         "Universidad Católica de Nuestra Señora de la Asunción",
@@ -108,6 +109,7 @@ public class GestionAvanzada extends org.apache.struts.action.Action {
         GestionUniversidad[] gestuniv = new GestionUniversidad[arrunis.length];
         for(int i=0; i<arrunis.length;i++){
         gestuniv[i] = DBMS.DBMS.getInstance().calcularavgunivGestion(u.getNombreusuario(), arrunis[i]);
+            
         gestuniv[i].setpais(paises[i]);
         gestuniv[i].setuniv(arrunis[i]);
         }
@@ -123,6 +125,7 @@ public class GestionAvanzada extends org.apache.struts.action.Action {
         
             mejorc[j]=gestuniv[j].getuniv();
             paisc[j]= gestuniv[j].getpais();
+            
             j++;
         }
         j=0;
@@ -132,7 +135,7 @@ public class GestionAvanzada extends org.apache.struts.action.Action {
         while(j<10){
         
             mejorg[j]=gestuniv[j].getuniv();
-            paisc[j]=gestuniv[j].getpais();
+            paisg[j]=gestuniv[j].getpais();
             j++;
         }
         
