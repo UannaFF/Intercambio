@@ -290,10 +290,10 @@
             </tr>
             
         </table>
-            <br><br><strong>FOTO DEL APLICANTE</strong><br>
+           <center> <br><br><strong>FOTO DEL APLICANTE</strong><br>
             <img src="<logic:iterate id="element" name="dir" >
                                        <bean:write filter='false' name="element" />
-                                </logic:iterate>" />
+                                </logic:iterate>" /></center>
             
 
 </html>
