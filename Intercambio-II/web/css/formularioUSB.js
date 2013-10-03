@@ -899,7 +899,7 @@
     
         var carrera_11=new Array("-Seleccione-", "Lic. Biología", "Lic. Física", "Lic. Matemática", "Lic. Química")
         var carrera_12=new Array("-Seleccione-", "Arquitectura", "Urbanismo")
-        var carrera_13=new Array("-Seleccione-", "Ing. Eléctrica", "Ing. Mecánica", "Ing. Química", "Ing. Computación", "Ing. Telecomunicaciones", "Ing. Mantenimiento", "Ing. Electrónica", "Ing. Geofísica", "Ing. Materiales", "Ing. Producción")
+        var carrera_13=new Array("-Seleccione-", "Ingenieria Electrica", "Ingenieria Mecanica", "Ingenieria Quimica", "Ingenieria de Computacion", "Ingenieria de Telecomunicaciones", "Ingenieria de Mantenimiento", "Ingenieria Electronica", "Ingenieria Geofisica", "Ingenieria de Materiales", "Ingenieria de Produccion")
         var carrera_14=new Array("-Seleccione-", "Lic. Gestión de la Hospitalidad", "Lic. Com. Internacional")
 
         var carrera_21=new Array("-Seleccione-", "TSU Tec. Electrónica", "TSU Tec. Mecánica", "TSU Mant. Aeronáutico")
@@ -1026,7 +1026,7 @@
             error=false;
             var string = document.getElementById(campo).value;
             var numero = parseFloat(string);
-            if(isNaN(numero)){
+            if(isNaN(string)){
                 document.getElementById(campo).style.background = "#FFCCE0";
                 error = true;
             }else{

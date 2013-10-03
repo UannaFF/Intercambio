@@ -25,8 +25,6 @@
     <h5 align ="center"> Recuerde no dejar en blanco los campos obligatorios</h5>
 
     <!-- LLENAR EL FORMULARIO DE DATOS -->
-    <div id="error">
-    </div>
     <script>
         var a= '<bean:write name="Usuario" property="nombre"></bean:write>'</script>
         <script>
@@ -51,18 +49,17 @@
         <div class="nav" style="text-align: center;">
             <a href="#" onclick=" if (true) show('datosplanilla'), hide('archivos'),hide('plan'),hide('idio')"> Formulario de Datos </a>
         </div>
-
+        
         <div id="datosplanilla" style="display: none; width:92%; margin-left: 8%">
 
             <h5>El siguiente formulario consta de 7 pasos, todos los campos son obligatorios</h5>
             <div>
                 <div align ="center">
-
-                <html:form action="/LlenarPlanilla_EstUSB"  method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this)">
+                <html:form styleId="planilla_EstUSB" action="/LlenarPlanilla_EstUSB"  method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this);">
                     <p hidden="true"><html:text name="PlanillaUSB" property="nombreUsuario" maxlength="20" errorStyleClass="error" value ="<%=var.toString()%>"
                                errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <br>
-
+                        <div id="error" style="color: #ff0000 !important; text-size: 14px"></div>
                         <div id="opci1" class="divformulario" style="display: block">
                             <br>
                             <span><a> Paso 1.1: </a><b><a style="text-decoration: underline">DATOS PERSONALES</a></b></span>
@@ -74,7 +71,7 @@
                                         <td style="font-weight: bold">Primer Apellido</td>
 
                                         <td>
-                                        <html:text name="PlanillaUSB" property="apellido1" maxlength="80" errorStyleClass="error"
+                                            <html:text styleId="apellido1" name="PlanillaUSB" property="apellido1" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
                                     </tr>
@@ -88,7 +85,7 @@
                                     <td style="font-weight: bold">Segundo Apellido</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="apellido2" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="apellido2" name="PlanillaUSB" property="apellido2" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
@@ -103,7 +100,7 @@
                                     <td style="font-weight: bold">Primer Nombre</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="nombre1" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="nombre1" name="PlanillaUSB" property="nombre1" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
@@ -118,7 +115,7 @@
                                     <td style="font-weight: bold">Segundo Nombre</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="nombre2" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="nombre2" name="PlanillaUSB" property="nombre2" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
@@ -134,7 +131,7 @@
                                     <td style="font-weight: bold">Fecha de Nacimiento</td>
 
                                     <td>
-                                        <input type="date" min="1980-01-01" name="fechaNacimiento" maxlength="80" errorStyleClass="error" />
+                                        <input id="fechaNacimiento" type="date" min="1980-01-01" max="1996-01-01" name="fechaNacimiento" maxlength="80" errorStyleClass="error" />
                                         <!--                               errorKey="org.apache.struts.action.ERROR" />-->
                                     </td>
 
@@ -149,8 +146,8 @@
                                     <td style="font-weight: bold">Género</td>
 
                                     <td>
-                                        <html:select property="sexo" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
-                                            <html:option value="">Seleccione</html:option>
+                                        <html:select styleId="sexo" property="sexo" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Femino">Femenino</html:option>
                                             <html:option value="Masculino">Masculino</html:option>
                                         </html:select>
@@ -168,7 +165,7 @@
                                     <td style="font-weight: bold">Nacionalidad</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="nacionalidad" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="nacionalidad" name="PlanillaUSB" property="nacionalidad" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -184,7 +181,7 @@
                                     <td style="font-weight: bold">Cédula de Identidad</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="cedula" maxlength="10" errorStyleClass="error"
+                                        <html:text styleId="cedula" name="PlanillaUSB" property="cedula" maxlength="10" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -199,7 +196,7 @@
                                 <tr>
                                     <td style="font-weight: bold">Nro Carnet Estudiantil</td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="carnet" maxlength="10" errorStyleClass="error"
+                                        <html:text styleId="carnet" name="PlanillaUSB" property="carnet" maxlength="10" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -235,7 +232,7 @@
                                     <td style="font-weight: bold">Urb / Sector / Barrio</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="urbanizacion" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="urbanizacion" name="PlanillaUSB" property="urbanizacion" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
                                     </tr>
@@ -249,7 +246,7 @@
                                     <td style="font-weight: bold">Calle</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="calle" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="calle" name="PlanillaUSB" property="calle" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
 
@@ -263,7 +260,7 @@
                                     <td style="font-weight: bold">Edificio / Casa </td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="edificio" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="edificio" name="PlanillaUSB" property="edificio" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
                                     </tr>
@@ -276,7 +273,7 @@
                                     <td style="font-weight: bold">Apartamento / Núm. Casa</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="apartamento" maxlength="80" errorStyleClass="error"
+                                        <html:text styleId="apartamento" name="PlanillaUSB" property="apartamento" maxlength="80" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR"></html:text>
                                         </td>
                                     </tr>
@@ -291,7 +288,7 @@
                                     <td style="font-weight: bold">Ciudad</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="ciudad"  maxlength="30" errorStyleClass="error"
+                                        <html:text styleId="ciudad" name="PlanillaUSB" property="ciudad"  maxlength="30" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -307,7 +304,7 @@
                                     <td style="font-weight: bold">Estado</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="estado" maxlength="30" errorStyleClass="error"
+                                        <html:text styleId="estado" name="PlanillaUSB" property="estado" maxlength="30" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -320,10 +317,10 @@
 
                                 <tr>
 
-                                    <td style="font-weight: bold">Código Postal</td>
+                                    <td style="font-weight: bold">Código Postal<font size="1"> (Formato numerico)</font></td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="codPostal"  maxlength="30" errorStyleClass="error"
+                                        <html:text styleId="codPostal" name="PlanillaUSB" property="codPostal"  maxlength="30" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -357,10 +354,10 @@
 
                                 <tr>
 
-                                    <td style="font-weight: bold"> Teléfono celular:</td>
+                                    <td style="font-weight: bold"> Teléfono celular<font size="1"> (Formato numerico)</font>:</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="telefonoCelular" maxlength="15" errorStyleClass="error"
+                                        <html:text styleId="telefonoCelular" name="PlanillaUSB" property="telefonoCelular" maxlength="15" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -373,10 +370,10 @@
 
                                 <tr>
 
-                                    <td style="font-weight: bold"> Teléfono fijo:</td>
+                                    <td style="font-weight: bold"> Teléfono fijo<font size="1"> (Formato numerico)</font>:</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="telefonoCasa" maxlength="15" errorStyleClass="error"
+                                        <html:text styleId="telefonoCasa" name="PlanillaUSB" property="telefonoCasa" maxlength="15" errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -394,7 +391,7 @@
                                     <td style="font-weight: bold"> E-mail:</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="email" maxlength="45"  errorStyleClass="error"
+                                        <html:text styleId="email" name="PlanillaUSB" property="email" maxlength="45"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -435,7 +432,7 @@
                                     <td style="font-weight: bold"> Nombre de Programa: </td>
                                     <td>
                                         <html:select styleId="prog_princ" onchange="cambia_pais();cambiar_link1()" property="nombreProgramaOpcion1"> 
-                                            <html:option value="0">Seleccione </html:option>
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Bilaterales">Convenios Bilaterales </html:option>
                                             <html:option value="SMILE">Programa SMILE </html:option>
                                             <html:option value="CINDA">Programa de Movilidad Estudiantil CINDA </html:option>
@@ -460,7 +457,7 @@
                                     <td style="font-weight: bold"> País Destino: </td>
                                     <td>
                                         <html:select styleId="pais_princ" onchange="cambia_universidad()" property="paisOpcion1"> 
-                                            <html:option value="-">- </html:option>
+                                            <html:option value="" >-</html:option>
                                         </html:select>
                                     </td>
                                 </tr>
@@ -474,7 +471,7 @@
                                     <td style="font-weight: bold"> Universidad Destino: </td>
                                     <td>
                                         <html:select styleId="uni_princ" property="nombreOpcion1"> 
-                                            <html:option value="-">- </html:option>
+                                            <html:option value="" >- </html:option>
                                         </html:select>
                                     </td>
                                 </tr>
@@ -487,8 +484,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Tipo de Programa: </td>
                                     <td>
-                                        <html:select  property="programaOpcion1">
-                                            <html:option value="Seleccione"></html:option>
+                                        <html:select styleId="programaOpcion1" property="programaOpcion1">
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Intercambio Académico (sólo Asignaturas)"></html:option>
                                             <html:option value="Intercambio Académico + Pasantía Internacional"></html:option>
                                             <html:option value="Intercambio Académico + Trabajo de Grado"></html:option>
@@ -505,8 +502,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Inicio: </td>
                                     <td>
-                                        <html:select  property="mesFechaIni1">
-                                            <html:option value="Mes"></html:option>
+                                        <html:select styleId="mesFechaIni1" property="mesFechaIni1">
+                                            <html:option value="">-Mes-</html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
                                             <html:option value="Marzo"></html:option>
@@ -520,8 +517,8 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select  property="anoFechaIni1">
-                                            <html:option value="Año"></html:option>
+                                        <html:select styleId="anoFechaIni1" property="anoFechaIni1">
+                                            <html:option value="">-Año-</html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
                                             <html:option value="2016"></html:option>
@@ -536,8 +533,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Fin: </td>
                                     <td>
-                                        <html:select  property="mesFechaFin1">
-                                            <html:option value="Mes"></html:option>
+                                        <html:select styleId="mesFechaFin1" property="mesFechaFin1">
+                                            <html:option value="">-Mes-</html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
                                             <html:option value="Marzo"></html:option>
@@ -551,8 +548,8 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select  property="anoFechaFin1">
-                                            <html:option value="Año"></html:option>
+                                        <html:select  styleId="anoFechaFin1" property="anoFechaFin1">
+                                            <html:option value="">-Año-</html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
                                             <html:option value="2016"></html:option>
@@ -567,8 +564,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Duración: </td>
                                     <td>
-                                        <html:select  property="duracionProgramaOpcion1">
-                                            <html:option value="Seleccione"></html:option>
+                                        <html:select styleId="duracionProgramaOpcion1" property="duracionProgramaOpcion1">
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Un Trimestre"></html:option>
                                             <html:option value="Dos Trimestres"></html:option>
                                             <html:option value="Año Académico"></html:option>
@@ -588,7 +585,7 @@
                                     <td style="font-weight: bold"> Nombre de Programa: </td>
                                     <td>
                                         <html:select styleId="prog_princ2" onchange="cambia_pais2();cambiar_link2()" property="nombreProgramaOpcion2"> 
-                                            <html:option value="0">Seleccione </html:option>
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Bilaterales">Convenios Bilaterales </html:option>
                                             <html:option value="SMILE">Programa SMILE </html:option>
                                             <html:option value="CINDA">Programa de Movilidad Estudiantil CINDA </html:option>
@@ -613,7 +610,7 @@
                                     <td style="font-weight: bold"> País Destino: </td>
                                     <td>
                                         <html:select styleId="pais_princ2" onchange="cambia_universidad2()" property="paisOpcion2"> 
-                                            <html:option value="-">-</html:option>
+                                            <html:option value="">-</html:option>
                                         </html:select>
                                     </td>
                                 </tr>
@@ -627,7 +624,7 @@
                                     <td style="font-weight: bold"> Universidad Destino: </td>
                                     <td>
                                         <html:select styleId="uni_princ2" property="nombreOpcion2"> 
-                                            <html:option value="-">- </html:option>
+                                            <html:option value="">-</html:option>
                                         </html:select>
                                     </td>
                                 </tr>
@@ -640,8 +637,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Tipo de Programa: </td>
                                     <td>
-                                        <html:select  property="programaOpcion2">
-                                            <html:option value="Seleccione"></html:option>
+                                        <html:select styleId="programaOpcion2" property="programaOpcion2">
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Intercambio Académico (sólo Asignaturas)"></html:option>
                                             <html:option value="Intercambio Académico + Pasantía Internacional"></html:option>
                                             <html:option value="Intercambio Académico + Trabajo de Grado"></html:option>
@@ -658,8 +655,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Inicio: </td>
                                     <td>
-                                        <html:select  property="mesFechaIni2">
-                                            <html:option value="Mes"></html:option>
+                                        <html:select styleId="mesFechaIni2" property="mesFechaIni2">
+                                            <html:option value="">-Mes-</html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
                                             <html:option value="Marzo"></html:option>
@@ -673,8 +670,8 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select  property="anoFechaIni2">
-                                            <html:option value="Año"></html:option>
+                                        <html:select  styleId="anoFechaIni2" property="anoFechaIni2">
+                                            <html:option value="">-Año-</html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
                                             <html:option value="2016"></html:option>
@@ -689,8 +686,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Fecha Tentativa Fin: </td>
                                     <td>
-                                        <html:select  property="mesFechaFin2">
-                                            <html:option value="Mes"></html:option>
+                                        <html:select styleId="mesFechaFin2" property="mesFechaFin2">
+                                            <html:option value="">-Mes-</html:option>
                                             <html:option value="Enero"></html:option>
                                             <html:option value="Febrero"></html:option>
                                             <html:option value="Marzo"></html:option>
@@ -704,8 +701,8 @@
                                             <html:option value="Noviembre"></html:option>
                                             <html:option value="Diciembre"></html:option>
                                         </html:select>
-                                        <html:select  property="anoFechaFin2">
-                                            <html:option value="Año"></html:option>
+                                        <html:select styleId="anoFechaFin2" property="anoFechaFin2">
+                                            <html:option value="">-Año-</html:option>
                                             <html:option value="2014"></html:option>
                                             <html:option value="2015"></html:option>
                                             <html:option value="2016"></html:option>
@@ -720,8 +717,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Duración: </td>
                                     <td>
-                                        <html:select  property="duracionProgramaOpcion2">
-                                            <html:option value="Seleccione"></html:option>
+                                        <html:select styleId="duracionProgramaOpcion2" property="duracionProgramaOpcion2">
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="Un Trimestre"></html:option>
                                             <html:option value="Dos Trimestres"></html:option>
                                             <html:option value="Año Académico"></html:option>
@@ -758,7 +755,7 @@
                                     <td style="font-weight: bold"> Decanato: </td>
                                     <td>
                                         <html:select styleId="dec" onchange="cambia_area()" property="decanato"> 
-                                            <html:option value="0">Seleccione</html:option>
+                                            <html:option value="">-Seleccione-</html:option>
                                             <html:option value="1"> Decanato de Estudios Profesionales</html:option>
                                             <html:option value="2"> Decanato de Estudios Tecnológicos </html:option>
                                         </html:select>
@@ -774,7 +771,7 @@
                                     <td style="font-weight: bold"> Área de Estudio: </td>
                                     <td>
                                         <html:select styleId="area" onchange="cambia_carrera()" property="areaEstud"> 
-                                            <html:option value="-">- </html:option>
+                                            <html:option value="">-</html:option>
                                         </html:select>
                                     </td>
                                 </tr>                        
@@ -787,8 +784,8 @@
                                 <tr>
                                     <td style="font-weight: bold"> Carrera: </td>
                                     <td>
-                                        <html:select styleId="carr" property="carrera"> 
-                                            <html:option value="-">- </html:option>
+                                        <html:select styleId="carrera" property="carrera"> 
+                                            <html:option value="">-</html:option>
                                         </html:select>
                                     </td>
                                 </tr>                                       
@@ -802,7 +799,7 @@
                                     <td style="font-weight: bold"> Número de Créditos Aprobados Hasta la Fecha</td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="creditosApro" maxlength="60"  errorStyleClass="error"
+                                        <html:text styleId="creditosApro" name="PlanillaUSB" property="creditosApro" maxlength="60"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -817,7 +814,7 @@
                                     <td style="font-weight: bold"> Índice Académico: </td>
 
                                     <td>
-                                        <html:text name="PlanillaUSB" property="indice" maxlength="60"  errorStyleClass="error"
+                                        <html:text styleId="indice" name="PlanillaUSB" property="indice" maxlength="60"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -850,8 +847,8 @@
                             <tbody>
                                 <tr>
                                     <td style="font-weight: bold"> Principal Fuente de Ingresos: </td>
-                                    <td><html:select name="PlanillaUSB" property="fuenteFinanciamiento">
-                                            <html:option value="Seleccione"></html:option>
+                                    <td><html:select styleId="fuenteFinanciamiento" name="PlanillaUSB" property="fuenteFinanciamiento">
+                                            <html:option value="-Seleccione-"></html:option>
                                             <html:option value="Personal"></html:option>
                                             <html:option value="Familiar"></html:option>
                                             <html:option value="Otro"></html:option>
@@ -866,7 +863,7 @@
                                 <tr>
                                     <td>
                                         Especifique:
-                                        <html:text name="PlanillaUSB" property="descripcion1" maxlength="60"  errorStyleClass="error"
+                                        <html:text styleId="descripcion1" name="PlanillaUSB" property="descripcion1" maxlength="60"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>     
                                     </td>
@@ -878,8 +875,8 @@
                                 </tr>
                                 <tr>
                                     <td style="font-weight: bold"> ¿Recibe algún tipo de ayuda económica?: </td>
-                                    <td><html:select name="PlanillaUSB" property="ayudaEc">
-                                            <html:option value="Seleccione"></html:option>
+                                    <td><html:select styleId="ayudaEc" name="PlanillaUSB" property="ayudaEc">
+                                            <html:option value="-Seleccione-"></html:option>
                                             <html:option value="Si"></html:option>
                                             <html:option value="No"></html:option>
                                         </html:select>
@@ -893,7 +890,7 @@
                                 <tr>
                                     <td>
                                         Especifique:
-                                        <html:text name="PlanillaUSB" property="descripcion2" maxlength="60"  errorStyleClass="error"
+                                        <html:text styleId="descripcion2" name="PlanillaUSB" property="descripcion2" maxlength="60"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text> 
                                     </td>                    
@@ -928,7 +925,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Apellidos: </td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="apellidosRep" maxlength="80"  errorStyleClass="error"
+                                        <html:text styleId="apellidosRep" name="PlanillaUSB" property="apellidosRep" maxlength="80"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -942,7 +939,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Nombres: </td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="nombresRep" maxlength="80"  errorStyleClass="error"
+                                        <html:text styleId="nombresRep" name="PlanillaUSB" property="nombresRep" maxlength="80"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -955,7 +952,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Teléfono Celular: </td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="celRep" maxlength="80"  errorStyleClass="error"
+                                        <html:text styleId="celRep" name="PlanillaUSB" property="celRep" maxlength="80"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -968,7 +965,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Teléfono Casa: </td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="tlfRepCasa" maxlength="80"  errorStyleClass="error"
+                                        <html:text styleId="tlfRepCasa" name="PlanillaUSB" property="tlfRepCasa" maxlength="80"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -981,7 +978,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> E-mail: </td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="emailRep" maxlength="80"  errorStyleClass="error"
+                                        <html:text styleId="emailRep" name="PlanillaUSB" property="emailRep" maxlength="80"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -994,7 +991,7 @@
                                 <tr>
                                     <td style="font-weight: bold"> Relación con el Estudiante: </td>
                                     <td>
-                                        <html:text name="PlanillaUSB" property="relacion" maxlength="80"  errorStyleClass="error"
+                                        <html:text styleId="relacion" name="PlanillaUSB" property="relacion" maxlength="80"  errorStyleClass="error"
                                                    errorKey="org.apache.struts.action.ERROR">
                                         </html:text>
                                     </td>
@@ -1010,7 +1007,7 @@
                                     <td style="font-weight: bold">Dirección: </td>
 
                                     <td>
-                                        <html:textarea name="PlanillaUSB" property="direccionRep" cols="20" rows="7"  errorStyleClass="error"
+                                        <html:textarea styleId="direccionRep" name="PlanillaUSB" property="direccionRep" cols="20" rows="7"  errorStyleClass="error"
                                                        errorKey="org.apache.struts.action.ERROR">
                                         </html:textarea >
                                     </td>
@@ -1027,7 +1024,8 @@
                         <span style="float: left"><a class="button"  href='javascript:seleccion(6);'> Anterior </a></span>
                         <br>
                         <p  align=center>
-                            <html:submit> GUARDAR  </html:submit>
+                            <span><a class="button" href='javascript:seleccion(8);'> Guardar </a></span>
+                            <html:submit style="display:none;" value="guardar"> GUARDAR  </html:submit>
                             </p> 
                         </div>                
 
