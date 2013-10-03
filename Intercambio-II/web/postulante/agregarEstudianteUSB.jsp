@@ -17,8 +17,8 @@
 
     <body onload ="clearForms()" onunload="clearForms()">
 
-        <h4>Creaci&oacute;n de Nuevo Estudiante</h4>
-        <h5>Por favor introduzca los datos del nuevo usuario.</h5>
+        <h4>Postulacio&oacute;n de Nuevo Estudiante</h4>
+        <h5>Por favor introduzca los datos del estudiante.</h5>
 
         <html:form action="/AgregarEstudianteUsb" method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this)">
             <table border="0" >
@@ -105,7 +105,7 @@
 
             <p style="text-align: center">
                 <html:submit onclick="javascript: return confirm('¿Está seguro que los datos son correctos?')">
-                    Agregar Estudiante
+                    Postular Estudiante
                 </html:submit>
             </p>
         </html:form>
