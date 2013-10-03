@@ -19,10 +19,10 @@
         </script>
 
         <h4>Informaci&oacute;n de Usuario</h4>
-        <br/><br/><strong><span style='font-size: 20px'>Solicitud de <bean:write name = "PlanillaUSB" property="nombre1"/> <bean:write name = "PlanillaUSB" property="nombre2"/> <bean:write name = "PlanillaUSB" property="apellido1"/> <bean:write name = "PlanillaUSB" property="apellido2"/>
-            </strong>
-        <br/><br/><strong>DATOS PERSONALES</strong><br/>
-        <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+        <br/><br/><center><strong><span style='font-size: 20px'>Solicitud de <bean:write name = "PlanillaUSB" property="nombre1"/> <bean:write name = "PlanillaUSB" property="nombre2"/> <bean:write name = "PlanillaUSB" property="apellido1"/> <bean:write name = "PlanillaUSB" property="apellido2"/>
+            </strong></center>
+        <br/><br/><center><strong>DATOS PERSONALES</strong></center><br/>
+        <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>Género</td>
                 <td><bean:write name = "PlanillaUSB" property="sexo"/></td>
@@ -61,8 +61,8 @@
             </tr>
             
         </table>
-            <br/><br/><strong>DOMICILIO ACTUAL</strong><br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+            <br/><br/><center><strong>DOMICILIO ACTUAL</strong></center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>Urb/Sector/Barrio</td>
                 <td><bean:write name = "PlanillaUSB" property="urbanizacion"/></td>
@@ -94,8 +94,8 @@
             <tr>
             
         </table>
-             <br/><br/><strong>IDENTIFICACIÓN DEL PROGRAMA Y LAPSO DE ESTUDIO EN INTERCAMBIO</strong><br/>Primera Opción
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+            <br/><br/><center><strong>IDENTIFICACIÓN DEL PROGRAMA Y LAPSO DE ESTUDIO EN INTERCAMBIO</strong><br/>Primera Opción</center>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>País de Destino</td>
                 <td><bean:write name = "PlanillaUSB" property="paisOpcion1"/></td>
@@ -126,8 +126,8 @@
             </tr>
             
         </table>
-            <br/><br/>Segunda Opción<br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+            <br/><br/><center>Segunda Opción</center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>País de Destino</td>
                 <td><bean:write name = "PlanillaUSB" property="paisOpcion2"/></td>
@@ -158,8 +158,8 @@
             </tr>
             
         </table>
-             <br/><br/><strong>INFORMACIÓN ACADÉMICA</strong><br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+             <br/><br/><center><strong>INFORMACIÓN ACADÉMICA</strong></center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>Decanato</td>
                 <td><bean:write name = "PlanillaUSB" property="decanato"/></td>
@@ -190,8 +190,8 @@
             </tr>
             
         </table>
-            <br/><br/><strong>PLAN DE ESTUDIO TENTATIVO</strong><br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+            <br/><br/><center><strong>PLAN DE ESTUDIO TENTATIVO</strong></center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
 
                                 <tr>
                                     <td> Nombre-USB
@@ -217,8 +217,8 @@
                                 </tr>
 
                     </table>
-            <br/><br/><strong>CONOCIMIENTO DE IDIOMAS</strong><br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+            <br/><br/><center><strong>CONOCIMIENTO DE IDIOMAS</strong></center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
 
                                 <tr>
                                     <td> Idioma
@@ -242,8 +242,8 @@
                                 </tr>
 
                     </table>
-            <br/><br/><strong>FUENTE DE FINANCIAMIENTO DEL ESTUDIANTE</strong><br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+            <br/><br/><center><strong>FUENTE DE FINANCIAMIENTO DEL ESTUDIANTE</strong></center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>Principal Fuente de Ingresos</td>
                 <td><bean:write name = "PlanillaUSB" property="fuenteFinanciamiento"/></td>
@@ -262,8 +262,8 @@
             </tr>
             
         </table>
-             <br/><br/><strong>DATOS DE CONTACTO EN CASO DE EMERGENCIA</strong><br/>
-            <table border=1 cellspacing=0 cellpadding=2 style="width:90%;">
+             <br/><br/><center><strong>DATOS DE CONTACTO EN CASO DE EMERGENCIA</strong></center><br/>
+            <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>Nombre Contacto</td>
                 <td><bean:write name = "PlanillaUSB" property="nombresRep"/> <bean:write name = "PlanillaUSB" property="apellidosRep"/></td>
