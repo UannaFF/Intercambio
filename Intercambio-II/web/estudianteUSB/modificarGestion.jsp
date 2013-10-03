@@ -16,7 +16,7 @@
 <%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
 
- <title>Sistema de Gesti&oacute;n de Intercambio</title>
+<title>Sistema de Gesti&oacute;n de Intercambio</title>
 <html:html lang="true">
 
     <h4 align ="center">Estudiante USB</h4>
