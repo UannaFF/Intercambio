@@ -40,6 +40,8 @@
         <tr> <td>   
 
      <html:form  action="/GestionporPais" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+                     <p hidden="true"><html:text name="GestionUniversidad" property="pais" maxlength="20" errorStyleClass="error" value ="0"
+                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
  
             <p style="text-align: center">
             <html:submit >
@@ -54,10 +56,15 @@
   
         
     <html:form  action="/GestionporUniv" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
-       
+        
+        
+       <p hidden="true"><html:text name="GestionUniversidad" property="pais" maxlength="20" errorStyleClass="error" value ="0"
+                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
+       <p hidden="true"><html:text name="GestionUniversidad" property="univ" maxlength="20" errorStyleClass="error" value ="-"
+                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
               
                           <p style="text-align: center">
-                            <html:submit >
+                              <html:submit>
                                 Por Universidad
                             </html:submit>
                         </p>    
@@ -72,7 +79,7 @@
     <html:form  action="/GestionAvanzada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
                      
             <p style="text-align: center">
-                <html:submit>
+                <html:submit disabled="true">
                     B&uacute;squeda Avanzada
                 </html:submit>
            </p>

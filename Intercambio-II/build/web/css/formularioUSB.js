@@ -423,46 +423,208 @@
             document.getElementById(target).style.display = 'none';
         }
 
-        function seleccion(opc)
-        {
-            //escondemos todos los contenidos
-            document.getElementById("opci1").style.display="none";
-            document.getElementById("opci2").style.display="none";
-            document.getElementById("opci3").style.display="none";
-            document.getElementById("opci4").style.display="none";
-            document.getElementById("opci5").style.display="none";
-            document.getElementById("opci6").style.display="none";
-            document.getElementById("opci7").style.display="none";
-            switch(opc)
-            {
+        function seleccion(opc){
+            var Error;
+            var ErrorInscripcion = false;
+            var MensajeError;
+            switch(opc){
                 case 1:
                     //mostramos elcontenido de la primera opcion
-                    document.getElementById("opci1").style.display="block";
+                        document.getElementById("opci2").style.display="none";
+                        document.getElementById("opci1").style.display="block";
                     break;
                 case 2:
+                    
+                    document.getElementById("opci3").style.display="none";
                     //mostramos elcontenido de la segunda opcion
-                    document.getElementById("opci2").style.display="block";
+                    
+                    Error = Necesario('apellido1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('apellido2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nombre1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nombre2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('fechaNacimiento');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('sexo');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nacionalidad');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('cedula');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('carnet');
+                    if (Error===true) ErrorInscripcion = true;
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                     
+                    }else{
+                        document.getElementById("opci2").style.display="block";
+                        document.getElementById("opci1").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                    }
+              
                     break;
                 case 3:
                     //mostramos elcontenido de la tercera opcion
-                    document.getElementById("opci3").style.display="block";
+                    document.getElementById("opci4").style.display="none";
+                    Error = Necesario('urbanizacion');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('calle');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('edificio');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('apartamento');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('ciudad');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('estado');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('codPostal');
+                    if (Error===true) ErrorInscripcion = true;
+                
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                     
+                    }else{
+                        document.getElementById("opci3").style.display="block";
+                        document.getElementById("opci2").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                    }
                     break;
                 case 4:
                     //mostramos elcontenido de la tercera opcion
-                    document.getElementById("opci4").style.display="block";
+                    document.getElementById("opci5").style.display="none";
+                    Error = Necesario('telefonoCelular');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('telefonoCasa');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('email');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = CompruebaEmail('email');
+                    if (Error===true){ 
+                        ErrorInscripcion = true;
+                        MensajeError = "Introduzca un correo válido<br/>";
+                    }
+                   
+                    if(ErrorInscripcion===true) {
+			MensajeError = MensajeError + "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                     
+                    }else{
+                        document.getElementById("opci4").style.display="block";
+                        document.getElementById("opci3").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                    }
                     break;
                 case 5:
-                    //mostramos elcontenido de la tercera opcion
-                    document.getElementById("opci5").style.display="block";
+                    document.getElementById("opci6").style.display="none";
+                    Error = Necesario('prog_princ');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('pais_princ');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('uni_princ');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('programaOpcion1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('mesFechaIni1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('anoFechaIni1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('mesFechaFin1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('anoFechaFin1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('duracionProgramaOpcion1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('prog_princ2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('pais_princ2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('uni_princ2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('programaOpcion2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('mesFechaIni2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('anoFechaIni2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('mesFechaFin2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('anoFechaFin2');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('duracionProgramaOpcion2');
+                    if (Error===true) ErrorInscripcion = true;
+                   
+                   
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                     
+                    }else{
+                        document.getElementById("opci5").style.display="block";
+                        document.getElementById("opci4").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                    }
                     break;
                 case 6:
-                    //mostramos elcontenido de la tercera opcion
-                    document.getElementById("opci6").style.display="block";
+                     //mostramos elcontenido de la tercera opcion
+                    document.getElementById("opci7").style.display="none";
+                    Error = Necesario('dec');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('area');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('carrera');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('creditosApro');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('indice');
+                    if (Error===true) ErrorInscripcion = true;
+                   
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                     
+                    }else{
+                        document.getElementById("opci6").style.display="block";
+                        document.getElementById("opci5").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                    }
                     break;
                 case 7:
+                    
                     //mostramos elcontenido de la tercera opcion
-                    document.getElementById("opci7").style.display="block";
-                    break;                            
+                    
+                    Error = Necesario('fuenteFinanciamiento');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('descripcion1');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('ayudaEc');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('descripcion2');
+                    if (Error===true) ErrorInscripcion = true;
+                   
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                     
+                    }else{
+                        document.getElementById("opci7").style.display="block";
+                        document.getElementById("opci6").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                    }
+                    break;  
+                  
+                
             }
         }
 
@@ -656,18 +818,91 @@
             if (decanato != 0) { 
                 mis_carreras=eval("carrera_" + decanato + areas) 
                 num_carreras = mis_carreras.length 
-                document.getElementById("carr").length = num_carreras
+                document.getElementById("carrera").length = num_carreras
                 for(i=0;i<num_carreras;i++){ 
-                    document.getElementById("carr").options[i].value=mis_carreras[i] 
-                    document.getElementById("carr").options[i].text=mis_carreras[i] 
+                    document.getElementById("carrera").options[i].value=mis_carreras[i] 
+                    document.getElementById("carrera").options[i].text=mis_carreras[i] 
                 } 
             }else{ 
                 //si no había provincia seleccionada, elimino las universidades del select 
-                document.getElementById("carr").length = 1 
-                document.getElementById("carr").options[0].value = "-" 
-                document.getElementById("carr").options[0].text = "-" 
+                document.getElementById("carrera").length = 1 
+                document.getElementById("carrera").options[0].value = "-" 
+                document.getElementById("carrera").options[0].text = "-" 
             } 
             //marco como seleccionada la opción primera de provincia 
-            document.getElementById("carr").options[0].selected = true 
+            document.getElementById("carrera").options[0].selected = true 
         }
          
+         /*FUNCIONES PARA VERIFICAR LOS CAMPOS
+         * REALIZADAS POR: FRANCO NORI G.
+         */
+        /*Funcion que verifica si el campo es necesario y lo modifica dependiendo de si esta vacio*/
+        function Necesario(campo){
+                error = false;
+                string = trim(document.getElementById(campo).value);
+                if((string==="") || (string==="-") || (string==="0")){
+                        error = true;
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                }else{
+                        error = false;
+                        document.getElementById(campo).style.background = "#FFFFFF";	
+                }
+                return error;
+        }
+        /*Funcion que elimina los espacios en blanco de un string*/
+        function trim(myString){
+                return myString.replace(/^\s+/g,'').replace(/\s+$/g,'')
+        }
+        /*Funcion que verifica el formato de un email*/
+        function CompruebaEmail(campo){
+                error = false;
+                var validRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var strEmail = document.getElementById(campo).value;
+                if (strEmail.length > 0) {
+                        if(strEmail.search(validRegExp)==-1) {
+                                error = true;
+                                document.getElementById(campo).style.background = "#FFCCE0";
+                                return error
+                        }
+                        document.getElementById(campo).style.background = "#FFFFFF";
+                }else{
+                        error = true;	
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                }
+                return error;
+        }
+        /*Funcion que verifica que la clave no contenga caracteres raros*/
+        function claveValida(campo,min,max){
+                var clave = document.getElementById(campo).value;
+                var alphaExp = /\s/gi;
+                if(clave.length >= min && clave.length <= max && !clave.match(alphaExp)){
+                        document.getElementById(campo).style.background = "#FFFFFF";
+                        return true;
+                }else{
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                        return false;	
+                }
+        }
+        /*Funcion que verifica que el campo sea valido*/
+        function campoValido(campo,min,max){
+                error = false;
+                var objeto = document.getElementById(campo).value;
+                var alphaExp = /\@|\'|\#|\$|\%|\;|drop|insert|create|delete|update/gi;
+                if(objeto.length >= min && objeto.length <= max && !objeto.match(alphaExp)){
+                        error=false;
+                        document.getElementById(campo).style.background = "#FFFFFF";
+                        return true;
+                }else{
+                        document.getElementById(campo).style.background = "#FFCCE0";
+                        error = true;
+                        return false;
+                }
+        }
+        /*Funcion que verifica que la fecha sea al menos 17 anios mayor al anio
+         * actual*/
+        function fechaValida(campo){
+            error = false;
+            var fecha = document.getElementById(campo);
+            fecha = Date(fecha);
+            var hoy = new Date();
+        }

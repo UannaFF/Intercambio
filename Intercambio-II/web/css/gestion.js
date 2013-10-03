@@ -25,12 +25,11 @@
         var uni_Japón=new Array("Seleccione", "Universidad de Tohoku", "Universidad Tecnológica de Nagaoka")
         var uni_México=new Array("Seleccione", "Instituto Tecnológico Superior de Cajeme (ITESCA)", "ITESM Monterrey", "Universidad Veracruzana",  "ITESM Monterrey ", "Universidad Autónoma Metropolitana")
         var uni_Noruega=new Array("Seleccione", "NTNU- Trondheim")
-        var uni_Perú=new Array("Seleccione", "Universidad San Martín de Porres")
+        var uni_Perú=new Array("Seleccione", "Universidad San Martín de Porres","Pontificia Universidad Católica del Perú ", "Universidad de Lima", "Universidad del Pacífico ", "Universidad Peruana Cayetano Heredia")
         var uni_Polonia=new Array("Seleccione", "PSML - POL - AGH Universidad de Ciencias y Tecnología")
         var uni_Portugal=new Array("Seleccione", "PSML - POR - Universidad Técnica de Lisboa")        
         var uni_Panamá=new Array("Seleccione", "Universidad de Panamá ")
         var uni_Paraguay=new Array("Seleccione", "Universidad Católica de Nuestra Señora de la Asunción")
-        var uni_Perú=new Array("Seleccione", "Pontificia Universidad Católica del Perú ", "Universidad de Lima", "Universidad del Pacífico ", "Universidad Peruana Cayetano Heredia")
         var uni_PuertoRico=new Array("Seleccione", "Universidad de Puerto Rico")
         var uni_ReinoUnido=new Array("Seleccione", "Universidad de Ulster")
         var uni_RepúblicaCheca=new Array("Seleccione", "PSML - RPC - Universidad Técnica Checa en Praga")
@@ -76,4 +75,143 @@
          alert(univ);   
         }
         
-       
+
+        function gestionnocompleta(){
+            
+          var i=0
+          var respondida = false
+          var correcto= true
+        while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p1[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p2[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p3[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p4[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p5[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p6[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p7[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p8[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p9[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p10[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p11[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p12[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p13[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p14[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p15[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+                while((i<6)&&(!(respondida))&&(correcto)){
+            if(document.forms[0].p16[i].checked) respondida = true;
+           i++; 
+        }
+        i=0;
+        correcto=respondida;
+        respondida = false;
+        
+        
+            
+        if((!(correcto)) || (document.getElementById("pais_princG")[document.getElementById("pais_princG").selectedIndex].value == 0)
+           || (document.getElementById("uni_princG")[document.getElementById("uni_princG").selectedIndex].value == "Seleccione"))
+       { 
+           
+                   alert ("Es necesario que toda la encuesta este completa.");
+                   return false;
+            
+           }
+           
+             
+         return true;
+        }
+        
+        
+
+        
+
+        
+          

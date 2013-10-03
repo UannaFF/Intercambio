@@ -2573,5 +2573,215 @@ public class DBMS {
     }
     
     
+    public Gestionpais calcularavgpaisGestion(String u, String p){
+        
+        Gestionpais gp = new Gestionpais();
+        PreparedStatement ps = null;
+        try {
+            ps = conexion.prepareStatement("SELECT nombrecarrera from \"dycicle\".POSTULANTE p"
+                + " WHERE p.nombreusuario= ?");
+            ps.setString(1, u);
+            ResultSet set = ps.executeQuery();
+            set.next();
+            String nombrecarrera= set.getString("nombrecarrera");
+            System.out.print(ps.toString());
+            System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
+            System.out.println(nombrecarrera);
+            
+            ps = conexion.prepareStatement("SELECT g.*, e.carreraest from \"dycicle\".GESTION g, \"dycicle\".Estudiante e"
+                + " WHERE g.pais = ? and e.nombreusuario=g.nombreusuario");
+            ps.setString(1, p);
+            set = ps.executeQuery();
+            int i,valor,t1=0,t2=0,t3=0,t4=0;
+            int tc1=0,tc2=0,tc3=0,tc4=0;
+            float a1=0,a2=0,a3=0,a4=0;
+            float c1=0,c2=0,c3=0,c4=0;
+            int participantes=0, participantescarrera=0;
+            while(set.next()){
+           
+                i=1;
+                while(i<=4){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a1 = a1 + valor;
+                        t1++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c1=c1+valor;
+                            tc1++;
+                        }
+                    }
+                    i++;
+                }
+                while(i<=8){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a2 = a2 + valor;
+                        t2++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c2=c2+valor;
+                            tc2++;
+                        }
+                    }
+                    i++;
+                }
+                while(i<=12){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a3 = a3 + valor;
+                        t3++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c3=c3+valor;
+                            tc3++;
+                        }
+                    }
+                    i++;
+                }
+                while(i<=16){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a4 = a4 + valor;
+                        t4++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c4=c4+valor;
+                            tc4++;
+                        }
+                    }
+                    i++;
+                }
+                
+                
+                
+                participantes++;
+                if(set.getString("carreraest").equals(nombrecarrera)) participantescarrera++;
+            }
+            if((tc1+tc2+tc3+tc4)==0) {tc1=1;tc2=1;tc3=1;tc4=1;}
+            if((t1+t2+t3+t4)==0) {t1=1;t2=1;t3=1;t4=1;}
+            
+            gp.setavgg1(a1/t1);
+            gp.setavgg2(a2/t2);
+            gp.setavgg3(a3/t3);
+            gp.setavgg3(a4/t4);
+            gp.setencuestasg(participantes);
+            gp.setavggt((a1+a2+a3+a4)/(t1+t2+t3+t4));
+            gp.setavgc1(c1/tc1);
+            gp.setavgc2(c2/tc2);
+            gp.setavgc3(c3/tc3);
+            gp.setavgc3(c4/tc4);
+            gp.setencuestasc(participantescarrera);
+            gp.setavgct((c1+c2+c3+c4)/(tc1+tc2+tc3+tc4));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBMS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return gp;
+    }
+    
+    public GestionUniversidad calcularavgunivGestion(String u, String univ){
+        
+        GestionUniversidad gp = new GestionUniversidad();
+        PreparedStatement ps = null;
+        try {
+            ps = conexion.prepareStatement("SELECT nombrecarrera from \"dycicle\".POSTULANTE p"
+                + " WHERE p.nombreusuario= ?");
+            ps.setString(1, u);
+            ResultSet set = ps.executeQuery();
+            set.next();
+            String nombrecarrera= set.getString("nombrecarrera");
+            System.out.print(ps.toString());
+            System.out.println();System.out.println();System.out.println();System.out.println();System.out.println();
+            System.out.println(nombrecarrera);
+            
+            ps = conexion.prepareStatement("SELECT g.*, e.carreraest from \"dycicle\".GESTION g, \"dycicle\".Estudiante e"
+                + " WHERE g.univ = ? and e.nombreusuario=g.nombreusuario");
+            ps.setString(1, univ);
+            set = ps.executeQuery();
+            int i,valor,t1=0,t2=0,t3=0,t4=0;
+            int tc1=0,tc2=0,tc3=0,tc4=0;
+            float a1=0,a2=0,a3=0,a4=0;
+            float c1=0,c2=0,c3=0,c4=0;
+            int participantes=0, participantescarrera=0;
+            while(set.next()){
+           
+                i=1;
+                while(i<=4){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a1 = a1 + valor;
+                        t1++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c1=c1+valor;
+                            tc1++;
+                        }
+                    }
+                    i++;
+                }
+                while(i<=8){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a2 = a2 + valor;
+                        t2++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c2=c2+valor;
+                            tc2++;
+                        }
+                    }
+                    i++;
+                }
+                while(i<=12){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a3 = a3 + valor;
+                        t3++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c3=c3+valor;
+                            tc3++;
+                        }
+                    }
+                    i++;
+                }
+                while(i<=16){
+                    valor = Integer.valueOf(set.getString("p"+String.valueOf(i)));
+                    if(valor>0) {
+                        a4 = a4 + valor;
+                        t4++;
+                        if(set.getString("carreraest").equals(nombrecarrera)){
+                            c4=c4+valor;
+                            tc4++;
+                        }
+                    }
+                    i++;
+                }
+                
+                
+                
+                participantes++;
+                if(set.getString("carreraest").equals(nombrecarrera)) participantescarrera++;
+            }
+            if((tc1+tc2+tc3+tc4)==0) {tc1=1;tc2=1;tc3=1;tc4=1;}
+            if((t1+t2+t3+t4)==0) {t1=1;t2=1;t3=1;t4=1;}
+            
+            gp.setavgg1(a1/t1);
+            gp.setavgg2(a2/t2);
+            gp.setavgg3(a3/t3);
+            gp.setavgg3(a4/t4);
+            gp.setencuestasg(participantes);
+            gp.setavggt((a1+a2+a3+a4)/(t1+t2+t3+t4));
+            gp.setavgc1(c1/tc1);
+            gp.setavgc2(c2/tc2);
+            gp.setavgc3(c3/tc3);
+            gp.setavgc3(c4/tc4);
+            gp.setencuestasc(participantescarrera);
+            gp.setavgct((c1+c2+c3+c4)/(tc1+tc2+tc3+tc4));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBMS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return gp;
+    }
+    
     //Fin modificacion MOSQ
 }

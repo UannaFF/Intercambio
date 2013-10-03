@@ -19,8 +19,8 @@
  <title>Sistema de Gesti&oacute;n de Intercambio</title>
 <html:html lang="true">
 
-    <h4 align ="center">Estudiante USB</h4>
-    <h5 align ="center">Punt&uacute;a del 1 al 5, siendo 5 el m&aacute;ximo en la escala. </h5>
+    <h4 align ="center">Coordinaci&oacute;n</h4>
+    <h5 align ="center">Elija una universidad </h5>
 
     <script  src="/Intercambio-II/css/gestion.js"></script>
     
@@ -28,6 +28,10 @@
     
     <html:form  action="/GestionUniv"  method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <table border="0" width="520"> 
+           
+            <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr>    
        
         <tr>
             
@@ -80,67 +84,39 @@
        </td></tr>
         
         <tr ><td colspan="2">
+       <script>   
+                   function nouniv(){
+        
+        
+        
+                if((document.getElementById("pais_princG")[document.getElementById("pais_princG").selectedIndex].value == 0)
+           || (document.getElementById("uni_princG")[document.getElementById("uni_princG").selectedIndex].value == "Seleccione"))
+       { 
+           
+                   alert ("Es necesario que elija una universidad.");
+                   return false;
+            
+        }
+           
+             
+         return true;
+        } </script>     
+                
                 
            <p style="text-align: center">
-            <html:submit >
+               <html:submit onclick="return nouniv();" >
                 Buscar
-            </html:submit>
+               </html:submit>
            </p>
 
         </td></tr>
         
        </table> 
     </html:form>
-        <div class="nav" style="text-align: center;">
-            <a href="#" onclick=" if (true){ show('muestrauni'); }"> 
-                <html:submit >    
-                    Buscar @
-                </html:submit>    
-            </a>
-        </div>
        <br>
        <br>
        <br>
               
-       <div id="muestrauni" style="display: none">
-       <table  border="1" width="520">
-           
-           <tr>
-               
-               <td>
-                   
-                   <b>UNIVERSIDAD</b> 
-                   
-                   
-               </td>
-               <td>
-                   
-                 <%=uni%>
-                   
-               </td>
-               
-           </tr>
-           <tr>
-               
-               <td>
-                   
-                   PAIS
-                   
-               </td>
-               <td>
-                   
-               </td>
-               
-           </tr>
-           
-           
-           
-       </table>    
-       </div>
-        
-    
-        
-    
     
          <html:link action="/AccionesGestionCoord">
             <p style="text-align: center">

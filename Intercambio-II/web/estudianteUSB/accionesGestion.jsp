@@ -79,6 +79,10 @@
      <html:form  action="/AgregarGestion" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
                         <p hidden="true"><html:text name="Gestion" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p> 
+                        <p hidden="true"><html:text name="Gestion" property="pais" maxlength="20" errorStyleClass="error" value ="0"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
+                        <p hidden="true"><html:text name="Gestion" property="univ" maxlength="20" errorStyleClass="error" value ="-"
+                                   errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <p hidden="true"> <html:text name="Gestion" property="p1" value ="" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
                         <p hidden="true"> <html:text name="Gestion" property="p2" value ="" maxlength="20" errorStyleClass="error"
@@ -113,7 +117,7 @@
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>
             <p style="text-align: center">
             <html:submit >
-                Agregar Encuesta
+                Responder Encuesta
             </html:submit>
         </p>
      </html:form> 
@@ -125,7 +129,7 @@
              errorKey="org.apache.struts.action.ERROR"></html:text></p> 
              <p style="text-align: center">
                  <html:submit disabled="true">
-                Agregar Encuesta
+                Responder Encuesta
             </html:submit>
         </p>
      </html:form>  

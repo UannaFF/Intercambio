@@ -19,14 +19,16 @@
  <title>Sistema de Gesti&oacute;n de Intercambio</title>
 <html:html lang="true">
 
-    <h4 align ="center">Estudiante USB</h4>
-    <h5 align ="center">Punt&uacute;a del 1 al 5, siendo 5 el m&aacute;ximo en la escala. </h5>
+    <h4 align ="center">Coordinaci&oacute;n</h4>
+    <h5 align ="center">Elija un pa&iacute;s </h5>
 
     <script  src="/Intercambio-II/css/gestion.js"></script>
     
     <html:form  action="/GestionPais" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <table border="0" width="520"> 
-        
+        <tr > <td><p hidden="true"><html:text name="Gestionpais" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr>
         <tr>
             
             <td>
@@ -70,8 +72,25 @@
 
         <tr ><td colspan="2">
                 
+                <script>
+                function nopais(){
+                if(document.getElementById("pais_princG")[document.getElementById("pais_princG").selectedIndex].value == 0)
+           
+       { 
+           
+                   alert ("Es necesario que elija un país.");
+                   return false;
+            
+           }
+           
+             
+         return true;
+        }
+                </script>     
+                
+                
            <p style="text-align: center">
-            <html:submit >
+            <html:submit onclick="return nopais();" >
                 Buscar
             </html:submit>
            </p>
@@ -84,7 +103,7 @@
     
       <html:link action="/AccionesGestionCoord">
             <p style="text-align: center">
-            <html:submit>
+                <html:submit>
                 Volver
             </html:submit>
             </p>

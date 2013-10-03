@@ -209,6 +209,12 @@
             scope="request"
             validate="false"
             parameter="gestionUniv"/> 
+           
+            <action path="/paisUniv"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="paisUniv"/>
 
             <action path="/gestionPais"
             type="org.apache.struts.actions.ForwardAction"
@@ -614,6 +620,10 @@
               
               <action name="GestionUniversidad" path="/GestionUniv" scope="session" type="Actions.GestionUniv">
                    <forward name="success" path="gestionUniv" />
+              </action>
+              
+              <action name="GestionUniversidad" path="/PaisUniv" scope="session" type="Actions.PaisUniv">
+                   <forward name="success" path="paisUniv" />
               </action>
               
               <action name="Gestionpais" path="/GestionPais" scope="session" type="Actions.GestionPais">

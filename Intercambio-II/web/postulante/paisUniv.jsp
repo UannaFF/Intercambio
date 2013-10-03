@@ -1,8 +1,9 @@
 <%-- 
-    Document   : gestionUniv
-    Created on : 30/09/2013, 03:32:00 PM
+    Document   : paisUniv
+    Created on : 02/10/2013, 10:19:05 PM
     Author     : jaescalante02
 --%>
+
 <%@page import="Clases.GestionUniversidad"%>
 <%Object tmp = session.getAttribute("nombreusuario");%>
 <%Object var = session.getAttribute("nombre");%>
@@ -49,18 +50,18 @@
                
                <td>
                    
-                   <b>   Pa&iacute;s </b>
+                   <b>Pa&iacute;s </b>
                    
                </td>
                <td>
-                   <b><%=g.getpais()%></b>
+                   <%=g.getpais()%>
                </td>
                
            </tr>
            <th colspan="2">GENERAL</th>
            <tr>
                <td>
-                   <b>  N&uacute;mero de encuestas llenadas del pa&iacute;s   </b>     
+                   <b>  N&uacute;mero de encuestas llenadas del pa&iacute;s    </b>    
                </td>
                <td>
                    <%=g.getencuestasg()%>
@@ -68,7 +69,7 @@
            </tr>
            <tr>
                <td>
-                   <b>    Promedio Secci&oacute;n 1 del pa&iacute;s </b>       
+                   <b>  Promedio Secci&oacute;n 1 del pa&iacute;s   </b>     
                </td>
                <td>
                    <%=g.getavgg1()%>
@@ -76,7 +77,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Secci&oacute;n 2 del pa&iacute;s       </b> 
+                   <b>    Promedio Secci&oacute;n 2 del pa&iacute;s     </b>   
                </td>
                <td>
                    <%=g.getavgg2()%>
@@ -84,7 +85,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Secci&oacute;n 3 del pa&iacute;s </b>       
+                   <b> Promedio Secci&oacute;n 3 del pa&iacute;s   </b>     
                </td>
                <td>
                    <%=g.getavgg3()%>
@@ -92,7 +93,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio 4 del pa&iacute;s  </b>      
+                   <b> Promedio Secci&oacute;n 4 del pa&iacute;s   </b>     
                </td>
                <td>
                    <%=g.getavgg4()%>
@@ -100,16 +101,16 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Total del pa&iacute;s   </b>     
+                   <b>   Promedio Total del pa&iacute;s </b>
                </td>
                <td>
                    <%=g.getavggt()%>
                </td>
-           </tr>
+           </tr>    
            <th colspan="2">CARRERA</th>
            <tr>
                <td>
-                   <b>    N&uacute;mero de encuestas llenadas del pa&iacute;s </b>
+                   <b> N&uacute;mero de encuestas llenadas del pa&iacute;s </b>
                </td>
                <td>
                  <%=g.getencuestasc()%>
@@ -117,7 +118,7 @@
            </tr>
            <tr>
                <td>
-                   <b>   Promedio Secci&oacute;n 1 del pa&iacute;s      </b>  
+                   <b>  Promedio Secci&oacute;n 1 del pa&iacute;s    </b>    
                </td>
                <td>
                    <%=g.getavgc1()%>
@@ -125,7 +126,7 @@
            </tr>
            <tr>
                <td>
-                   <b>  Promedio Secci&oacute;n 2 del pa&iacute;s        </b>
+                   <b>   Promedio Secci&oacute;n 2 del pa&iacute;s   </b>     
                </td>
                <td>
                    <%=g.getavgc2()%>
@@ -133,7 +134,7 @@
            </tr>
            <tr>
                <td>
-                   <b>   Promedio Secci&oacute;n 3 del pa&iacute;s </b>       
+                   <b> Promedio Secci&oacute;n 3 del pa&iacute;s </b>        
                </td>
                <td>
                    <%=g.getavgc3()%>
@@ -141,7 +142,7 @@
            </tr>
            <tr>
                <td>
-                   <b>   Promedio Secci&oacute;n 4 del pa&iacute;s     </b>   
+                   <b>   Promedio Secci&oacute;n 4 del pa&iacute;s    </b>    
                </td>
                <td>
                    <%=g.getavgc4()%>
@@ -149,21 +150,25 @@
            </tr>
            <tr>
                <td>
-                   <b>     Promedio Total del pa&iacute;s </b>
+                   <b>  Promedio Total del pa&iacute;s </b> 
                </td>
                <td>
                    <%=g.getavgct()%>
                </td>
-           </tr>
            
        </table>    
        </div>
        <br>
        
-       <html:form  action="/GestionporUniv" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
-       
-            <p hidden="true"><html:text name="GestionUniversidad" property="pais" maxlength="20" errorStyleClass="error" value ="0"
-                    errorKey="org.apache.struts.action.ERROR"></html:text></p> 
+       <html:form  action="/GestionPais" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+            <table>
+            <tr><td><p hidden="true"><html:text name="Gestionpais" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr>
+            <tr > <td><p hidden="true"><html:text name="Gestionpais" property="pais" maxlength="20" errorStyleClass="error" value ="<%=g.getpais()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
+           </table> 
               
                           <p style="text-align: center">
                               <html:submit>
@@ -174,3 +179,5 @@
        </html:form>
                    
 </html:html>
+                   
+

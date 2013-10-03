@@ -15,7 +15,7 @@ import org.apache.struts.action.ActionMapping;
  *
  * @author jaescalante02
  */
-public class GestionUniv extends org.apache.struts.action.Action {
+public class PaisUniv extends org.apache.struts.action.Action {
 
 
     /* forward name="success" path="" */
@@ -56,3 +56,4 @@ public class GestionUniv extends org.apache.struts.action.Action {
         return mapping.findForward(SUCCESS);
     }
 }
+

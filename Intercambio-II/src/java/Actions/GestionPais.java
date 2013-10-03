@@ -41,7 +41,16 @@ public class GestionPais extends org.apache.struts.action.Action {
         
         Gestionpais gestp= (Gestionpais) form;
         gestp.setpais(new String (gestp.getpais().getBytes("ISO-8859-1"),"UTF-8"));
-        //gestuniv.setuniv(new String (gestuniv.getuniv().getBytes("ISO-8859-1"),"UTF-8"));
+        String pais = gestp.getpais();
+        String u = gestp.getnombreusuario();
+        System.out.println(u);
+        System.out.println();
+        System.out.println();
+        System.out.println(pais);
+        gestp = DBMS.DBMS.getInstance().calcularavgpaisGestion(u, pais);
+        gestp.setpais(pais);
+        String[] arreglo = gestp.UnivdePais(pais);
+        request.setAttribute("univs", arreglo);
         request.setAttribute("gestionpais", gestp);
         return mapping.findForward(SUCCESS);
     }

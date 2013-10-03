@@ -21,6 +21,7 @@
 <html:html lang="true">
     
     <% Gestionpais g = (Gestionpais) request.getAttribute("gestionpais");%>
+    <% String[] arr = (String []) request.getAttribute("univs");%>
 
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -35,56 +36,147 @@
                
                <td width="300">
                    
-                   Pa&iacute;s
+                   <b> Pa&iacute;s </b>
                    
                </td>
                <td>
-                   <b><%=g.getpais()%></b>
+                   <%=g.getpais()%>
                </td>
                
            </tr>
            <th colspan="2">GENERAL</th>
            <tr>
                <td>
-                   N&uacute;mero de encuestas llenadas del pa&iacute;s        
+                   <b> N&uacute;mero de encuestas llenadas del pa&iacute;s </b>        
                </td>
                <td>
-                  
+                  <%=g.getencuestasg()%>
+               </td>
+           </tr>
+<tr>
+               <td>
+                   <b>  Promedio Secci&oacute;n 1 del pa&iacute;s </b>        
+               </td>
+               <td>
+                   <%=g.getavgg1()%>
                </td>
            </tr>
            <tr>
                <td>
-                   Promedio de aceptaci&oacute;n del pa&iacute;s        
+                   <b> Promedio Secci&oacute;n 2 del pa&iacute;s    </b>    
                </td>
                <td>
-                  
+                   <%=g.getavgg2()%>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <b> Promedio Secci&oacute;n 3 del pa&iacute;s    </b>    
+               </td>
+               <td>
+                   <%=g.getavgg3()%>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <b>  Promedio Secci&oacute;n 4 del pa&iacute;s </b>        
+               </td>
+               <td>
+                   <%=g.getavgg4()%>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <b>  Promedio Total del pa&iacute;s </b> 
+               </td>
+               <td>
+                   <%=g.getavggt()%>
                </td>
            </tr>
            <th colspan="2">CARRERA</th>
            <tr>
                <td>
-                 N&uacute;mero de encuestas llenadas del pa&iacute;s
+                   <b> N&uacute;mero de encuestas llenadas del pa&iacute;s </b>
                </td>
                <td>
-                   
+                   <%=g.getencuestasg()%>
                </td>
            </tr>
            <tr>
                <td>
-                    Promedio de aceptaci&oacute;n del pa&iacute;s 
+                   <b> Promedio Secci&oacute;n 1 del pa&iacute;s </b>        
                </td>
                <td>
-                   
+                   <%=g.getavgc1()%>
                </td>
            </tr>
+           <tr>
+               <td>
+                   <b>   Promedio Secci&oacute;n 2 del pa&iacute;s   </b>     
+               </td>
+               <td>
+                   <%=g.getavgc2()%>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <b>   Promedio Secci&oacute;n 3 del pa&iacute;s </b>        
+               </td>
+               <td>
+                   <%=g.getavgc3()%>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <b>  Promedio Secci&oacute;n 4 del pa&iacute;s </b>        
+               </td>
+               <td>
+                   <%=g.getavgc4()%>
+               </td>
+           </tr>
+           <tr>
+               <td>
+                   <b>  Promedio Total del pa&iacute;s </b> 
+               </td>
+               <td>
+                   <%=g.getavgct()%>
+               </td>
+           </tr>    
            <th colspan="2">
-                Posibles universidades             
+                Posibles universidades           
            </th>
-           <tr>
-               <td colspan="2" align="center">
-                Univ 1             
-               </td>
-           </tr>
+           <tr><td colspan="2">
+               <table> 
+                  <% for (int i=0; i<arr.length; i++){%>
+                  <html:form  action="/PaisUniv" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+                  
+                  <tr ><td><p hidden="true"><html:text name="GestionUniversidad" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
+                  <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="pais" maxlength="20" errorStyleClass="error" value ="<%=g.getpais()%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr>
+            <tr > <td><p hidden="true"><html:text name="GestionUniversidad" property="univ" maxlength="20" errorStyleClass="error" value ="<%=arr[i]%>"
+                           errorKey="org.apache.struts.action.ERROR"></html:text></p>
+            </td></tr> 
+                  
+                   
+                      <tr>
+                          <td>
+                          <%=arr[i]%>
+                          </td>   
+                      
+                      <td>
+                       
+                          <html:submit>Detalles</html:submit>
+                       
+                      </td>
+                      </tr>
+                  </html:form>    
+                 <%}%>  
+                   
+               </table>
+               </td> </tr>
            
        </table>    
        </div>
