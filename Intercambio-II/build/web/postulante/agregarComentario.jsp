@@ -21,7 +21,7 @@
         <html:hidden name="Usuario" property="nombreusuario"/>
         <center> <html:textarea style="width:300px;height:200px;" name="Usuario" property="confirmar"/>
 <br>
-        <br/><br/><html:submit value="AgregarComentario"> Comentar </html:submit></center>
+        <br/><br/><html:submit value="AgregarComentario"> Comentar/Postular </html:submit></center>
     </html:form>
 
 

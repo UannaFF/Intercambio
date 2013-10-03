@@ -56,7 +56,7 @@
                         Eliminar Solicitud
                     </th>
                     <th width="100px" align="center">
-                        Comentario/ Recomendación
+                        Recomendacion/Postular
                     </th>
                 </tr>
             </thead>

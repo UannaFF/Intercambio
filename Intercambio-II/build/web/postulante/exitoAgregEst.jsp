@@ -16,7 +16,7 @@
 
 
     <div style="text-align: center;">
-        <h1>El estudiante fue agregado</h1>
+        <h1>Accion realizada con exito</h1>
         
         <html:image src="images/correct.png" /> 
         <br />
