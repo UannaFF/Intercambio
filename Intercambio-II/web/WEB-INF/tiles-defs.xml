@@ -235,7 +235,7 @@
         <put name="body" value="/estudianteUSB/consultarPlan.jsp" />
     </definition>
     
-    <definition name="creacioncuentaest" extends="baseEstudiante"> 
+    <definition name="creacioncuentaest" extends="basePublic"> 
         <put name="body" value="/public/CreacionCuentaEstudiante.jsp" />
     </definition>
     
