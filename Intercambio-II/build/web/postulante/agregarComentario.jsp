@@ -16,12 +16,12 @@
         <title>Comentar</title>
     </head>
 
-    <h1>Agregar Comentario para estudiante:</h1>
+    <center><h1>Agregar Comentario para estudiante:</h1></center>
     <html:form action="/AgregarComentario"  acceptCharset="ISO-8859-1" onsubmit="return(this)">
         <html:hidden name="Usuario" property="nombreusuario"/>
-        <html:textarea style="width:200px;height:250px;" name="Usuario" property="confirmar"/>
+        <center> <html:textarea style="width:300px;height:200px;" name="Usuario" property="confirmar"/>
 <br>
-        <html:submit value="AgregarComentario"> Comentar </html:submit>
+        <br/><br/><html:submit value="AgregarComentario"> Comentar </html:submit></center>
     </html:form>
 
 

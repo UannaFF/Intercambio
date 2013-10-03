@@ -53,7 +53,7 @@
                         Ver estudiante
                     </th>
                     <th width="90px" align="center">
-                        Eliminar estudiante
+                        Eliminar Solicitud
                     </th>
                     <th width="100px" align="center">
                         Comentario/ Recomendación

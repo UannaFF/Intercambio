@@ -32,7 +32,7 @@
         <h5 align ="center">¿Qu&eacute; desea hacer?</h5>
 
     <html:link action="/AgregarEstudiantes">
-        <p align ="center">Agregar Estudiante</p>
+        <p align ="center">Postular Estudiante</p>
     </html:link>
         <div align="center">
         <html:form action="/ListarEstudiantes">
