@@ -423,18 +423,29 @@
             document.getElementById(target).style.display = 'none';
         }
 
-        function seleccion(opc){
+        function seleccion(opc)
+        {
             var Error;
             var ErrorInscripcion = false;
-            var MensajeError;
-            switch(opc){
+            var MensajeError = "";
+            //escondemos todos los contenidos
+            /*
+            document.getElementById("opci1").style.display="none";
+            document.getElementById("opci2").style.display="none";
+            document.getElementById("opci3").style.display="none";
+            document.getElementById("opci4").style.display="none";
+            document.getElementById("opci5").style.display="none";
+            document.getElementById("opci6").style.display="none";
+            document.getElementById("opci7").style.display="none";
+            */
+            switch(opc)
+            {
                 case 1:
                     //mostramos elcontenido de la primera opcion
                         document.getElementById("opci2").style.display="none";
                         document.getElementById("opci1").style.display="block";
                     break;
                 case 2:
-                    
                     document.getElementById("opci3").style.display="none";
                     //mostramos elcontenido de la segunda opcion
                     
@@ -454,10 +465,20 @@
                     if (Error===true) ErrorInscripcion = true;
                     Error = Necesario('cedula');
                     if (Error===true) ErrorInscripcion = true;
+                    Error = esNumero('cedula');
+                    if(Error===true){
+                        MensajeError = "Coloca solo numeros en el campo Cédula<br /><br />";
+                        ErrorInscripcion = true;
+                    }
                     Error = Necesario('carnet');
                     if (Error===true) ErrorInscripcion = true;
+                    Error = verificaCarnet('carnet');
+                    if(Error===true){
+                        MensajeError = MensajeError + "Coloca un carnet con el formato: 12-34567<br /><br />";
+                        ErrorInscripcion = true;
+                    }
                     if(ErrorInscripcion===true) {
-			MensajeError = "Rellena los campos obligatorios<br />";
+			MensajeError = MensajeError + "Rellena los campos obligatorios<br />";
                         //document.getElementById("opci1").style.display="block";
                         document.getElementById('error').innerHTML = MensajeError;
                      
@@ -485,9 +506,15 @@
                     if (Error===true) ErrorInscripcion = true;
                     Error = Necesario('codPostal');
                     if (Error===true) ErrorInscripcion = true;
+                    Error = esNumero('codPostal');
+                    if(Error===true){
+                        MensajeError = "Coloca solo numeros en el campo Código Postal<br />";
+                        ErrorInscripcion = true;
+                        document.getElementById('error').innerHTML = MensajeError;
+                    }
                 
                     if(ErrorInscripcion===true) {
-			MensajeError = "Rellena los campos obligatorios<br />";
+			MensajeError = MensajeError + "Rellena los campos obligatorios<br />";
                         //document.getElementById("opci1").style.display="block";
                         document.getElementById('error').innerHTML = MensajeError;
                      
@@ -502,15 +529,22 @@
                     document.getElementById("opci5").style.display="none";
                     Error = Necesario('telefonoCelular');
                     if (Error===true) ErrorInscripcion = true;
+                    Error = esNumero('telefonoCelular');
+                    if(Error===true){
+                        MensajeError = "Coloca solo numeros en el campo Teléfono Celular<br />";
+                        ErrorInscripcion = true;
+                        document.getElementById('error').innerHTML = MensajeError;
+                    }
                     Error = Necesario('telefonoCasa');
                     if (Error===true) ErrorInscripcion = true;
-                    Error = Necesario('email');
-                    if (Error===true) ErrorInscripcion = true;
-                    Error = CompruebaEmail('email');
-                    if (Error===true){ 
+                    Error = esNumero('telefonoCasa');
+                    if(Error===true){
+                        MensajeError = MensajeError + "Coloca solo numeros en el campo Teléfono Fijo<br />";
                         ErrorInscripcion = true;
-                        MensajeError = "Introduzca un correo válido<br/>";
+                        document.getElementById('error').innerHTML = MensajeError;
                     }
+                    Error = CompruebaEmail('email');
+                    if (Error===true) ErrorInscripcion = true;
                    
                     if(ErrorInscripcion===true) {
 			MensajeError = MensajeError + "Rellena los campos obligatorios<br />";
@@ -584,13 +618,28 @@
                     Error = Necesario('carrera');
                     if (Error===true) ErrorInscripcion = true;
                     Error = Necesario('creditosApro');
+                    Error = esNumero('creditosApro');
+                    if(Error===true){
+                        MensajeError = "Coloca solo numeros en el campo Créditos Aprobados<br />";
+                        ErrorInscripcion = true;
+                        document.getElementById('error').innerHTML = MensajeError;
+                    }
                     if (Error===true) ErrorInscripcion = true;
                     Error = Necesario('indice');
                     if (Error===true) ErrorInscripcion = true;
-                   
+                    Error = verificaIndice('indice');
+                    if (Error===true){ 
+                       ErrorInscripcion = true;
+                       MensajeError = MensajeError + "Introduce un indice entre 3 y 5<br />";
+                    }
+                    Error = esNumero('indice');
+                    if (Error===true){ 
+                       ErrorInscripcion = true;
+                       MensajeError = MensajeError + "Introduce un indice con valor numérico<br />";
+                    }
+                    
                     if(ErrorInscripcion===true) {
-			MensajeError = "Rellena los campos obligatorios<br />";
-                        //document.getElementById("opci1").style.display="block";
+			MensajeError = MensajeError + "Rellena los campos obligatorios<br />";
                         document.getElementById('error').innerHTML = MensajeError;
                      
                     }else{
@@ -622,21 +671,66 @@
                         document.getElementById("opci6").style.display="none";
                         document.getElementById('error').innerHTML = "";
                     }
-                    break;  
-                  
+                    break;
                 
+                 case 8:
+                    
+                    //mostramos elcontenido de la tercera opcion
+                    
+                    Error = Necesario('apellidosRep');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('nombresRep');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('celRep');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = esNumero('celRep');
+                    if(Error===true){
+                        MensajeError = "Coloca solo numeros en el campo Teléfono Celular<br />";
+                        ErrorInscripcion = true;
+                        document.getElementById('error').innerHTML = MensajeError;
+                    }
+                    Error = Necesario('tlfRepCasa');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = esNumero('tlfRepCasa');
+                    if(Error===true){
+                        MensajeError = MensajeError + "Coloca solo numeros en el campo Teléfono Casa<br />";
+                        ErrorInscripcion = true;
+                        document.getElementById('error').innerHTML = MensajeError;
+                    }
+                     Error = CompruebaEmail('emailRep');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('relacion');
+                    if (Error===true) ErrorInscripcion = true;
+                    Error = Necesario('direccionRep');
+                    if (Error===true) ErrorInscripcion = true;
+                   
+                    if(ErrorInscripcion===true) {
+			MensajeError = "Rellena los campos obligatorios<br />";
+                        //document.getElementById("opci1").style.display="block";
+                        document.getElementById('error').innerHTML = MensajeError;
+                        
+                     
+                    }else{
+                        document.getElementById("opci7").style.display="none";
+                        document.getElementById('error').innerHTML = "";
+                        document.forms[0].action = "LlenarPlanilla_EstUSB.do?method=guardar";
+                        document.forms[0].submit();
+                    }
+                    break;               
             }
+            
+            
         }
 
 
         // CAMBIA EL PAIS DE ACUERDO AL TIPO DE CONVENIO ELEGIDO
 
         // Convenios Bilaterales
-        var paises_Bilaterales=new Array("Seleccione", "Alemania","Australia", "Canadá", "Colombia", "España", "EstadosUnidos", "Finlandia", "Francia", "Italia", "Japón", "México", "Noruega", "Perú", "PuertoRico", "ReinoUnido", "Suecia")
+        var paises_Bilaterales=new Array("-Seleccione-", "Alemania","Australia", "Canadá", "Colombia", "España", "EstadosUnidos", "Finlandia", "Francia", "Italia", "Japón", "México", "Noruega", "Perú", "PuertoRico", "ReinoUnido", "Suecia")
         // SMILE
-        var paises_SMILE=new Array("Seleccione", "Alemania", "Bélgica", "Brasil", "Chile", "Colombia", "España", "Polonia", "Portugal", "RepúblicaCheca")
+        var paises_SMILE=new Array("-Seleccione-", "Alemania", "Bélgica", "Brasil", "Chile", "Colombia", "España", "Polonia", "Portugal", "RepúblicaCheca")
         // CINDA
-        var paises_CINDA=new Array("Seleccione", "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "CostaRica", "Ecuador", "España", "Italia", "México", "Panamá", "Paraguay", "Perú", "RepúblicaDominicana", "Uruguay", "Venezuela")
+        var paises_CINDA=new Array("-Seleccione-", "Argentina", "Bolivia", "Brasil", "Chile", "Colombia", "CostaRica", "Ecuador", "España", "Italia", "México", "Panamá", "Paraguay", "Perú", "RepúblicaDominicana", "Uruguay", "Venezuela")
 
         function cambia_pais(){ 
             //tomo el valor del select del pais elegido 
@@ -645,8 +739,8 @@
                 mis_paises=eval("paises_" + programa) 
                 num_paises = mis_paises.length 
                 document.getElementById("pais_princ").length = num_paises
-                document.getElementById("pais_princ").options[0].value=0
-                document.getElementById("pais_princ").options[0].text="Seleccione"
+                document.getElementById("pais_princ").options[0].value=""
+                document.getElementById("pais_princ").options[0].text="-Seleccione-"
                 for(i=1;i<num_paises;i++){ 
                     document.getElementById("pais_princ").options[i].value=mis_paises[i]
                     document.getElementById("pais_princ").options[i].text=mis_paises[i] 
@@ -654,7 +748,7 @@
             }else{ 
                 //si no había provincia seleccionada, elimino las universidades del select 
                 document.getElementById("pais_princ").length = 1 
-                document.getElementById("pais_princ").options[0].value = "-" 
+                document.getElementById("pais_princ").options[0].value = "" 
                 document.getElementById("pais_princ").options[0].text = "-" 
             } 
             //marco como seleccionada la opción primera de provincia 
@@ -668,8 +762,8 @@
                 mis_paises=eval("paises_" + programa) 
                 num_paises = mis_paises.length 
                 document.getElementById("pais_princ2").length = num_paises
-                document.getElementById("pais_princ2").options[0].value=0
-                document.getElementById("pais_princ2").options[0].text="Seleccione"
+                document.getElementById("pais_princ2").options[0].value=""
+                document.getElementById("pais_princ2").options[0].text="-Seleccione-"
                 for(i=1;i<num_paises;i++){ 
                     document.getElementById("pais_princ2").options[i].value=mis_paises[i]
                     document.getElementById("pais_princ2").options[i].text=mis_paises[i] 
@@ -677,7 +771,7 @@
             }else{ 
                 //si no había provincia seleccionada, elimino las universidades del select 
                 document.getElementById("pais_princ2").length = 1 
-                document.getElementById("pais_princ2").options[0].value = "-" 
+                document.getElementById("pais_princ2").options[0].value = "" 
                 document.getElementById("pais_princ2").options[0].text = "-" 
             } 
             //marco como seleccionada la opción primera de provincia 
@@ -687,51 +781,51 @@
         // CAMBIA LA UNIVERSIDAD DE ACUERDO AL PAIS ESCOGIDO 
  
         // Universidad con Convenios Bilaterales
-        var uni_BilateralesAlemania=new Array("Seleccione", "Universidad de Karlsruhe", "Universidad de Siegen")
-        var uni_BilateralesAustralia=new Array("Seleccione", "Universidad Tecnológica de Swinburne")
-        var uni_BilateralesCanadá=new Array("Seleccione", "Instituto de Tecnología de Ontario")
-        var uni_BilateralesColombia=new Array("Seleccione", "Pontificia Universidad Bolivariana", "Universidad Externado")
-        var uni_BilateralesEspaña=new Array("Seleccione", "Universidad de Granada", "Universidad de Zaragoza", "Universidad Politécnica de Valencia")
-        var uni_BilateralesEstadosUnidos=new Array("Seleccione", "Universidad de Nuevo México", "Universidad de Oklahoma")
-        var uni_BilateralesFinlandia=new Array("Seleccione", "Universidad Abo Akademi")
-        var uni_BilateralesFrancia=new Array("Seleccione", "Arts et Métiers ParisTech", "EPF Escuela de Ingenieros", "Escuela de Minas de Nantes", "INSA – Lyon", "TELECOM – SudParis", "Universidad Paris Est Marne la Vallé", "Universidad Paris Ouest Nanterre", "Universidad Tecnológica de Compiègne")
-        var uni_BilateralesItalia=new Array("Seleccione", "Politécnico de Milano", "Politécnico de Torino")
-        var uni_BilateralesJapón=new Array("Seleccione", "Universidad de Tohoku", "Universidad Tecnológica de Nagaoka")
-        var uni_BilateralesMéxico=new Array("Seleccione", "Instituto Tecnológico Superior de Cajeme (ITESCA)", "ITESM Monterrey", "Universidad Veracruzana")
-        var uni_BilateralesNoruega=new Array("Seleccione", "NTNU- Trondheim")
-        var uni_BilateralesPerú=new Array("Seleccione", "Universidad San Martín de Porres")
-        var uni_BilateralesPuertoRico=new Array("Seleccione", "Universidad de Puerto Rico")
-        var uni_BilateralesReinoUnido=new Array("Seleccione", "Universidad de Ulster")
-        var uni_BilateralesSuecia=new Array("Seleccione", "Real Instituto de Estocolmo KTH", "Universidad de Lund", "Universidad de Uppsala")
+        var uni_BilateralesAlemania=new Array("-Seleccione-", "Universidad de Karlsruhe", "Universidad de Siegen")
+        var uni_BilateralesAustralia=new Array("-Seleccione-", "Universidad Tecnológica de Swinburne")
+        var uni_BilateralesCanadá=new Array("-Seleccione-", "Instituto de Tecnología de Ontario")
+        var uni_BilateralesColombia=new Array("-Seleccione-", "Pontificia Universidad Bolivariana", "Universidad Externado")
+        var uni_BilateralesEspaña=new Array("-Seleccione-", "Universidad de Granada", "Universidad de Zaragoza", "Universidad Politécnica de Valencia")
+        var uni_BilateralesEstadosUnidos=new Array("-Seleccione-", "Universidad de Nuevo México", "Universidad de Oklahoma")
+        var uni_BilateralesFinlandia=new Array("-Seleccione-", "Universidad Abo Akademi")
+        var uni_BilateralesFrancia=new Array("-Seleccione-", "Arts et Métiers ParisTech", "EPF Escuela de Ingenieros", "Escuela de Minas de Nantes", "INSA – Lyon", "TELECOM – SudParis", "Universidad Paris Est Marne la Vallé", "Universidad Paris Ouest Nanterre", "Universidad Tecnológica de Compiègne")
+        var uni_BilateralesItalia=new Array("-Seleccione-", "Politécnico de Milano", "Politécnico de Torino")
+        var uni_BilateralesJapón=new Array("-Seleccione-", "Universidad de Tohoku", "Universidad Tecnológica de Nagaoka")
+        var uni_BilateralesMéxico=new Array("-Seleccione-", "Instituto Tecnológico Superior de Cajeme (ITESCA)", "ITESM Monterrey", "Universidad Veracruzana")
+        var uni_BilateralesNoruega=new Array("-Seleccione-", "NTNU- Trondheim")
+        var uni_BilateralesPerú=new Array("-Seleccione-", "Universidad San Martín de Porres")
+        var uni_BilateralesPuertoRico=new Array("-Seleccione-", "Universidad de Puerto Rico")
+        var uni_BilateralesReinoUnido=new Array("-Seleccione-", "Universidad de Ulster")
+        var uni_BilateralesSuecia=new Array("-Seleccione-", "Real Instituto de Estocolmo KTH", "Universidad de Lund", "Universidad de Uppsala")
 
         // Universidad con SMILE
-        var uni_SMILEAlemania=new Array("Seleccione", "Universidad de Stuttgart")
-        var uni_SMILEBélgica=new Array("Seleccione", "Universidad Católica de Lovaina")
-        var uni_SMILEBrasil=new Array("Seleccione", "PSML - BRA - Universidad de Sao Paulo", "PSML - BRA - Universidad Federal de Río de Janeiro")
-        var uni_SMILEChile=new Array("Seleccione", "PSML - CHI - Pontifica Universidad Católica de Chile")
-        var uni_SMILEColombia=new Array("Seleccione", "PSML - COL - Pontificia Universidad Javeriana")
-        var uni_SMILEEspaña=new Array("Seleccione", "PSML - ESP - Universidad Politécnica de Cataluña", "PSML - ESP - Universidad Politécnica de Madrid")
-        var uni_SMILEPolonia=new Array("Seleccione", "PSML - POL - AGH Universidad de Ciencias y Tecnología")
-        var uni_SMILEPortugal=new Array("Seleccione", "PSML - POR - Universidad Técnica de Lisboa")
-        var uni_SMILERepúblicaCheca=new Array("Seleccione", "PSML - RPC - Universidad Técnica Checa en Praga")
+        var uni_SMILEAlemania=new Array("-Seleccione-", "Universidad de Stuttgart")
+        var uni_SMILEBélgica=new Array("-Seleccione-", "Universidad Católica de Lovaina")
+        var uni_SMILEBrasil=new Array("-Seleccione-", "PSML - BRA - Universidad de Sao Paulo", "PSML - BRA - Universidad Federal de Río de Janeiro")
+        var uni_SMILEChile=new Array("-Seleccione-", "PSML - CHI - Pontifica Universidad Católica de Chile")
+        var uni_SMILEColombia=new Array("-Seleccione-", "PSML - COL - Pontificia Universidad Javeriana")
+        var uni_SMILEEspaña=new Array("-Seleccione-", "PSML - ESP - Universidad Politécnica de Cataluña", "PSML - ESP - Universidad Politécnica de Madrid")
+        var uni_SMILEPolonia=new Array("-Seleccione-", "PSML - POL - AGH Universidad de Ciencias y Tecnología")
+        var uni_SMILEPortugal=new Array("-Seleccione-", "PSML - POR - Universidad Técnica de Lisboa")
+        var uni_SMILERepúblicaCheca=new Array("-Seleccione-", "PSML - RPC - Universidad Técnica Checa en Praga")
 
         // Universidad con CINDA
-        var uni_CindaArgentina=new Array("Seleccione", "Universidad Nacional de Cuyo", "Universidad Nacional de Quilmes", "Universidad Nacional de San Martín")
-        var uni_CindaBolivia=new Array("Seleccione", "Universidad Católica Boliviana San Pablo", "Universidad Privada Santa Cruz de la Sierra")
-        var uni_CindaBrasil=new Array("Seleccione", "Universidad de Sao Paulo ", "Universidad Estadual de Campinas")
-        var uni_CindaChile=new Array("Seleccione", "Pontificia Universidad Católica de Chile", "Pontificia Universidad Católica de Valparaíso", "Universidad Austral de Chile", "Universidad de Concepción", "Universidad de Talca", "Universidad de Tarapacá")
-        var uni_CindaColombia=new Array("Seleccione", "Pontificia Universidad Javeriana ", "Universidad de los Andes", "Universidad del Norte", "Universidad del Valle")
-        var uni_CindaCostaRica=new Array("Seleccione", "Universidad de Costa Rica ")
-        var uni_CindaEcuador=new Array("Seleccione", "Escuela Superior Politécnica del Litoral")
-        var uni_CindaEspaña=new Array("Seleccione", "Universidad Carlos III de Madrid", "Universidad de Barcelona", "Universidad de las Islas Baleares", "Universidad de Santiago de Compostela", "Universitat Oberta de Catalunya", "Universitat Politécnica de Catalunya")
-        var uni_CindaItalia=new Array("Seleccione", "Universidad Degli Studi Di Genova")
-        var uni_CindaMéxico=new Array("Seleccione", "ITESM Monterrey ", "Universidad Autónoma Metropolitana")
-        var uni_CindaPanamá=new Array("Seleccione", "Universidad de Panamá ")
-        var uni_CindaParaguay=new Array("Seleccione", "Universidad Católica de Nuestra Señora de la Asunción")
-        var uni_CindaPerú=new Array("Seleccione", "Pontificia Universidad Católica del Perú ", "Universidad de Lima", "Universidad del Pacífico ", "Universidad Peruana Cayetano Heredia")
-        var uni_CindaRepúbicaDominicana=new Array("Seleccione", "Instituto Tecnológico de Santo Domingo", "Pontificia Universidad Católica Madre Maestra ")
-        var uni_CindaUruguay=new Array("Seleccione", "Universidad Católica del Uruguay")
-        var uni_CindaVenezuela=new Array("Seleccione", "Universidad Centroccidental Lisandro Alvarado", "Universidad Metropolitana")
+        var uni_CindaArgentina=new Array("-Seleccione-", "Universidad Nacional de Cuyo", "Universidad Nacional de Quilmes", "Universidad Nacional de San Martín")
+        var uni_CindaBolivia=new Array("-Seleccione-", "Universidad Católica Boliviana San Pablo", "Universidad Privada Santa Cruz de la Sierra")
+        var uni_CindaBrasil=new Array("-Seleccione-", "Universidad de Sao Paulo ", "Universidad Estadual de Campinas")
+        var uni_CindaChile=new Array("-Seleccione-", "Pontificia Universidad Católica de Chile", "Pontificia Universidad Católica de Valparaíso", "Universidad Austral de Chile", "Universidad de Concepción", "Universidad de Talca", "Universidad de Tarapacá")
+        var uni_CindaColombia=new Array("-Seleccione-", "Pontificia Universidad Javeriana ", "Universidad de los Andes", "Universidad del Norte", "Universidad del Valle")
+        var uni_CindaCostaRica=new Array("-Seleccione-", "Universidad de Costa Rica ")
+        var uni_CindaEcuador=new Array("-Seleccione-", "Escuela Superior Politécnica del Litoral")
+        var uni_CindaEspaña=new Array("-Seleccione-", "Universidad Carlos III de Madrid", "Universidad de Barcelona", "Universidad de las Islas Baleares", "Universidad de Santiago de Compostela", "Universitat Oberta de Catalunya", "Universitat Politécnica de Catalunya")
+        var uni_CindaItalia=new Array("-Seleccione-", "Universidad Degli Studi Di Genova")
+        var uni_CindaMéxico=new Array("-Seleccione-", "ITESM Monterrey ", "Universidad Autónoma Metropolitana")
+        var uni_CindaPanamá=new Array("-Seleccione-", "Universidad de Panamá ")
+        var uni_CindaParaguay=new Array("-Seleccione-", "Universidad Católica de Nuestra Señora de la Asunción")
+        var uni_CindaPerú=new Array("-Seleccione-", "Pontificia Universidad Católica del Perú ", "Universidad de Lima", "Universidad del Pacífico ", "Universidad Peruana Cayetano Heredia")
+        var uni_CindaRepúbicaDominicana=new Array("-Seleccione-", "Instituto Tecnológico de Santo Domingo", "Pontificia Universidad Católica Madre Maestra ")
+        var uni_CindaUruguay=new Array("-Seleccione-", "Universidad Católica del Uruguay")
+        var uni_CindaVenezuela=new Array("-Seleccione-", "Universidad Centroccidental Lisandro Alvarado", "Universidad Metropolitana")
 
 
         function cambia_universidad(){ 
@@ -779,9 +873,9 @@
         }    
 
         // Estudios Profesionales
-        var area_1=new Array("Seleccione", "Áreas de Ciencias Básicas", "Área de Arquitectura y Urbanismo", "Área de Ingeniería", "Área de Ciencias Administrativas")
+        var area_1=new Array("-Seleccione-", "Áreas de Ciencias Básicas", "Área de Arquitectura y Urbanismo", "Área de Ingeniería", "Área de Ciencias Administrativas")
         // Estudios Tecnologicos 
-        var area_2=new Array("Seleccione", "Área de Tecnología", "Área de Ciencias Sociales")
+        var area_2=new Array("-Seleccione-", "Área de Tecnología", "Área de Ciencias Sociales")
 
         function cambia_area(){ 
             decanato = document.getElementById("dec")[document.getElementById("dec").selectedIndex].value 
@@ -803,13 +897,13 @@
             document.getElementById("area").options[0].selected = true 
         }
     
-        var carrera_11=new Array("Seleccione", "Lic. Biología", "Lic. Física", "Lic. Matemática", "Lic. Química")
-        var carrera_12=new Array("Seleccione", "Arquitectura", "Urbanismo")
-        var carrera_13=new Array("Seleccione", "Ing. Eléctrica", "Ing. Mecánica", "Ing. Química", "Ing. Computación", "Ing. Telecomunicaciones", "Ing. Mantenimiento", "Ing. Electrónica", "Ing. Geofísica", "Ing. Materiales", "Ing. Producción")
-        var carrera_14=new Array("Seleccione", "Lic. Gestión de la Hospitalidad", "Lic. Com. Internacional")
+        var carrera_11=new Array("-Seleccione-", "Lic. Biología", "Lic. Física", "Lic. Matemática", "Lic. Química")
+        var carrera_12=new Array("-Seleccione-", "Arquitectura", "Urbanismo")
+        var carrera_13=new Array("-Seleccione-", "Ing. Eléctrica", "Ing. Mecánica", "Ing. Química", "Ing. Computación", "Ing. Telecomunicaciones", "Ing. Mantenimiento", "Ing. Electrónica", "Ing. Geofísica", "Ing. Materiales", "Ing. Producción")
+        var carrera_14=new Array("-Seleccione-", "Lic. Gestión de la Hospitalidad", "Lic. Com. Internacional")
 
-        var carrera_21=new Array("Seleccione", "TSU Tec. Electrónica", "TSU Tec. Mecánica", "TSU Mant. Aeronáutico")
-        var carrera_22=new Array("Seleccione", "TSU Admin. Turismo", "TSU Admin. Hotelera", "TSU Admin. Transporte", "TSU Admin. Aduanera", "TSU Com. Exterior", "TSU Org. Empresarial")
+        var carrera_21=new Array("-Seleccione-", "TSU Tec. Electrónica", "TSU Tec. Mecánica", "TSU Mant. Aeronáutico")
+        var carrera_22=new Array("-Seleccione-", "TSU Admin. Turismo", "TSU Admin. Hotelera", "TSU Admin. Transporte", "TSU Admin. Aduanera", "TSU Com. Exterior", "TSU Org. Empresarial")
 
         function cambia_carrera(){ 
             //tomo el valor del select del pais elegido 
@@ -840,7 +934,7 @@
         function Necesario(campo){
                 error = false;
                 string = trim(document.getElementById(campo).value);
-                if((string==="") || (string==="-") || (string==="0")){
+                if((string==="") || (string==="-") || (string==="-Seleccione-")){
                         error = true;
                         document.getElementById(campo).style.background = "#FFCCE0";
                 }else{
@@ -856,8 +950,8 @@
         /*Funcion que verifica el formato de un email*/
         function CompruebaEmail(campo){
                 error = false;
-                var validRegExp = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-                var strEmail = document.getElementById(campo).value;
+                var	validRegExp	= /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                var strEmail	= 	document.getElementById(campo).value;
                 if (strEmail.length > 0) {
                         if(strEmail.search(validRegExp)==-1) {
                                 error = true;
@@ -898,11 +992,67 @@
                         return false;
                 }
         }
-        /*Funcion que verifica que la fecha sea al menos 17 anios mayor al anio
-         * actual*/
-        function fechaValida(campo){
-            error = false;
-            var fecha = document.getElementById(campo);
-            fecha = Date(fecha);
-            var hoy = new Date();
+        /*Funcion que verifica que el indice este entre 3 y 5*/
+        function verificaIndice(campo){
+            error=false;
+            var indice = document.getElementById(campo).value;
+            if(parseFloat(indice)>=3 && parseFloat(indice)<=5){
+                document.getElementById(campo).style.background = "#FFFFFF";
+                error = false;
+            }else{
+                document.getElementById(campo).style.background = "#FFCCE0";
+                error = true;
+            }
+            return error;
+        }
+        /*Funcion que verifica que el carnet tiene un formato valido*/
+        function verificaCarnet(campo){
+            error=false;
+            var carnet = document.getElementById(campo).value;
+            carnet = carnet.split("-");
+            anio = carnet[0];
+            numero = carnet[1];
+            if(carnet.length>1 && !isNaN(parseFloat(anio))&& !isNaN(parseFloat(numero))){
+                document.getElementById(campo).style.background = "#FFFFFF";
+                error = false;
+            }else{
+                document.getElementById(campo).style.background = "#FFCCE0";
+                error = true;
+            }
+            return error;
+        }
+        /*Funcion que verifica que el campo esta compuesto solo por numeros*/
+        function esNumero(campo){
+            error=false;
+            var string = document.getElementById(campo).value;
+            var numero = parseFloat(string);
+            if(isNaN(numero)){
+                document.getElementById(campo).style.background = "#FFCCE0";
+                error = true;
+            }else{
+                document.getElementById(campo).style.background = "#FFFFFF";
+                error = false;
+            }
+            return error;
+        }
+        /*Funcion que verifica que el campo tenga un tamano mayor a 4 caracteres*/
+        function tamano(campo){
+            error=false;
+            var string = document.getElementById(campo).value;
+            if(string.length()>3){
+                error = false;
+                document.getElementById(campo).style.background = "#FFFFFF";
+            }else{
+                document.getElementById(campo).style.background = "#FFCCE0";
+                error = true;
+            }
+            return error;
+        }
+        /*Funcion grafica para subir un div*/
+        function subir(campo){
+            Effect.SlideUp(campo);
+        }
+        /*Funcion grafica para bajar un div*/
+        function bajar(campo){
+            Effect.SlideDown(campo);
         }
