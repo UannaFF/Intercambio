@@ -31,9 +31,7 @@
         <h4 align ="center">Postulante</h4>
         <h5 align ="center">¿Qu&eacute; desea hacer?</h5>
 
-    <html:link action="/AgregarEstudiantes">
-        <p align ="center">Postular Estudiante</p>
-    </html:link>
+   
         <div align="center">
         <html:form action="/ListarEstudiantes">
             <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
