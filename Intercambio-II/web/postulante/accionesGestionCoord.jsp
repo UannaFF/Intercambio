@@ -28,16 +28,17 @@
         <tr align="center"><td>
                 <div id="opci1" class="divformulario" style="display: block" align="center">
                     <p align="center"><b>Consulta de la Gesti&oacute;n de conocimientos</b></p>
-                    <br>Este espacio est&aacute; destinado a la consulta de la opini&oacute;<br>
+                    <br>Este espacio est&aacute; destinado a la consulta de la opini&oacute;n<br>
                      estudiantil en el exterior.<br>
-                     Verifique la opini&oacute;n en los diversos pa&iacute;ses y universidades y <br>
+                     Verifique la opini&oacute;n en los diversos pa&iacute;ses o universidades y <br>
                      revise las mejores opciones calculadas para los <br> estudiantes de su carrera.
-
+                     <br><br>  
                 </div>     
                     </td></tr>
                   
         </td></tr>
-<tr> <td> <h3 align ="center">¿C&oacute;mo desea consultar?</h3> </td> </tr>
+
+<tr> <td> <br><br><h3 align ="center">¿C&oacute;mo desea consultar?</h3> </td> </tr>
     
         
         <tr> <td>   
