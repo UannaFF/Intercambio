@@ -728,6 +728,8 @@
       </action>
       <action input="/" name="Usuario" path="/AgregarComentario" scope="session" type="Actions.AgregarComentario">
           <forward name = "success" path="exitoAgregEst"/>
+          <forward name="failure" path="falloAgregEst"/>
+          
       </action>
       
       <action name="PlanExtranjero" path="/AccionPlanEstudioExt" scope="session" type="Actions.AccionPlanEstudioExt">

@@ -2313,6 +2313,10 @@ public class DBMS {
         try {
             ps = conexion.prepareStatement("UPDATE \"dycicle\".estudiante SET "
                     + "comentario= ? WHERE nombreusuario = ?");
+            
+            if (!(u.getConfirmar().length() > 0)){
+                return false;
+            }
             ps.setString(1, u.getConfirmar());
             ps.setString(2, u.getNombreusuario());
             Integer i = ps.executeUpdate();

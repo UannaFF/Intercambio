@@ -16,13 +16,13 @@
 
 
     <div style="text-align: center;">
-        <h1>El estudiante no pudo ser agregado</h1>
+        <h1>Ha dejado la recomendacion vacia</h1>
         
         <html:image src="images/error.png" /> 
         <br />
         
         <html:link action="accionesPostulante">
-            Continuar
+            Volver
         </html:link>
     </div>
 
