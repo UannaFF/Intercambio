@@ -16,6 +16,7 @@
         <form-bean name="Gestion" type="Clases.Gestion"/> <!-- MOSQ -->
         <form-bean name="GestionUniversidad" type="Clases.GestionUniversidad"/> <!-- MOSQ -->
         <form-bean name="Gestionpais" type="Clases.Gestionpais"/> <!-- MOSQ -->
+        <form-bean name="ExtmpSol" type="Clases.ExtmpSol"/> <!-- MOSQ 30%-->
         <form-bean name="EstInter" type="Clases.EstudianteInternacional"/>
         <form-bean name="Postulante" type="Clases.Postulante"/>
         <form-bean name="fileUploadForm" type="Clases.FileUploadForm"/>

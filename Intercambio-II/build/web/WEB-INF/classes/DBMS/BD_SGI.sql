@@ -87,6 +87,27 @@ WITH (
 OIDS = FALSE
 );
 
+/* Entidad Solicitud Extemporanea
+ *  Guarda la peticion de un estudiante para modificar su plan de estudio,
+ *  pedir permiso para pasantia o proy de grado           */
+
+CREATE TABLE "dycicle".EXTMPSOL(
+	NombreUsuario	VARCHAR(20)	NOT NULL,
+        Fecha	        timestamp with time zone NOT NULL default CURRENT_TIMESTAMP(2),
+        Tipo            VARCHAR(20)     NOT NULL,
+        Solicitud       VARCHAR(2000)     NOT NULL,
+        Estado          VARCHAR(20)     NOT NULL,
+        Respuesta       VARCHAR(2000)       default NULL,
+	CONSTRAINT PK_ExtmpSol PRIMARY KEY (NombreUsuario, Fecha)
+)
+WITH (
+OIDS = FALSE
+);
+
+
+
+
+
 /* En esta tabla se tienen todos los datos particulares
  * de  los  estudiantes  que  pertenecen  a  la  USB */
 CREATE TABLE "dycicle".EstudianteUSB(
@@ -520,7 +541,7 @@ INSERT INTO "dycicle".ANTECEDENTEACADEMICO VALUES ('brahyam','3.6575','Estudios 
 INSERT INTO "dycicle".POSTULACION VALUES ('brahyam','En evaluacion','recomendacion','comentario','2013-03-09');
 
 INSERT INTO "dycicle".PLANESTUDIO VALUES ('brahyam','CI-2525','Ingenieria de Software',4,'HJI878','Analisis Cuantico',5);
-INSERT INTO "dycicle".PLANESTUDIO VALUES ('brahyam','CI-2525','Ingenier Software',4,'HJI8','Analisis Cuantico',5);
+
 INSERT INTO "dycicle".PLANESTUDIO VALUES ('brahyam','CI25','Ingenieria de Software',4,'HJ78','Anisis Cuano',3);
 
 INSERT INTO "dycicle".REPRESENTANTE VALUES ('brahyam','Jorge Luis','Meneses Arriba','04166119360','02125518367','jorge@gmail.com','Familiar','La Candelaria');
