@@ -21,6 +21,8 @@
 
     <h4 align ="center">Estudiante USB</h4>
     
+    <script  src="/Intercambio-II/css/extmp.js"></script>
+    
     <html:form  action="/ExtmpAgregada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <table border="0" width="520"> 
                 
@@ -30,7 +32,7 @@
             
         <tr>
             <td align="center" colspan="2">
-               <html:select styleId="tippo" name="ExtmpSol" property="tipo"> 
+               <html:select styleId="tipoextmp" name="ExtmpSol" property="tipo"> 
                <html:option value="0">Seleccione </html:option>
                <html:option value="materia">Solicitud de cambio de materia</html:option>
                <html:option value="pasantia">Solicitud de pasant&iacute;a</html:option>
@@ -39,13 +41,13 @@
         </td></tr>
         <tr><td align="center" colspan="2">
                 
-               <html:textarea style="width:500px;height:200px;" name="ExtmpSol" property="solicitud" errorStyleClass="error"
+               <html:textarea styleId="solextmp" style="width:500px;height:200px;" name="ExtmpSol" property="solicitud" errorStyleClass="error"
                               errorKey="org.apache.struts.action.ERROR"></html:textarea> 
                 <br><br> 
             </td>
         </tr>  
         <tr>
-        <td align="center">Ingrese el archivo tal<br></td>  
+        <td align="center">Ingrese el un plan relacionado con su solicitud<br></td>  
         </tr>
         <tr>
         <td align="center">
@@ -69,7 +71,7 @@
     
    
 <p style="text-align: center" >
-    <html:submit > <%--onclick="return gestionnocompleta();"--%>
+    <html:submit onclick="return extmpnocompleta();"> 
                 Guardar
     </html:submit>
             </p>

@@ -36,6 +36,9 @@
             
             
         </tr>
+    <%if(sol.size()==0){%>
+    <tr><td align="center" colspan="4"> No hay solicitudes para consultar</td></tr>
+    <%}else{%>
     <%for(int i = 0; i<sol.size(); i++){%>
     <html:form  action="/DetallesConsultarExtmp" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
             
@@ -63,7 +66,7 @@
             </p></td>
             </tr>
             </html:form>
-           <%}%>
+           <%}}%>
            
         
      
