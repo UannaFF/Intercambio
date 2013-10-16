@@ -1026,7 +1026,7 @@
             error=false;
             var string = document.getElementById(campo).value;
             var numero = parseFloat(string);
-            if(isNaN(string)){
+            if(isNaN(numero)){
                 document.getElementById(campo).style.background = "#FFCCE0";
                 error = true;
             }else{
