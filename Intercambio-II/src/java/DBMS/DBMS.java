@@ -17,6 +17,7 @@ import java.util.logging.Logger;
  *
  * @author gustavo
  * @Modified by dreabalbas
+ * @Modified by jaescalante02
  */
 public class DBMS {
 
@@ -2787,6 +2788,31 @@ public class DBMS {
         
         return gp;
     }
+    
+    // MOSQ 30%
+    
+    public void agregarExtmp(ExtmpSol sol) throws UnsupportedEncodingException{
+        
+            PreparedStatement psAgregar = null;
+
+        try {
+            psAgregar = conexion.prepareStatement("INSERT INTO \"dycicle\".EXTMPSOL "
+                    + "(nombreusuario,tipo,solicitud,estado) VALUES (?,?,?,?);");
+            psAgregar.setString(1, sol.getnombreusuario());
+            psAgregar.setString(2, sol.gettipo());
+            psAgregar.setString(3, new String (sol.getsolicitud().getBytes("ISO-8859-1"),"UTF-8"));
+            psAgregar.setString(4,"En proceso");
+            //
+
+            System.out.println(psAgregar.toString());
+            psAgregar.executeUpdate();
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }    
+        
+    }
+    
     
     //Fin modificacion MOSQ
 }

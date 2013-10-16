@@ -315,7 +315,25 @@
     <definition name="gestionPais" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/postulante/gestionPais.jsp" />
     </definition>         
-                                    
+                             
+     <!--30% MOSQ-->  
+     
+    <definition name="accionesExtmp" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/accionesExtmp.jsp" />
+    </definition>      
+    
+    <definition name="agregarExtmp" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/agregarExtmp.jsp" />
+    </definition>                                                        
+    
+    <definition name="consultarExtmp" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/consultarExtmp.jsp" />
+    </definition>
+    
+    <definition name="extmpAgregada" extends="baseEstudiante"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/estudianteUSB/extmpAgregada.jsp" />
+    </definition>                                                                                                        
+                                                                                                                                              
      <!--Fin modificacion MOSQ--> 
     
         

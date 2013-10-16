@@ -15,6 +15,15 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
     String solicitud;
     String estado;
     String respuesta;
+    String archivo;
+
+    public String getarchivo() {
+        return archivo;
+    }
+
+    public void setarchivo(String archivo) {
+        this.archivo = archivo;
+    }
 
     public String getnombreusuario() {
         return nombreusuario;

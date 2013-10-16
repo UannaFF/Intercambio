@@ -228,7 +228,33 @@
             scope="request"
             validate="false"
             parameter="gestionPais"/>           
+
+       <!--MOSQ 30%-->
        
+            <action path="/accionesExtmp"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="accionesExtmp"/> 
+            
+            <action path="/agregarExtmp"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="agregarExtmp"/> 
+                        
+            <action path="/consultarExtmp"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="consultarExtmp"/> 
+       
+            <action path="/extmpAgregada"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="extmpAgregada"/>             
+                   
        <!--Fin Modificacion MOSQ-->
         
         <action path="/contactoEstUSB"
@@ -641,8 +667,24 @@
                    <forward name="success" path="gestionPais" />
               </action>
        
-       
+       <!--30% MOSQ-->
   
+              <action name="ExtmpSol" path="/AccionesExtmp" scope="session" type="Actions.AccionesExtmp">
+                   <forward name="success" path="accionesExtmp" />
+              </action>
+              
+              <action name="ExtmpSol" path="/AgregarExtmp" scope="session" type="Actions.AgregarExtmp">
+                   <forward name="success" path="agregarExtmp" />
+              </action>
+              
+              <action name="ExtmpSol" path="/ConsultarExtmp" scope="session" type="Actions.ConsultarExtmp">
+                   <forward name="success" path="consultarExtmp" />
+              </action>
+              
+              <action name="ExtmpSol" path="/ExtmpAgregada" scope="session" type="Actions.ExtmpAgregada">
+                   <forward name="success" path="extmpAgregada" />
+              </action>
+             
               
        <!--Fin modificacion MOSQ-->
        

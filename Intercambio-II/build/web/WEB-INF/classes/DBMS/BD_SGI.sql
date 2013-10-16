@@ -97,6 +97,7 @@ CREATE TABLE "dycicle".EXTMPSOL(
         Tipo            VARCHAR(20)     NOT NULL,
         Solicitud       VARCHAR(2000)     NOT NULL,
         Estado          VARCHAR(20)     NOT NULL,
+        Archivo         VARCHAR(200),
         Respuesta       VARCHAR(2000)       default NULL,
 	CONSTRAINT PK_ExtmpSol PRIMARY KEY (NombreUsuario, Fecha)
 )
