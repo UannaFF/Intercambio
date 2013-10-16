@@ -2813,6 +2813,37 @@ public class DBMS {
         
     }
     
+    public ArrayList<ExtmpSol> consultarExtmpUsuario(String u){
+        
+            PreparedStatement psConsultar;
+            ArrayList<ExtmpSol> res = new ArrayList<ExtmpSol>(0);
+        try {        
+            psConsultar = conexion.prepareStatement("SELECT * FROM \"dycicle\".extmpsol"
+                + " WHERE nombreusuario = ?;");
+            
+            
+            psConsultar.setString(1, u);
+            ResultSet set = psConsultar.executeQuery();
+            while(set.next()){
+                ExtmpSol sol = new ExtmpSol();
+                sol.setnombreusuario(set.getString("nombreusuario"));
+                sol.setestado(set.getString("estado"));
+                sol.setsolicitud(set.getString("solicitud"));
+                sol.setfecha(set.getString("fecha"));
+                sol.settipo(set.getString("tipo"));
+                sol.setrespuesta(set.getString("respuesta"));
+                res.add(sol);
+                
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBMS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+
+        return res;
+        
+    }
     
     //Fin modificacion MOSQ
 }

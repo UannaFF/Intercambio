@@ -16,6 +16,15 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
     String estado;
     String respuesta;
     String archivo;
+    String fecha;
+
+    public String getfecha() {
+        return fecha;
+    }
+
+    public void setfecha(String fecha) {
+        this.fecha = fecha;
+    }
 
     public String getarchivo() {
         return archivo;
