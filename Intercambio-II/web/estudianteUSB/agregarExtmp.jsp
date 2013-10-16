@@ -23,15 +23,13 @@
     
     <html:form  action="/ExtmpAgregada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
         <table border="0" width="520"> 
-           <tr><td>
                 
             <p hidden="true"> <html:text name="ExtmpSol" property="nombreusuario" value ="<%=tmp.toString()%>" maxlength="20" errorStyleClass="error"
                                  errorKey="org.apache.struts.action.ERROR"></html:text></p>    
                 
-            </td></tr>
             
         <tr>
-            <td align="center">
+            <td align="center" colspan="2">
                <html:select styleId="tippo" name="ExtmpSol" property="tipo"> 
                <html:option value="0">Seleccione </html:option>
                <html:option value="materia">Solicitud de cambio de materia</html:option>
@@ -39,12 +37,28 @@
                <html:option value="proygrado">Solicitud de proyecto de grado</html:option>              
              </html:select>  
         </td></tr>
-        <tr><td align="center">
+        <tr><td align="center" colspan="2">
                 
                <html:textarea style="width:500px;height:200px;" name="ExtmpSol" property="solicitud" errorStyleClass="error"
                               errorKey="org.apache.struts.action.ERROR"></html:textarea> 
-                
-            </td></tr>
+                <br><br> 
+            </td>
+        </tr>  
+        <tr>
+        <td align="center">Ingrese el archivo tal<br></td>  
+        </tr>
+        <tr>
+        <td align="center">
+                   <div id="archivos" >
+                   <div class="feed">  
+
+                       <html:file name="ExtmpSol" property="archivo" />
+                   </div>
+                   </div>
+
+       </td>
+        
+        </tr>
             </tbody>
         </table>
     

@@ -37,7 +37,7 @@
             
         </tr>
     <%for(int i = 0; i<sol.size(); i++){%>
-    <html:form  action="/ExtmpAgregada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+    <html:form  action="/DetallesConsultarExtmp" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
             
                 
             <p hidden="true"> <html:text name="ExtmpSol" property="nombreusuario" value ="<%=sol.get(i).getnombreusuario().toString()%>" maxlength="20" errorStyleClass="error"
@@ -48,6 +48,10 @@
                                  errorKey="org.apache.struts.action.ERROR"></html:text></p> 
             
             <p hidden="true"> <html:text name="ExtmpSol" property="tipo" value ="<%=sol.get(i).gettipo().toString()%>" maxlength="20" errorStyleClass="error"
+                                 errorKey="org.apache.struts.action.ERROR"></html:text></p> 
+            <p hidden="true"> <html:text name="ExtmpSol" property="respuesta" value ="<%=sol.get(i).getrespuesta()%>" maxlength="2000" errorStyleClass="error"
+                                 errorKey="org.apache.struts.action.ERROR"></html:text></p> 
+            <p hidden="true"> <html:text name="ExtmpSol" property="solicitud" value ="<%=sol.get(i).getsolicitud().toString()%>" maxlength="2000" errorStyleClass="error"
                                  errorKey="org.apache.struts.action.ERROR"></html:text></p> 
             <td><%=sol.get(i).gettipo()%></td>
             <td><%=sol.get(i).getfecha()%></td>

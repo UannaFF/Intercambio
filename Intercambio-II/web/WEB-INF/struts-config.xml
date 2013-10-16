@@ -253,7 +253,13 @@
             type="org.apache.struts.actions.ForwardAction"
             scope="request"
             validate="false"
-            parameter="extmpAgregada"/>             
+            parameter="extmpAgregada"/> 
+            
+            <action path="/detallesConsultarExtmp"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="detallesConsultarExtmp"/>            
                    
        <!--Fin Modificacion MOSQ-->
         
@@ -683,6 +689,10 @@
               
               <action name="ExtmpSol" path="/ExtmpAgregada" scope="session" type="Actions.ExtmpAgregada">
                    <forward name="success" path="extmpAgregada" />
+              </action>
+              
+              <action name="ExtmpSol" path="/DetallesConsultarExtmp" scope="session" type="Actions.DetallesConsultarExtmp">
+                   <forward name="success" path="detallesConsultarExtmp" />
               </action>
              
               

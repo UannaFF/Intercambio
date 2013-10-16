@@ -4,6 +4,8 @@
  */
 package Clases;
 
+import org.apache.struts.upload.FormFile;
+
 /**
  *
  * @author jaescalante02
@@ -15,7 +17,7 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
     String solicitud;
     String estado;
     String respuesta;
-    String archivo;
+    FormFile archivo;
     String fecha;
 
     public String getfecha() {
@@ -26,11 +28,11 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
         this.fecha = fecha;
     }
 
-    public String getarchivo() {
+    public FormFile getarchivo() {
         return archivo;
     }
 
-    public void setarchivo(String archivo) {
+    public void setarchivo(FormFile archivo) {
         this.archivo = archivo;
     }
 
