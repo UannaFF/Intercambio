@@ -93,7 +93,7 @@ OIDS = FALSE
 
 CREATE TABLE "dycicle".EXTMPSOL(
 	NombreUsuario	VARCHAR(20)	NOT NULL,
-        Fecha	        timestamp with time zone NOT NULL default CURRENT_TIMESTAMP(2),
+        Fecha	        timestamp  NOT NULL default CURRENT_TIMESTAMP(2),
         Tipo            VARCHAR(20)     NOT NULL,
         Solicitud       VARCHAR(2000)     NOT NULL,
         Estado          VARCHAR(20)     NOT NULL,

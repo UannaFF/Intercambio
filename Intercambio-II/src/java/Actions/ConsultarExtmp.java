@@ -4,6 +4,8 @@
  */
 package Actions;
 
+import Clases.ExtmpSol;
+import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.struts.action.ActionForm;
@@ -35,7 +37,12 @@ public class ConsultarExtmp extends org.apache.struts.action.Action {
     public ActionForward execute(ActionMapping mapping, ActionForm form,
             HttpServletRequest request, HttpServletResponse response)
             throws Exception {
+       
+         ArrayList<ExtmpSol> sol; 
+         ExtmpSol s = (ExtmpSol) form;
         
+         sol= DBMS.DBMS.getInstance().consultarExtmpUsuario(s.getnombreusuario());
+         request.setAttribute("solicitudesextmp", sol);
         return mapping.findForward(SUCCESS);
     }
 }

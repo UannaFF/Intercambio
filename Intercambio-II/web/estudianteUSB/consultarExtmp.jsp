@@ -4,14 +4,73 @@
     Author     : jaescalante02
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Clases.ExtmpSol"%>
+<%Object tmp = session.getAttribute("nombreusuario");%>
+<%Object var = session.getAttribute("nombre");%>
+<%Object confirm = session.getAttribute("confirmar");%>
+<%@page import="javax.swing.text.html.HTML"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<meta http-equiv="Content-Type" content="text/html; UTF-8">
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean" %>
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
+<%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
+<%@ taglib uri="http://struts.apache.org/tags-tiles" prefix="tiles" %>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World consulta!</h1>
+
+ <title>Sistema de Gesti&oacute;n de Intercambio</title>
+ 
+
+ 
+<html:html lang="true">
+
+     <%ArrayList<ExtmpSol> sol= (ArrayList<ExtmpSol>)request.getAttribute("solicitudesextmp");%>
+    
+    <h4 align ="center">Estudiante USB</h4>
+    <table border="1" width="520">
+        <tr>
+            <th>Tipo</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+            <th>Detalles</th>
+            
+            
+        </tr>
+    <%for(int i = 0; i<sol.size(); i++){%>
+    <html:form  action="/ExtmpAgregada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+            
+                
+            <p hidden="true"> <html:text name="ExtmpSol" property="nombreusuario" value ="<%=sol.get(i).getnombreusuario().toString()%>" maxlength="20" errorStyleClass="error"
+                                 errorKey="org.apache.struts.action.ERROR"></html:text></p>    
+                
+            
+            <p hidden="true"> <html:text name="ExtmpSol" property="estado" value ="<%=sol.get(i).getestado().toString()%>" maxlength="20" errorStyleClass="error"
+                                 errorKey="org.apache.struts.action.ERROR"></html:text></p> 
+            
+            <p hidden="true"> <html:text name="ExtmpSol" property="tipo" value ="<%=sol.get(i).gettipo().toString()%>" maxlength="20" errorStyleClass="error"
+                                 errorKey="org.apache.struts.action.ERROR"></html:text></p> 
+            <td><%=sol.get(i).gettipo()%></td>
+            <td><%=sol.get(i).getfecha()%></td>
+            <td><%=sol.get(i).getestado()%></td>
+            <td>            <p style="text-align: center">
+            <html:submit>
+                Solicitud/Respuesta
+            </html:submit>
+            </p></td>
+            </tr>
+            </html:form>
+           <%}%>
+           
+        
+     
+    </table>
+     <html:link action="/AccionesExtmp">
+            <p style="text-align: center">
+            <html:submit>
+                Volver
+            </html:submit>
+            </p>
+      </html:link>      
+            
     </body>
-</html>
+</html:html>
