@@ -35,7 +35,13 @@ ddmenu.init({
 <html:html>
 
     <div class="glossymenu" style="width: 190px">
-        <a style="border-bottom: none;" ><html:link styleClass="menuitem" action="/accionesPostulante">Inicio</html:link></a>
+         <a style="border-bottom: none;" ><html:link styleClass="menuitem" action="/accionesPostulante">
+                                                <html:param name="nombreusuario"> 
+                                                    <bean:write name="Usuario" property="nombreusuario"/>
+                                                </html:param>
+                                                <p hidden="true"><bean:write name="Usuario" property="nombreusuario"></bean:write></p>
+                                                Inicio
+                                         </html:link></a>
         
         <a class="menuitem submenuheader">Gestión de estudiantes </a>
         <div class="submenu">

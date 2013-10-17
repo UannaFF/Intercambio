@@ -1,5 +1,5 @@
 <%-- 
-    Document   : listarEstudiantes
+    Document   : listarSolicitudes
     Created on : Oct 18, 2012, 12:58:41 AM
     Author     : caponte
 --%>

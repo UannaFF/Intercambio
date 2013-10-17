@@ -525,7 +525,15 @@
     <definition name="accionesPostulante" extends="baseCoordinaciones"> <!-- pagina de gestion de usuarios -->
         <put name="body" value="/postulante/accionesPostulante.jsp" />
     </definition>
-            
+    
+    <definition name="accionesPostulanteConNotif" extends="baseCoordinaciones"> <!-- pagina de gestion de usuarios -->
+        <put name="body" value="/postulante/accionesPostulanteConNotif.jsp" />
+    </definition>
+    
+    <definition name="accionesPostulanteSinNotif" extends="baseCoordinaciones"> <!-- pagina de gestion de usuarios -->
+        <put name="body" value="/postulante/accionesPostulanteSinNotif.jsp" />
+    </definition>    
+        
     <definition name="listarEstudiantes" extends="baseCoordinaciones"> <!-- pagina de listar estudiantes -->
         <put name="body" value="/postulante/listarEstudiantes.jsp" />
     </definition>  

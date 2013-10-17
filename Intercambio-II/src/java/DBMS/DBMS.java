@@ -2903,4 +2903,24 @@ public class DBMS {
             
         
     }
+    
+     public boolean haySolPendientes(String carrera){
+        PreparedStatement psVerificar;
+        try {    
+            psVerificar = conexion.prepareStatement("select SOL.estado, SOL.nombreusuario\n" +
+                                        "from dycicle.extmpsol SOL, dycicle.estudiante E\n" +
+                                        "WHERE SOL.nombreusuario = E.nombreusuario AND\n" +
+                                        "      E.carreraest = ? AND\n" +
+                                        "      SOL.estado = 'En proceso';");
+            psVerificar.setString(1, carrera);
+            ResultSet set = psVerificar.executeQuery();
+            if(set.next()){
+                return true;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(DBMS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    //Fin modificacion Syscomp 30%
 }

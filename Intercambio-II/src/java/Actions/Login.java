@@ -26,7 +26,8 @@ public class Login extends org.apache.struts.action.Action {
     /* forward name="success" path="" */
     private static final String ADMIN = "administrador";
     private static final String GESTOR = "gestor";
-    private static final String COORD = "coordinacion";
+    private static final String COORDCONNOT = "coordinacionConNotif";
+    private static final String COORDSINNOT = "coordinacionSinNotif";
     private static final String univExt = "univExt";
     private static final String estUSB = "estUSB";
     private static final String estExt = "estExt";
@@ -108,10 +109,20 @@ public class Login extends org.apache.struts.action.Action {
                     request.setAttribute("usuario", tmp);
                     session.setAttribute("nombre", tmp.getNombre());
                     session.setAttribute("nombreusuario", tmp.getNombreusuario());
+                    
+                    System.out.println(u.getNombreusuario());
+                    String[] info = DBMS.getInstance().getInfoPostulante(u.getNombreusuario());
+        
+                    
+        
                     if(sistema){
                         return mapping.findForward("Cerrado");
                     }
-                    return mapping.findForward(COORD);
+                    if(DBMS.getInstance().haySolPendientes(info[3])){
+                        return mapping.findForward(COORDCONNOT);
+                    }
+                    
+                    return mapping.findForward(COORDSINNOT);
                 } else if (tmp.getPrivilegio() == 4) {
                     request.setAttribute("usuario", tmp);
                     session.setAttribute("nombre", tmp.getNombre());

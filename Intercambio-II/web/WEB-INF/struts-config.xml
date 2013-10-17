@@ -303,11 +303,7 @@
 
 
         <!-- desde Coordinacion usb -->
-        <action path="/accionesPostulante"
-            type="org.apache.struts.actions.ForwardAction"
-            scope="request"
-            validate="false"
-            parameter="accionesPostulante"/>
+        
         
         <action path="/contactoCoord"
             type="org.apache.struts.actions.ForwardAction"
@@ -354,7 +350,8 @@
             <forward name="failure" path="datosErrados"/>
             <forward name="administrador" path="accionesAdmin" />
             <forward name="gestor" path="listarEstudiantesPostulados" />
-            <forward name="coordinacion" path="accionesPostulante" />
+            <forward name="coordinacionConNotif" path="accionesPostulanteConNotif" />
+            <forward name="coordinacionSinNotif" path="accionesPostulanteSinNotif" />
             <forward name="univExt" path="welcomeCoord" />
             <forward name="estUSB" path="accionesEstUSB" />
             <forward name="estExt" path="accionesEstExt" />
@@ -573,7 +570,12 @@
             <forward name="failure" path="listarEstudiantes"/>
             <forward name="success" path="elimExitoCoord" />
      </action>
-  
+     
+      <action input="/" name="Usuario" path="/accionesPostulante" scope="session" type="Actions.revisarNuevasSol">
+            <forward name="success" path="accionesPostulanteConNotif"/>
+            <forward name="failure" path="accionesPostulanteSinNotif"/>
+      </action>
+      
       
         <!-- -->
         
