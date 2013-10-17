@@ -33,11 +33,9 @@
                 <td>Solicitud</td>
                 <td><bean:write name = "solicitud" property="solicitud"/></td>
             </tr>
-            <tr>
-                <td>Archivo adjunto</td>
-                <td><a href="<bean:write name = "solicitud" property="dirarchivo"/>">Descargar</a></td>
-            </tr>        
-        </table>
+                  
+        </table><br/><br/>
+            <center>Archivo adjunto<br/><br/><img src="Documentos2/<bean:write name = "solicitud" property="dirarchivo"/>"></center>
             
 
 </html>

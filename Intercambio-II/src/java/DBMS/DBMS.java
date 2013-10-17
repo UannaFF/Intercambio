@@ -2918,7 +2918,8 @@ public class DBMS {
                 t.setfecha(rs.getString("fecha"));
                 t.settipo(rs.getString("tipo"));
                 t.setsolicitud(rs.getString("solicitud"));
-                t.setdirarchivo(rs.getString("archivo"));
+                String[] c = rs.getString("archivo").split("/");
+                t.setdirarchivo(c[c.length-2]+"/"+c[c.length-1]);
                 t.setrespuesta(rs.getString("respuesta"));
                 Usuario n = new Usuario();
                 n.setNombreusuario(rs.getString("nombreusuario"));
