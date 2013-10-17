@@ -183,7 +183,7 @@
     <definition name="LogAuditoria" extends ="baseAdmin">
         <put name="body" value="/admin/LogAuditoria.jsp"/>
     </definition>
-       
+
         
     <!-- ESTUDIANTE USB -->
     <definition name="baseEstudiante" extends="base"> <!-- base de todas las vistas de estudiantes -->
@@ -286,6 +286,10 @@
     
     <definition name="accionesGestionCoord" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
         <put name="body" value="/postulante/accionesGestionCoord.jsp" />
+    </definition>
+    
+     <definition name="mostrarSolicitud" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->
+        <put name="body" value="/postulante/mostrarSolicitud.jsp" />
     </definition>
     
     <definition name="gestionporPais" extends="baseCoordinaciones"> <!-- pagina acciones de estudiante usb -->

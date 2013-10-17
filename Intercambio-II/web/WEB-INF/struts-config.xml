@@ -289,6 +289,12 @@
             validate="false"
             parameter="cuentaEstExt"/>
         
+         <action path="/mostrarSolicitud"
+            type="org.apache.struts.actions.ForwardAction"
+            scope="request"
+            validate="false"
+            parameter="mostrarSolicitud"/>
+         
         <action path="/modificarperExt"
             type="org.apache.struts.actions.ForwardAction"
             scope="request"
@@ -507,6 +513,10 @@
             <forward name="success" path = "accExito" />
             <forward name ="failure" path = "accFallo" />
             <forward name="error" path = "agregarCoord" />
+      </action>
+      
+      <action input="/" name="Postulante" path="/mostrarSolicitud" scope="session" type="Actions.mostrarSolicitud">
+            <forward name="success" path = "mostrarSolicitud" />
       </action>
             
       <action input="/" name="gestor" path="/AccionAgregarGestor" scope="session" type="Actions.AccionAgregarGestor">

@@ -18,7 +18,9 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
     String estado;
     String respuesta;
     FormFile archivo;
+    String dirarchivo;
     String fecha;
+    Usuario user;
 
     public String getfecha() {
         String[] fech = fecha.split(" ");
@@ -33,9 +35,21 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
     public FormFile getarchivo() {
         return archivo;
     }
+    
+    public Usuario getuser() {
+        return user;
+    }
 
     public void setarchivo(FormFile archivo) {
         this.archivo = archivo;
+    }
+    
+    public void setuser(Usuario archivo) {
+        this.user = archivo;
+    }
+    
+      public void setdirarchivo(String archivo) {
+        this.dirarchivo = archivo;
     }
 
     public String getnombreusuario() {
@@ -56,6 +70,10 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
 
     public String getsolicitud() {
         return solicitud;
+    }
+    
+    public String getdirarchivo() {
+        return dirarchivo;
     }
 
     public void setsolicitud(String solicitud) {

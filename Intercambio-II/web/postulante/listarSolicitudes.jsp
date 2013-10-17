@@ -74,11 +74,10 @@
                         <bean:write name="solic" property="estado" />
                     </td>
                     <td align="center" width="90px">
-                       <%--  <html:form action="/solicitudModificacion" onsubmit="return(this)">
-                            <html:hidden name = "usuarios" property="nombreusuario"/>
-                            <html:hidden name = "usuarios" property="confirmar" value="postulante"/>
+                         <html:form action="/mostrarSolicitud" onsubmit="return(this)">
+                            <html:hidden name = "solic" property="nombreusuario"/>
                             <html:image src="images/verDatos.png" value="" property="" style=""/> 
-                        </html:form> --%> 
+                        </html:form> 
                     </td>
                 </tr>
 

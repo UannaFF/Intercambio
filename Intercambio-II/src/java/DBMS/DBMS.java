@@ -2849,27 +2849,6 @@ public class DBMS {
     //Fin modificacion MOSQ
     //SysComp 30%
     public ArrayList<ExtmpSol> consultarExtmp(Usuario u, boolean todas){
-        
-           /* PreparedStatement psConsultar;
-            ArrayList<ExtmpSol> res = new ArrayList<ExtmpSol>(0);
-        try {        
-            psConsultar = conexion.prepareStatement("SELECT * FROM \"dycicle\".extmpsol"
-                + " WHERE nombreusuario = ?;");
-            
-            
-            psConsultar.setString(1, u);
-            ResultSet set = psConsultar.executeQuery();
-            while(set.next()){
-                ExtmpSol sol = new ExtmpSol();
-                sol.setnombreusuario(set.getString("nombreusuario"));
-                sol.setestado(set.getString("estado"));
-                sol.setsolicitud(set.getString("solicitud"));
-                sol.setfecha(set.getString("fecha"));
-                sol.settipo(set.getString("tipo"));
-                sol.setrespuesta(set.getString("respuesta"));
-                res.add(sol);
-                
-            }*/
             
              ArrayList<ExtmpSol> sols = new ArrayList<ExtmpSol>(0);
 
@@ -2921,6 +2900,37 @@ public class DBMS {
             Logger.getLogger(DBMS.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }
+     public ExtmpSol consultarExtmpExt(Usuario u){
+            
+    ExtmpSol t = new ExtmpSol();
+        try {
+            String sqlquery;
+
+            sqlquery = "SELECT * FROM \"dycicle\".extmpsol WHERE nombreusuario = '" + u.getNombreusuario() + "';";
+
+            Statement stmt = conexion.createStatement();
+            ResultSet rs = stmt.executeQuery(sqlquery);
+            
+            while (rs.next()) {
+                t.setnombreusuario(rs.getString("nombreusuario"));
+                t.setestado(rs.getString("estado"));
+                t.setfecha(rs.getString("fecha"));
+                t.settipo(rs.getString("tipo"));
+                t.setsolicitud(rs.getString("solicitud"));
+                t.setdirarchivo(rs.getString("archivo"));
+                t.setrespuesta(rs.getString("respuesta"));
+                Usuario n = new Usuario();
+                n.setNombreusuario(rs.getString("nombreusuario"));
+                t.setuser(n);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return t;
+            
+        
     }
     //Fin modificacion Syscomp 30%
 }
