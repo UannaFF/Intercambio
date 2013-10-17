@@ -21,7 +21,9 @@ public class ExtmpSol extends org.apache.struts.validator.ValidatorForm {
     String fecha;
 
     public String getfecha() {
-        return fecha;
+        String[] fech = fecha.split(" ");
+        fech = fech[0].split("-");
+        return fech[2]+"/"+fech[1]+"/"+fech[0];
     }
 
     public void setfecha(String fecha) {
