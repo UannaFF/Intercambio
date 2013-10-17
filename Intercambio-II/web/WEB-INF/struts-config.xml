@@ -320,6 +320,7 @@
             scope="request"
             validate="false"
             parameter="modPerfilPos"/>
+       
         
         <!-- desde gestor usb -->
         <action path="/accionesGestor"
@@ -409,6 +410,11 @@
             <forward name="failure" path="accFallo"/>
             <forward name="success" path="accExito" />
             <forward name="error" path="agregPostulante"/>
+       </action>
+       
+       <action name="Postulante" path="/solicitudes" scope="session" type="Actions.Solicitudes">
+           <forward name="failure" path="solicitudes"/>
+           <forward name="success" path="solicitudes" />
        </action>
        
        <action name="Usuario" path="/AgregarUsuarios" scope="session" type="Actions.AgregarUsuarios">

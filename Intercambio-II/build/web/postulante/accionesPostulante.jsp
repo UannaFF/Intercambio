@@ -36,6 +36,17 @@
         <html:form action="/ListarEstudiantes">
             <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
             <html:submit>Consultar Solicitudes de Estudiantes</html:submit>
+        </html:form>
+        
+            <html:form action="/solicitudes">
+            <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
+            <html:hidden name="Usuario" property="nombre" value="false"/>
+            <html:submit>Listar solicitudes pendientes</html:submit>
+        </html:form>
+            <html:form action="/solicitudes">
+            <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
+            <html:hidden name="Usuario" property="nombre" value="true"/>
+            <html:submit>Listar todas las solicitudes</html:submit>
         </html:form> 
     </div>
 </html:html>

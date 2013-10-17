@@ -2847,4 +2847,60 @@ public class DBMS {
     }
     
     //Fin modificacion MOSQ
+    //SysComp 30%
+    public ArrayList<ExtmpSol> consultarExtmp(Usuario u, boolean todas){
+        
+           /* PreparedStatement psConsultar;
+            ArrayList<ExtmpSol> res = new ArrayList<ExtmpSol>(0);
+        try {        
+            psConsultar = conexion.prepareStatement("SELECT * FROM \"dycicle\".extmpsol"
+                + " WHERE nombreusuario = ?;");
+            
+            
+            psConsultar.setString(1, u);
+            ResultSet set = psConsultar.executeQuery();
+            while(set.next()){
+                ExtmpSol sol = new ExtmpSol();
+                sol.setnombreusuario(set.getString("nombreusuario"));
+                sol.setestado(set.getString("estado"));
+                sol.setsolicitud(set.getString("solicitud"));
+                sol.setfecha(set.getString("fecha"));
+                sol.settipo(set.getString("tipo"));
+                sol.setrespuesta(set.getString("respuesta"));
+                res.add(sol);
+                
+            }*/
+            
+             ArrayList<ExtmpSol> sols = new ArrayList<ExtmpSol>(0);
+
+        try {
+            String sqlquery;
+            if (todas)
+            {
+            sqlquery = "SELECT * FROM \"dycicle\".extmpsol WHERE nombreusuario IN"
+                    + " (SELECT nombreusuario FROM \"dycicle\".estudiante WHERE carreraest="
+                    + "'" + u.getNombreusuario() + "');";
+            }else{
+            sqlquery = "SELECT * FROM \"dycicle\".extmpsol WHERE nombreusuario IN"
+                    + " (SELECT nombreusuario FROM \"dycicle\".estudiante WHERE carreraest="
+                    + "'" + u.getNombreusuario() + "') AND estado='En proceso';";  
+            }
+
+            Statement stmt = conexion.createStatement();
+            ResultSet rs = stmt.executeQuery(sqlquery);
+            while (rs.next()) {
+                ExtmpSol t = new ExtmpSol();
+                t.setnombreusuario(rs.getString("nombreusuario"));
+                t.setestado(rs.getString("estado"));
+                t.setfecha(rs.getString("fecha"));
+                sols.add(t);
+            }
+
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return sols;
+            
+        
+    }
 }

@@ -557,6 +557,10 @@
     <definition name="modPerfilPos" extends="baseCoordinaciones"> <!-- pagina para modificar perfil del postulante -->
         <put name="body" value="/postulante/modificarperfil.jsp"/>
     </definition>
+    
+    <definition name="solicitudes" extends="baseCoordinaciones"> <!-- pagina para modificar perfil del postulante -->
+        <put name="body" value="/postulante/listarSolicitudes.jsp"/>
+    </definition>
         
         
     <!-- UNIVERSIDAD EXTRANJERA -->
