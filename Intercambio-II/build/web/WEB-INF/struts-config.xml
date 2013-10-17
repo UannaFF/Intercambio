@@ -415,7 +415,7 @@
             <forward name="error" path="agregPostulante"/>
        </action>
        
-       <action name="Postulante" path="/solicitudes" scope="session" type="Actions.Solicitudes">
+       <action name="Usuario" path="/solicitudes" scope="session" type="Actions.Solicitudes">
            <forward name="failure" path="solicitudes"/>
            <forward name="success" path="solicitudes" />
        </action>
@@ -584,6 +584,12 @@
       <action input="/" name="Usuario" path="/accionesPostulante" scope="session" type="Actions.revisarNuevasSol">
             <forward name="success" path="accionesPostulanteConNotif"/>
             <forward name="failure" path="accionesPostulanteSinNotif"/>
+      </action>
+      
+      
+      <action input="/" name="ExtmpSol" path="/ResponderSolicitudExtmp" scope="session" type="Actions.ResponderSolicitudExtmp">
+            <forward name="success" path="respuestaEnv"/>
+            <forward name="fail" path="respuestaNoEnv"/>
       </action>
       
       
@@ -841,7 +847,7 @@
       
       <action path="/Descarga" type="Actions.Descarga" parameter="images/descarga.png" />
       
-      <action input="/" name="EstUSB" path="/ListarSolicitudes" scope="session" type="Actions.ListarSolicitudes"/>
+      <action input="/" name="Usuario" path="/ListarSolicitudes" scope="session" type="Actions.ListarSolicitudes"/>
       
       <!-->Creacion de estudiante desde 0, cuando entra por primera vez<-->
        <action forward="creacioncuentaest" path="/CrearCuentaEstudiante"/>

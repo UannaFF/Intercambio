@@ -573,6 +573,14 @@
     <definition name="solicitudes" extends="baseCoordinaciones"> <!-- pagina para modificar perfil del postulante -->
         <put name="body" value="/postulante/listarSolicitudes.jsp"/>
     </definition>
+    
+    <definition name="respuestaEnv" extends="baseCoordinaciones"> 
+        <put name="body" value="/postulante/respEnv.jsp" />
+    </definition>
+    
+    <definition name="respuestaNoEnv" extends="baseCoordinaciones"> 
+        <put name="body" value="/postulante/respNoEnv.jsp" />
+    </definition> 
         
         
     <!-- UNIVERSIDAD EXTRANJERA -->
