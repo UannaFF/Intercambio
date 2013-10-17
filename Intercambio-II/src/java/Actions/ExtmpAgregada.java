@@ -95,7 +95,7 @@ public class ExtmpAgregada extends org.apache.struts.action.Action {
                 System.out.println("Server path:" + filePath);
                 boolean existe=true;
                 while(existe){
-                f1 = "extmp"+ r.nextInt(1000) +".png";
+                f1 = "extmp"+ r.nextInt(1000) +".pdf";
                 File newFile=new File(filePath,f1);
 
 
