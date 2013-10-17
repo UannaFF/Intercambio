@@ -27,6 +27,9 @@
      <%ArrayList<ExtmpSol> sol= (ArrayList<ExtmpSol>)request.getAttribute("solicitudesextmp");%>
     
     <h4 align ="center">Estudiante USB</h4>
+    
+    <p align="center"> Verifique el estado de sus solicitudes</p>
+    
     <table border="1" width="520">
         <tr>
             <th>Tipo</th>

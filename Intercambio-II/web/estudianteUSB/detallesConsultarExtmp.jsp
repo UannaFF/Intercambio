@@ -26,6 +26,9 @@
      <%ExtmpSol sol= (ExtmpSol)request.getAttribute("solicitudextmp");%>
     
     <h4 align ="center">Estudiante USB</h4>
+    
+    <p align="center"> Revise su solicitud y la respuesta que recibi&oacute;</p>
+    
     <table border="1" width="400">
     
         <th>Solicitud</th>
@@ -52,7 +55,7 @@
         
      
     </table>
-     <html:form  action="/ConsultarExtmp" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
+    <html:form  action="/ConsultarExtmp" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
        
                         <p hidden="true"> <html:text name="ExtmpSol" property="nombreusuario" value ="<%=tmp.toString()%>" maxlength="20" errorStyleClass="error"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p>

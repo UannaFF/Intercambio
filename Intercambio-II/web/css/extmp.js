@@ -26,6 +26,13 @@ function extmpnocompleta(){
                    return false;
         
    }
+   
+   if (document.forms[0].archivo.value.toString().search(".pdf") == -1){
+     
+                   alert ("Es necesario que el archivo tenga formato PDF.");
+                   return false;
+        
+   }
     
     
     return true;

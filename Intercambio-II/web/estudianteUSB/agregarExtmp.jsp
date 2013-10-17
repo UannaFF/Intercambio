@@ -20,7 +20,7 @@
 <html:html lang="true">
 
     <h4 align ="center">Estudiante USB</h4>
-    
+    <p align="center">Ingresa tu solicitud</p>
     <script  src="/Intercambio-II/css/extmp.js"></script>
     
     <html:form  action="/ExtmpAgregada" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
@@ -31,6 +31,7 @@
                 
             
         <tr>
+            <td align="center"><b>Tipo de solicitud: </b></td>
             <td align="center" colspan="2">
                <html:select styleId="tipoextmp" name="ExtmpSol" property="tipo"> 
                <html:option value="0">Seleccione </html:option>
@@ -39,18 +40,19 @@
                <html:option value="proygrado">Solicitud de proyecto de grado</html:option>              
              </html:select>  
         </td></tr>
+        <tr><td align="center" colspan="2"><br><br><b>Comentario sobre su solicitud (m&aacute;x 2000 car&aacute;cteres):</b></td></tr>
         <tr><td align="center" colspan="2">
                 
                <html:textarea styleId="solextmp" style="width:500px;height:200px;" name="ExtmpSol" property="solicitud" errorStyleClass="error"
                               errorKey="org.apache.struts.action.ERROR"></html:textarea> 
-                <br><br> 
+                
             </td>
         </tr>  
         <tr>
-        <td align="center">Ingrese el un plan relacionado con su solicitud<br></td>  
+            <td align="center" colspan="2"><b>Ingrese el un plan relacionado con su solicitud:<br></b></td>  
         </tr>
         <tr>
-        <td align="center">
+            <td align="center" colspan="2">
                    <div id="archivos" >
                    <div class="feed">  
 
@@ -69,13 +71,15 @@
     <LABEL ACCESSKEY=D><INPUT TYPE=radio NAME="payment_method" VALUE="2"> Debit card</LABEL><BR>
 <LABEL ACCESSKEY=M><INPUT TYPE=radio NAME="payment_method" VALUE="3"> Money order</LABEL></P> --%>
     
-   
+<table border="0" width="520">   
 <p style="text-align: center" >
     <html:submit onclick="return extmpnocompleta();"> 
                 Guardar
     </html:submit>
-            </p>
+</p>
+</table>
      </html:form> 
+<table border="0" width="520">    
      <html:link action="/AccionesExtmp">
             <p style="text-align: center">
             <html:submit>
@@ -84,5 +88,5 @@
             </p>
       </html:link>      
             
-    </body>
+</table>
 </html:html>

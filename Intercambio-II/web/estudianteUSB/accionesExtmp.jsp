@@ -22,8 +22,15 @@
         <tr> <td> <h4 align ="center">Estudiante USB</h4> </td> </tr>
         <tr align="center"><td>
                 <div id="opci1" class="divformulario" style="display: block" align="center">
-                    <p align="center"><b>¡Extemporanea!</b></p>
+                    <p align="center"><b>Solicitud de Modificaci&oacute;n Extempor&aacute;nea</b>
+                        <br>Está sección esta dedicada a las peticiones desde la universidad
+                    de destino, para los casos imprevistos.<br><br>
+                    
+                    Recuerda tener preparado tu plan de trabajo para pasant&iacute;a o
+                    proyecto de grado o en el caso de tener problemas con una materia,
+                    el programa de tu nueva opci&oacute;n
                     </p>
+     
                      
                 </div>     
                     </td></tr>
@@ -33,7 +40,12 @@
     
         
         <tr> <td>   
-
+     <p style="text-align:center">
+        <font size="1">
+            Ingresa una solicitud para tu coordinador.
+        </font>
+            
+    </p>
      <html:form  action="/AgregarExtmp" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
                         <p hidden="true"><html:text name="ExtmpSol" property="nombreusuario" maxlength="20" errorStyleClass="error" value ="<%=tmp.toString()%>"
                                    errorKey="org.apache.struts.action.ERROR"></html:text></p> 
@@ -51,7 +63,12 @@
        </td> </tr>
         <tr><td>
     
-        
+    <p style="text-align:center">
+        <font size="1">
+            Consulta el estado de tus solicitudes.
+        </font>
+            
+    </p>   
     <html:form  action="/ConsultarExtmp" method="POST" enctype="multipart/form-data" onsubmit="return(this)">
        
                         <p hidden="true"> <html:text name="ExtmpSol" property="nombreusuario" value ="<%=tmp.toString()%>" maxlength="20" errorStyleClass="error"
