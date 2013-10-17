@@ -16,7 +16,7 @@
         </script>
 
         <h4>Solicitud</h4>
-       
+       <center>
         <table border=1 cellspacing=0 cellpadding=2 style="width:68%;">
             <tr>
                 <td>Nombre</td>
@@ -50,27 +50,28 @@
                        
                     </html:text></p>
                     
-                    <html:text name="ExtmpSol" property="respuesta" maxlength="20" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
-                       
-                    </html:text>
+                    <br/>
                     
                     <html:radio name="ExtmpSol" property="estado" value="Aceptado">Aceptar Solicitud</html:radio>
                     <html:radio name="ExtmpSol" property="estado" value="Rechazado">Rechazar Solicitud</html:radio>
                     
-                    
-               
+                    <br/>
+                    <p>Comentario</p><html:textarea style="width:300px;height:200px;" name="ExtmpSol" property="respuesta" >
+                        </html:textarea>
+                       
+                    <br/>
                     
                     <html:submit value="Enviar">
                         
                      Enviar  
-                    </html:submit>
+                    </html:submit></center>
                      
                 </html:form>
                      <br>     
                 <html:form action="/solicitudes">
             <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
             <html:hidden name="Usuario" property="nombre" value="true"/>
-            <html:submit>Volver</html:submit>
+            <center><html:submit>Volver</html:submit></center>
         </html:form> 
             </br>
             
