@@ -2933,5 +2933,23 @@ public class DBMS {
             
         
     }
+     
+     public boolean guardarRespuestaExtmp(String res, String estado, String nombreEst){
+        PreparedStatement psRespuesta;
+        
+        try{
+             psRespuesta = conexion.prepareStatement("UPDATE dycicle.extmpsol SET respuesta = ?,"
+                     + " estado = ? WHERE nombreusuario = ?;");
+             psRespuesta.setString(1, res);
+             psRespuesta.setString(2, estado);
+             psRespuesta.setString(3, nombreEst);
+             
+            Integer i = psRespuesta.executeUpdate();
+            return i >0;
+        } catch (SQLException ex) {
+            Logger.getLogger(DBMS.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
     //Fin modificacion Syscomp 30%
 }

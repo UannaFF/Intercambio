@@ -3,7 +3,8 @@
     Created on : Oct 18, 2012, 12:58:41 AM
     Author     : caponte
 --%>
-
+<%Object var = session.getAttribute("nombre");
+    Object var2 = session.getAttribute("nombreusuario");%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://struts.apache.org/tags-html" prefix="html" %>
 <%@ taglib uri="http://struts.apache.org/tags-logic" prefix="logic" %>
@@ -76,6 +77,7 @@
                     <td align="center" width="90px">
                          <html:form action="/mostrarSolicitud" onsubmit="return(this)">
                             <html:hidden name = "solic" property="nombreusuario"/>
+                            <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
                             <html:image src="images/verDatos.png" value="" property="" style=""/> 
                         </html:form> 
                     </td>

@@ -1,5 +1,6 @@
 
-
+<%Object var = session.getAttribute("nombre");
+    Object var2 = session.getAttribute("nombreusuario");%>
 <%@page contentType="text/html"%>
 <%@page pageEncoding="UTF-8"%>
 
@@ -37,8 +38,40 @@
                 <td>Archivo adjunto</td>
                 <td><a href="Documentos2/<bean:write name = "solicitud" property="dirarchivo"/>">Descargar</a></td>
             </tr>
+          
                   
-        </table><br/>
+        </table>
             
-
+            
+                <html:form styleId="ResponderExtmp" action="/ResponderSolicitudExtmp" method="POST" acceptCharset="ISO-8859-1" enctype="multipart/form-data" onsubmit="return(this);">
+                  
+                    
+                    <p hidden="true"><html:text name="solicitud" property="nombreusuario" maxlength="20" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
+                       
+                    </html:text></p>
+                    
+                    <html:text name="ExtmpSol" property="respuesta" maxlength="20" errorStyleClass="error" errorKey="org.apache.struts.action.ERROR">
+                       
+                    </html:text>
+                    
+                    <html:radio name="ExtmpSol" property="estado" value="Aceptado">Aceptar Solicitud</html:radio>
+                    <html:radio name="ExtmpSol" property="estado" value="Rechazado">Rechazar Solicitud</html:radio>
+                    
+                    
+               
+                    
+                    <html:submit value="Enviar">
+                        
+                     Enviar  
+                    </html:submit>
+                     
+                </html:form>
+                     <br>     
+                <html:form action="/solicitudes">
+            <html:hidden name="Usuario" property="nombreusuario" value="<%=var2.toString()%>"/>
+            <html:hidden name="Usuario" property="nombre" value="true"/>
+            <html:submit>Volver</html:submit>
+        </html:form> 
+            </br>
+            
 </html>
